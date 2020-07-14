@@ -17,11 +17,15 @@ export default function Welcome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFAE00',
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#FFffff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   image: {
-    width: '5rem',
+    width: '100%',
+    height: '50%',
+    borderRadius: 10
   }
 });

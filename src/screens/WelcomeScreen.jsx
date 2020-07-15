@@ -1,48 +1,49 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, Button } from 'react-native';
-// import Salad from "../../assets/images/delivery-man-svg.png"
-import Salad from "../../assets/images/black-burger-banner.jpg"
-import Logo from "../../assets/images/Swift-logo.gif"
-
+import React from "react";
+import { StyleSheet, ImageBackground } from "react-native";
+import Button from "../components/Button";
+import Salad from "../../assets/images/black-burger-banner.jpg";
+import Logo from "../components/Logo";
 
 export default function Welcome() {
   return (
-      <ImageBackground style={styles.image} source={Salad}>
-       <View style={styles.imageText}>
-            <Image style={styles.innerImage} source={Logo}/>
-          <Text style={styles.text}>SWIFT FOODS</Text>
-        </View>
-      </ImageBackground>
+    <ImageBackground style={styles.image} source={Salad}>
+      <Logo />
+      <Button text="Get Started" />
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  text: {
-   fontSize: 35,
-   fontWeight: '900',
-   color: '#fff',
-   top: '2%'
-  },
   container: {
     flex: 1,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'green',
+    width: "100%",
+    height: "100%",
+    backgroundColor: "green",
     alignItems: "center",
-    justifyContent: 'center',
+    justifyContent: "center",
   },
-  innerImage: {
-    borderRadius: 100
-   },
   image: {
-    width: '100%',
-    height: '100%',
-    flex: 1 
-  },
-  imageText: {
-    alignItems: 'center', 
-    justifyContent: 'flex-start',
-    top: '5%',
+    width: "100%",
+    height: "100%",
     flex: 1,
-  }
+  },
+  button: {
+    alignItems: "center",
+    backgroundColor: "red",
+    color: "#fff",
+    padding: 13,
+    width: "50%",
+    borderRadius: 30,
+    padding: 17,
+  },
+  buttonWrapper: {
+    alignItems: "center",
+    width: "100%",
+    bottom: "7%",
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 17,
+    fontWeight: "bold",
+  },
 });

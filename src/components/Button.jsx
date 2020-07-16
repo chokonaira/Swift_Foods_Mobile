@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     alignItems: 'center',
     width: '100%',
-    bottom: '7%',
+    bottom: '5%',
   },
   buttonText:{
     color: '#fff',

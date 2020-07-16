@@ -1,18 +1,24 @@
-import React from 'react';
-import {Provider} from "react-redux";
-import { NativeRouter, Route } from "react-router-native";
-import Welcome from './src/screens/WelcomeScreen.jsx';
-import store from './src/redux/store';
-import { YellowBox } from 'react-native';
-YellowBox.ignoreWarnings(['Remote debugger']);
+import React from "react";
+import { Provider } from "react-redux";
+import HomeScreen from "./src/screens/HomeScreen.jsx";
+import Login from "./src/screens/LoginScreen.jsx";
+import store from "./src/redux/store";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { YellowBox } from "react-native";
+YellowBox.ignoreWarnings(["Remote debugger"]);
 
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <Provider store={store}>
-      <NativeRouter>
-        <Route exact path="/" component={Welcome} />
-      </NativeRouter>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Login" component={Login} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </Provider>
   );
 }

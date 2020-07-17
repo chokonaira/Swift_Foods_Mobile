@@ -4,35 +4,43 @@ export const GlobalStyles = StyleSheet.create({
   authForm: {
     flex: 1,
     width: "100%",
-    padding: 30,
+    padding: 40,
     justifyContent: "center",
     bottom: "8%",
   },
   input: {
-    borderWidth: .5,
-    borderColor: "#fff",
+    borderWidth: 1,
     padding: 10,
     fontSize: 15,
+    fontWeight: 'bold',
     borderRadius: 6,
-    color: '#fff'
+    color: '#fff',
+    marginTop: '2%',
+    borderBottomColor: '#fff'
+  },
+  authFormInput:{
+    width: '100%',
+    justifyContent: "center",
   },
   formText: {
-    // flex: 1,
     color: 'red',
-    // width: "100%",
-    // padding: 10,
     alignItems: "center",
-    fontSize: 23,
+    fontSize: 30,
     fontWeight: 'bold',
     justifyContent: "center",
   },
   formButton:{
-    marginTop: 60
+    marginTop: '5%',
+    backgroundColor: "red",
+    alignItems: "center",
+    width: "100%",
+    padding: 13,
+    borderRadius: 30,
   },
   formTextWrapper:{
     alignItems: "center",
     width: "100%",
-    top: '15%',
+    top: '12%',
   },
   image: {
     width: "100%",
@@ -64,9 +72,11 @@ export const GlobalStyles = StyleSheet.create({
     padding: 17,
   },
   buttonWrapper: {
+    marginTop: '50%',
     alignItems: "center",
     width: "100%",
     bottom: "5%",
+    
   },
   buttonText: {
     color: "#fff",
@@ -78,12 +88,6 @@ export const GlobalStyles = StyleSheet.create({
     height: "100%",
     flex: 1,
   },
-  
-  // buttonWrapper: {
-  //   alignItems: "center",
-  //   width: "100%",
-  //   bottom: "7%",
-  // },
   buttonText: {
     color: "#fff",
     fontSize: 17,

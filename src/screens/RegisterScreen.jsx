@@ -1,9 +1,9 @@
 import React from "react";
-import { ImageBackground, TextInput, View, Text } from "react-native";
-import Banner from "../../assets/images/login-banner-blur.jpg";
+import { ImageBackground, TextInput, TouchableOpacity, View, Text } from "react-native";
+import Banner from "../../assets/images/signup-banner-blur.jpg";
 import { GlobalStyles } from "../styles/globalStyles";
 import { Formik } from "formik";
-import Button from "../components/Button";
+// import Button from "../components/Button";
 
 export default function Register() {
   return (
@@ -19,6 +19,7 @@ export default function Register() {
         }}
         >
           {(formikProps) => (
+          
             <View style={GlobalStyles.authFormInput}>
               <TextInput 
                 style={GlobalStyles.input}
@@ -56,7 +57,9 @@ export default function Register() {
                 value={formikProps.values.password}
                 placeholderTextColor={'#fff'}
               />
-              <Button style={GlobalStyles.formButton} title='Submit' onPress={formikProps.handleSubmit} />
+              <TouchableOpacity style={GlobalStyles.formButton} onPress={formikProps.handleSubmit}>
+                <Text style={GlobalStyles.buttonText}>Submit</Text>
+            </TouchableOpacity>
             </View>
           )}
         </Formik>

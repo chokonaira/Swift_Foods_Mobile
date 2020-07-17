@@ -1,13 +1,13 @@
 import React from "react";
 import { StyleSheet, ImageBackground } from "react-native";
-import Button from "../components/Button";
+// import Button from "../components/Button";
 import Banner from "../../assets/images/login-banner.jpeg";
 import Logo from "../components/Logo";
 
 export default function Login() {
   return (
     <ImageBackground style={styles.image} source={Banner}>
-      <Logo />
+      {/* <Logo /> */}
       {/* <Button text="Order Food" /> */}
     </ImageBackground>
   );

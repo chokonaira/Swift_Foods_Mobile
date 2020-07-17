@@ -6,10 +6,10 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function Button({text}) {
+export default function Button({text,}) {
   return (
     <View style={styles.buttonWrapper}>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} >
         <Text style={styles.buttonText}> {text}</Text>
       </TouchableOpacity>
     </View>

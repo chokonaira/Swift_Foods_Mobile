@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   logoWrapper: {
     alignItems: 'center', 
     justifyContent: 'flex-start',
-    top: '10%',
+    top: '5%',
     flex: 1,
   }
 });

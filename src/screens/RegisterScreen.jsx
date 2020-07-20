@@ -11,7 +11,7 @@ import {
 import Banner from "../../assets/images/signup-banner-blur.jpg";
 import { GlobalStyles } from "../styles/globalStyles";
 import { Formik } from "formik";
-// import Button from "../components/Button";
+
 
 export default function Register({ navigation }) {
 
@@ -36,18 +36,18 @@ export default function Register({ navigation }) {
             phone: "",
             password: "",
           }}
-          onSubmit={(values) => {
+          onSubmit={(values, actions) => {
+            actions.resetForm()
             console.log(values, "values");
           }}
-          pressHandler ={() => navigation.navigate("Home")}
         >
-          {(formikProps) => (
+          {(props) => (
             <View style={GlobalStyles.authFormInput}>
               <TextInput
                 style={GlobalStyles.input}
                 placeholder="First Name"
-                onChangeText={formikProps.handleChange("first_name")}
-                value={formikProps.values.first_name}
+                onChangeText={props.handleChange("first_name")}
+                value={props.values.first_name}
                 placeholderTextColor={"#fff"}
                 autoCorrect={false}
                 enablesReturnKeyAutomatically={true}
@@ -55,8 +55,8 @@ export default function Register({ navigation }) {
               <TextInput
                 style={GlobalStyles.input}
                 placeholder="Last Name"
-                onChangeText={formikProps.handleChange("last_name")}
-                value={formikProps.values.last_name}
+                onChangeText={props.handleChange("last_name")}
+                value={props.values.last_name}
                 placeholderTextColor={"#fff"}
                 autoCorrect={false}
                 enablesReturnKeyAutomatically={true}
@@ -64,8 +64,8 @@ export default function Register({ navigation }) {
               <TextInput
                 style={GlobalStyles.input}
                 placeholder="Email"
-                onChangeText={formikProps.handleChange("email")}
-                value={formikProps.values.email}
+                onChangeText={props.handleChange("email")}
+                value={props.values.email}
                 placeholderTextColor={"#fff"}
                 autoCapitalize='none'
                 autoCorrect={false}
@@ -75,8 +75,8 @@ export default function Register({ navigation }) {
               <TextInput
                 style={GlobalStyles.input}
                 placeholder="Phone"
-                onChangeText={formikProps.handleChange("phone")}
-                value={formikProps.values.phone}
+                onChangeText={props.handleChange("phone")}
+                value={props.values.phone}
                 placeholderTextColor={"#fff"}
                 keyboardType={"numeric"}
                 autoCorrect={false}
@@ -85,8 +85,8 @@ export default function Register({ navigation }) {
               <TextInput
                 style={GlobalStyles.input}
                 placeholder="Password"
-                onChangeText={formikProps.handleChange("password")}
-                value={formikProps.values.password}
+                onChangeText={props.handleChange("password")}
+                value={props.values.password}
                 placeholderTextColor={"#fff"}
                 secureTextEntry={true}
                 autoCorrect={false}
@@ -97,7 +97,7 @@ export default function Register({ navigation }) {
               </TouchableOpacity>
               <TouchableOpacity
                 style={GlobalStyles.formButton}
-                onPress={formikProps.handleSubmit}
+                onPress={props.handleSubmit}
               >
                 <Text style={GlobalStyles.buttonText}>Submit</Text>
               </TouchableOpacity>
@@ -110,10 +110,6 @@ export default function Register({ navigation }) {
       </View>
         </ScrollView>
         </KeyboardAvoidingView>
-      {/* <View style={GlobalStyles.formTextWrapper}>
-        <Text style={GlobalStyles.formText}>Register</Text>
-      </View> */}
-      
     </ImageBackground>
   );
 }

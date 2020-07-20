@@ -56,11 +56,8 @@ export default function Login({ navigation }) {
                     autoCorrect={false}
                     enablesReturnKeyAutomatically={true}
                   />
-                  <TextInput
-                    style={GlobalStyles.emptyInput}
-                  />
                   <TouchableOpacity onPress={pressHandler}>
-                    <Text style={GlobalStyles.loginText}>Register</Text>
+                    <Text style={GlobalStyles.registerText}>Register</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     style={GlobalStyles.formButton}

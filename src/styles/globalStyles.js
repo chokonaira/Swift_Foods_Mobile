@@ -129,6 +129,14 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 13,
     fontWeight: 'bold',
   },
+  registerText:{
+    paddingTop: 8,
+    paddingRight: 7,
+    alignSelf: 'flex-end',
+    color: '#fff',
+    fontSize: 13,
+    fontWeight: 'bold',
+  },
   keyboardViewContainer: {
     flex: 1
   },

@@ -13,6 +13,8 @@ import {
 import Banner from "../../assets/images/login-banner-blur.jpg";
 import { GlobalStyles } from "../styles/globalStyles";
 import { Formik } from "formik";
+import { loginSchema } from "../helpers/formValidationSchema"
+
 
 export default function Login({ navigation }) {
   const pressHandler = () => {

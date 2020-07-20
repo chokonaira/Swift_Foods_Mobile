@@ -11,6 +11,7 @@ import {
 import Banner from "../../assets/images/signup-banner-blur.jpg";
 import { GlobalStyles } from "../styles/globalStyles";
 import { Formik } from "formik";
+import { registerSchema } from "../helpers/formValidationSchema"
 
 
 export default function Register({ navigation }) {
@@ -36,6 +37,7 @@ export default function Register({ navigation }) {
             phone: "",
             password: "",
           }}
+          validationSchema={registerSchema}
           onSubmit={(values, actions) => {
             actions.resetForm()
             console.log(values, "values");
@@ -52,6 +54,7 @@ export default function Register({ navigation }) {
                 autoCorrect={false}
                 enablesReturnKeyAutomatically={true}
               />
+              <Text style={GlobalStyles.errorText}>{props.touched.first_name && props.errors.first_name}</Text>
               <TextInput
                 style={GlobalStyles.input}
                 placeholder="Last Name"
@@ -61,6 +64,7 @@ export default function Register({ navigation }) {
                 autoCorrect={false}
                 enablesReturnKeyAutomatically={true}
               />
+              <Text style={GlobalStyles.errorText}>{props.touched.last_name && props.errors.last_name}</Text>
               <TextInput
                 style={GlobalStyles.input}
                 placeholder="Email"
@@ -72,6 +76,7 @@ export default function Register({ navigation }) {
                 enablesReturnKeyAutomatically={true}
                 keyboardType={"email-address"}
               />
+              <Text style={GlobalStyles.errorText}>{props.touched.email && props.errors.email}</Text>
               <TextInput
                 style={GlobalStyles.input}
                 placeholder="Phone"
@@ -82,6 +87,7 @@ export default function Register({ navigation }) {
                 autoCorrect={false}
                 enablesReturnKeyAutomatically={true}
               />
+              <Text style={GlobalStyles.errorText}>{props.touched.phone && props.errors.phone}</Text>
               <TextInput
                 style={GlobalStyles.input}
                 placeholder="Password"
@@ -92,6 +98,8 @@ export default function Register({ navigation }) {
                 autoCorrect={false}
                 enablesReturnKeyAutomatically={true}
               />
+             <Text style={GlobalStyles.password}>{props.touched.phone && props.errors.phone.password}</Text>
+
               <TouchableOpacity onPress={pressHandler}>
                 <Text style={GlobalStyles.loginText}>Login</Text>
               </TouchableOpacity>

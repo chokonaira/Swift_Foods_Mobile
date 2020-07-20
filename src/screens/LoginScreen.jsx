@@ -23,7 +23,7 @@ export default function Login({ navigation }) {
     <ImageBackground style={GlobalStyles.image} source={Banner}>
       <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
         <ScrollView style={GlobalStyles.authFormWrapper}>
-          <View style={GlobalStyles.authForm}>
+          <View style={GlobalStyles.authLoginForm}>
             <Formik
               initialValues={{
                 email: "",
@@ -32,7 +32,6 @@ export default function Login({ navigation }) {
               onSubmit={(values) => {
                 console.log(values, "values");
               }}
-              pressHandler={() => navigation.navigate("Home")}
             >
               {(formikProps) => (
                 <View style={GlobalStyles.authFormInput}>
@@ -57,6 +56,9 @@ export default function Login({ navigation }) {
                     autoCorrect={false}
                     enablesReturnKeyAutomatically={true}
                   />
+                  <TextInput
+                    style={GlobalStyles.emptyInput}
+                  />
                   <TouchableOpacity onPress={pressHandler}>
                     <Text style={GlobalStyles.loginText}>Register</Text>
                   </TouchableOpacity>
@@ -66,6 +68,12 @@ export default function Login({ navigation }) {
                   >
                     <Text style={GlobalStyles.buttonText}>Submit</Text>
                   </TouchableOpacity>
+                  <TextInput
+                    style={GlobalStyles.emptyInput}
+                  />
+                  <TextInput
+                    style={GlobalStyles.emptyInput}
+                  />
                 </View>
               )}
             </Formik>

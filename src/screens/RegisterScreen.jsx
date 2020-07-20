@@ -101,6 +101,9 @@ export default function Register({ navigation }) {
               >
                 <Text style={GlobalStyles.buttonText}>Submit</Text>
               </TouchableOpacity>
+              <TextInput
+                    style={GlobalStyles.emptyInput}
+                  />
             </View>
           )}
         </Formik>

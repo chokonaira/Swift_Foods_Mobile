@@ -7,7 +7,15 @@ export const GlobalStyles = StyleSheet.create({
     height: "100%",
     padding: 40,
     justifyContent: "center",
-    top: "6.7%",
+    top: "7.5%",
+  },
+  authLoginForm: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    padding: 40,
+    justifyContent: "center",
+    top: "20%",
   },
   input: {
     borderBottomWidth: 1.5,
@@ -18,6 +26,8 @@ export const GlobalStyles = StyleSheet.create({
     color: '#fff',
     marginTop: '2%',
     borderColor: '#fff'
+  },
+  emptyInput: {
   },
   authFormInput:{
     width: '100%',

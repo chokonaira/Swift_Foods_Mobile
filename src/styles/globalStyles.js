@@ -4,23 +4,26 @@ export const GlobalStyles = StyleSheet.create({
   authForm: {
     flex: 1,
     width: "100%",
+    height: "100%",
     padding: 40,
     justifyContent: "center",
-    bottom: "8%",
+    top: "6.7%",
   },
   input: {
-    borderWidth: 1,
+    borderBottomWidth: 1.5,
     padding: 10,
     fontSize: 15,
     fontWeight: 'bold',
     borderRadius: 6,
     color: '#fff',
     marginTop: '2%',
-    borderBottomColor: '#fff'
+    borderColor: '#fff'
   },
   authFormInput:{
     width: '100%',
     justifyContent: "center",
+    height: '100%',
+    top: 10
   },
   formText: {
     color: 'red',
@@ -32,8 +35,9 @@ export const GlobalStyles = StyleSheet.create({
   formButton:{
     marginTop: '5%',
     backgroundColor: "red",
+    alignSelf: "center",
     alignItems: "center",
-    width: "100%",
+    width: "50%",
     padding: 13,
     borderRadius: 30,
   },
@@ -78,20 +82,15 @@ export const GlobalStyles = StyleSheet.create({
     bottom: "5%",
     
   },
-  buttonText: {
-    color: "#fff",
+  buttonText:{
+    color: '#fff',
     fontSize: 17,
-    fontWeight: "bold",
+   fontWeight: 'bold',
   },
   image: {
     width: "100%",
     height: "100%",
     flex: 1,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 17,
-    fontWeight: "bold",
   },
   logo: {
     borderRadius: 100
@@ -99,7 +98,7 @@ export const GlobalStyles = StyleSheet.create({
   logoWrapper: {
     alignItems: 'center', 
     justifyContent: 'flex-start',
-    top: '5%',
+    top: '8%',
     flex: 1,
   },
   button: {
@@ -112,14 +111,15 @@ export const GlobalStyles = StyleSheet.create({
     padding: 17,
     
   },
-  buttonWrapper: {
-    alignItems: 'center',
-    width: '100%',
-    bottom: '5%',
-  },
-  buttonText:{
+  loginText:{
+    paddingTop: 8,
+    paddingRight: 7,
+    alignSelf: 'flex-end',
     color: '#fff',
-    fontSize: 17,
-   fontWeight: 'bold',
-  }
+    fontSize: 13,
+    fontWeight: 'bold',
+  },
+  keyboardViewContainer: {
+    flex: 1
+  },
 });

@@ -6,8 +6,11 @@ import Register from "../screens/RegisterScreen";
 
 
 const screens = {
-  Home:{
-    screen: HomeScreen
+  " ":{
+    screen: HomeScreen,
+    navigationOptions:{
+      headerStyle: { height:0}
+    }
   },
   Login:{
     screen: LoginScreen
@@ -17,5 +20,10 @@ const screens = {
   }
 }
 
-const Routes = createStackNavigator(screens);
+const Routes = createStackNavigator(screens, {
+  defaultNavigationOptions:{
+    headerTintColor: '#444',
+    headerStyle: {backgroundColor: 'red'}
+  }
+});
 export default createAppContainer(Routes)

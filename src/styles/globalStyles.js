@@ -1,13 +1,13 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 export const GlobalStyles = StyleSheet.create({
   authForm: {
     flex: 1,
     width: "100%",
     height: "100%",
-    padding: 40,
+    padding: 43,
     justifyContent: "center",
-    top: "7.5%",
+    top: "5%",
   },
   authLoginForm: {
     flex: 1,
@@ -15,35 +15,44 @@ export const GlobalStyles = StyleSheet.create({
     height: "100%",
     padding: 40,
     justifyContent: "center",
-    top: "20%",
+    top: "18%",
   },
-  input: {
+  registerInput: {
+    borderBottomWidth: 1.5,
+    padding: 4,
+    fontSize: 15,
+    fontWeight: "bold",
+    borderRadius: 6,
+    color: "#fff",
+    marginTop: "3%",
+    borderColor: "#fff",
+  },
+  loginInput: {
     borderBottomWidth: 1.5,
     padding: 10,
     fontSize: 15,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     borderRadius: 6,
-    color: '#fff',
-    marginTop: '2%',
-    borderColor: '#fff'
+    color: "#fff",
+    marginTop: "4%",
+    borderColor: "#fff",
   },
-  emptyInput: {
-  },
-  authFormInput:{
-    width: '100%',
+  emptyInput: {},
+  authFormInput: {
+    width: "100%",
     justifyContent: "center",
-    height: '100%',
-    top: 10
+    height: "100%",
+    // top: 10,
   },
   formText: {
-    color: 'red',
+    color: "red",
     alignItems: "center",
     fontSize: 30,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     justifyContent: "center",
   },
-  formButton:{
-    marginTop: '5%',
+  formButton: {
+    marginTop: "5%",
     backgroundColor: "red",
     alignSelf: "center",
     alignItems: "center",
@@ -51,10 +60,10 @@ export const GlobalStyles = StyleSheet.create({
     padding: 13,
     borderRadius: 30,
   },
-  formTextWrapper:{
+  formTextWrapper: {
     alignItems: "center",
     width: "100%",
-    top: '12%',
+    top: "12%",
   },
   image: {
     width: "100%",
@@ -86,16 +95,15 @@ export const GlobalStyles = StyleSheet.create({
     padding: 17,
   },
   buttonWrapper: {
-    marginTop: '50%',
+    marginTop: "50%",
     alignItems: "center",
     width: "100%",
     bottom: "5%",
-    
   },
-  buttonText:{
-    color: '#fff',
+  buttonText: {
+    color: "#fff",
     fontSize: 17,
-   fontWeight: 'bold',
+    fontWeight: "bold",
   },
   image: {
     width: "100%",
@@ -103,41 +111,57 @@ export const GlobalStyles = StyleSheet.create({
     flex: 1,
   },
   logo: {
-    borderRadius: 100
-   },
+    borderRadius: 100,
+  },
   logoWrapper: {
-    alignItems: 'center', 
-    justifyContent: 'flex-start',
-    top: '8%',
+    alignItems: "center",
+    justifyContent: "flex-start",
+    top: "8%",
     flex: 1,
   },
   button: {
-    alignItems: 'center',
-    backgroundColor: 'red',
-    color: '#fff',
+    alignItems: "center",
+    backgroundColor: "red",
+    color: "#fff",
     padding: 13,
-    width: '50%',
+    width: "50%",
     borderRadius: 30,
     padding: 17,
-    
   },
-  loginText:{
+  loginText: {
+    paddingRight: 7,
+    color: "#fff",
+    fontSize: 14,
+    fontWeight: "bold",
+  },
+  loginTextWrapper: {
+    flexDirection:"row",
+    top: 35,
+    alignSelf: "center",
+    color: "#fff",
+    fontSize: 13,
+    fontWeight: "bold",
+  },
+  registerText: {
     paddingTop: 8,
     paddingRight: 7,
-    alignSelf: 'flex-end',
-    color: '#fff',
+    alignSelf: "flex-end",
+    color: "#fff",
     fontSize: 13,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
-  registerText:{
-    paddingTop: 8,
-    paddingRight: 7,
-    alignSelf: 'flex-end',
-    color: '#fff',
-    fontSize: 13,
-    fontWeight: 'bold',
+  loginTextSpan: {
+    color: "red",
+    fontSize: 14,
+    fontWeight: "bold",
   },
   keyboardViewContainer: {
-    flex: 1
+    flex: 1,
   },
+  errorText:{
+    color: 'red',
+    paddingTop: '1%',
+    paddingLeft: '2%',
+    fontWeight: 'bold'
+  }
 });

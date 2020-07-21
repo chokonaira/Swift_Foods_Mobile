@@ -13,8 +13,7 @@ import {
 import Banner from "../../assets/images/login-banner-blur.jpg";
 import { GlobalStyles } from "../styles/globalStyles";
 import { Formik } from "formik";
-import { loginSchema } from "../helpers/formValidationSchema"
-
+import { loginSchema } from "../helpers/formValidationSchema";
 
 export default function Login({ navigation }) {
   const pressHandler = () => {
@@ -32,45 +31,57 @@ export default function Login({ navigation }) {
                   email: "",
                   password: "",
                 }}
+                validationSchema={loginSchema}
                 onSubmit={(values, actions) => {
                   actions.resetForm();
                   console.log(values, "values");
                 }}
               >
-                {(formikProps) => (
+                {(props) => (
                   <View style={GlobalStyles.authFormInput}>
                     <TextInput
-                      style={GlobalStyles.input}
+                      style={GlobalStyles.loginInput}
                       placeholder="Email"
-                      onChangeText={formikProps.handleChange("email")}
-                      value={formikProps.values.email}
+                      onChangeText={props.handleChange("email")}
+                      value={props.values.email}
                       placeholderTextColor={"#fff"}
                       autoCapitalize="none"
                       autoCorrect={false}
                       enablesReturnKeyAutomatically={true}
                       keyboardType={"email-address"}
                     />
+                    <Text style={GlobalStyles.errorText}>
+                      {props.touched.email && props.errors.email}
+                    </Text>
                     <TextInput
-                      style={GlobalStyles.input}
+                      style={GlobalStyles.loginInput}
                       placeholder="Password"
-                      onChangeText={formikProps.handleChange("password")}
-                      value={formikProps.values.password}
+                      onChangeText={props.handleChange("password")}
+                      value={props.values.password}
                       placeholderTextColor={"#fff"}
                       secureTextEntry={true}
                       autoCorrect={false}
                       enablesReturnKeyAutomatically={true}
                     />
-                    <TouchableOpacity onPress={pressHandler}>
-                      <Text style={GlobalStyles.registerText}>Register</Text>
-                    </TouchableOpacity>
+                    <Text style={GlobalStyles.errorText}>
+                      {props.touched.password && props.errors.password}
+                    </Text>
                     <TouchableOpacity
                       style={GlobalStyles.formButton}
-                      onPress={formikProps.handleSubmit}
+                      onPress={props.handleSubmit}
                     >
                       <Text style={GlobalStyles.buttonText}>Submit</Text>
                     </TouchableOpacity>
-                    <TextInput style={GlobalStyles.emptyInput} />
-                    <TextInput style={GlobalStyles.emptyInput} />
+                    <View style={GlobalStyles.loginTextWrapper}>
+                      <Text style={GlobalStyles.loginText}>
+                        Don't have an account?
+                      </Text>
+                      <TouchableOpacity onPress={pressHandler}>
+                        <Text style={GlobalStyles.loginTextSpan}>Register</Text>
+                      </TouchableOpacity>
+                    </View>
+                    <Text style={GlobalStyles.emptyInput}></Text>
+                    <Text style={GlobalStyles.emptyInput}></Text>
                   </View>
                 )}
               </Formik>

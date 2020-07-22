@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import {
   ImageBackground,
@@ -11,10 +12,10 @@ import {
   // Keyboard,
 } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
-import Banner from "../../assets/images/dish-dash-blur.jpg";
+import Banner from "../../assets/images/dish-side.jpg";
 
 
-class DashboardScreen extends Component {
+class ProfileScreen extends Component {
   render() {
     return (
       <ImageBackground style={GlobalStyles.image} source={Banner}>
@@ -25,4 +26,4 @@ class DashboardScreen extends Component {
 }
 
 
-export default DashboardScreen;
+export default ProfileScreen;

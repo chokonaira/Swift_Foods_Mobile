@@ -172,5 +172,30 @@ export const GlobalStyles = StyleSheet.create({
     paddingTop: '.5%',
     paddingLeft: '2%',
     fontWeight: 'bold'
+  },
+  header:{
+    flex:1,
+    width: '100%',
+    height: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    backgroundColor: 'red'
+  },
+  headerText:{
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: '#444',
+    letterSpacing: 1,
+    paddingLeft: 50
+    // alignItems: 'center',
+  },
+  menuIcon:{
+    alignSelf: 'flex-start',
+    // flex: 1,
+    position: 'relative',
+    // justifyContent: 'flex-start',
+    left: 16,
+    // paddingRight: '50%'
   }
 });

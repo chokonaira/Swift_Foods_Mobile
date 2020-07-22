@@ -18,7 +18,7 @@ export const GlobalStyles = StyleSheet.create({
     top: "18%",
   },
   registerInput: {
-    borderBottomWidth: 1.5,
+    borderBottomWidth: 2,
     padding: 4,
     fontSize: 15,
     fontWeight: "bold",
@@ -69,6 +69,7 @@ export const GlobalStyles = StyleSheet.create({
     width: "100%",
     height: "100%",
     flex: 1,
+    backgroundColor: 'black'
   },
   text: {
     color: "#fff",
@@ -98,7 +99,7 @@ export const GlobalStyles = StyleSheet.create({
     marginTop: "50%",
     alignItems: "center",
     width: "100%",
-    bottom: "5%",
+    bottom: "8%",
   },
   buttonText: {
     color: "#fff",
@@ -133,6 +134,8 @@ export const GlobalStyles = StyleSheet.create({
     color: "#fff",
     fontSize: 14,
     fontWeight: "bold",
+    alignSelf: "center",
+    top: '7%'
   },
   loginTextWrapper: {
     flexDirection:"row",
@@ -152,15 +155,21 @@ export const GlobalStyles = StyleSheet.create({
   },
   loginTextSpan: {
     color: "red",
+    paddingRight: 8,
     fontSize: 14,
     fontWeight: "bold",
+    alignSelf: "flex-end",
+   
+  },
+  loginTextSpanWrapper:{
+    // top: '8%'
   },
   keyboardViewContainer: {
     flex: 1,
   },
   errorText:{
     color: 'red',
-    paddingTop: '1%',
+    paddingTop: '.5%',
     paddingLeft: '2%',
     fontWeight: 'bold'
   }

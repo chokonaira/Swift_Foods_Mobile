@@ -105,21 +105,17 @@ export default function Register({ navigation }) {
                     {props.touched.password && props.errors.password}
                   </Text>
                   <TouchableOpacity
+                      onPress={pressHandler}
+                      style={GlobalStyles.loginTextSpanWrapper}
+                    >
+                      <Text style={GlobalStyles.loginTextSpan}>Login</Text>
+                    </TouchableOpacity> 
+                  <TouchableOpacity
                     style={GlobalStyles.formButton}
                     onPress={props.handleSubmit}
                   >
                     <Text style={GlobalStyles.buttonText}>Submit</Text>
-                  </TouchableOpacity>
-                  <View style={GlobalStyles.loginTextWrapper}>
-                    <Text style={GlobalStyles.loginText}>
-                      Already have an account?
-                    </Text>
-                    <TouchableOpacity
-                      onPress={pressHandler}
-                    >
-                      <Text style={GlobalStyles.loginTextSpan}>Login</Text>
-                    </TouchableOpacity>              
-                  </View>
+                  </TouchableOpacity>     
                   <Text style={GlobalStyles.emptyInput}></Text>
                   <Text style={GlobalStyles.emptyInput}></Text>
                 </View>

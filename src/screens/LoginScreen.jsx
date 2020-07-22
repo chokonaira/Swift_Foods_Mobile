@@ -67,19 +67,17 @@ export default function Login({ navigation }) {
                       {props.touched.password && props.errors.password}
                     </Text>
                     <TouchableOpacity
+                      onPress={pressHandler}
+                      style={GlobalStyles.loginTextSpanWrapper}
+                    >
+                      <Text style={GlobalStyles.loginTextSpan}>Register</Text>
+                    </TouchableOpacity> 
+                    <TouchableOpacity
                       style={GlobalStyles.formButton}
                       onPress={props.handleSubmit}
                     >
                       <Text style={GlobalStyles.buttonText}>Submit</Text>
                     </TouchableOpacity>
-                    <View style={GlobalStyles.loginTextWrapper}>
-                      <Text style={GlobalStyles.loginText}>
-                        Don't have an account?
-                      </Text>
-                      <TouchableOpacity onPress={pressHandler}>
-                        <Text style={GlobalStyles.loginTextSpan}>Register</Text>
-                      </TouchableOpacity>
-                    </View>
                     <Text style={GlobalStyles.emptyInput}></Text>
                     <Text style={GlobalStyles.emptyInput}></Text>
                   </View>

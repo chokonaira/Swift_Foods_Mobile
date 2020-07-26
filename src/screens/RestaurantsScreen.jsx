@@ -19,7 +19,7 @@ import Banner from "../../assets/images/dish-side.jpg";
 class ProfileScreen extends Component {
   render() {
     return (
-      <ImageBackground style={GlobalStyles.image} source={Banner}>
+      <ImageBackground style={GlobalStyles.image} source={globalImages.}>
         
       </ImageBackground>
     )

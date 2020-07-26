@@ -7,9 +7,10 @@ import DashboardScreen from "../screens/DashboardScreen"
 
 
 const screens = {
-  " ":{
+  Home:{
     screen: HomeScreen,
     navigationOptions:{
+      title:" ",
       headerStyle: { height:0}
     }
   },
@@ -27,7 +28,7 @@ const screens = {
 const Routes = createStackNavigator(screens, {
   defaultNavigationOptions:{
     headerTintColor: '#444',
-    headerStyle: {backgroundColor: 'red'}
+    headerStyle: {backgroundColor: '#F0A500'}
   }
 });
 export default createAppContainer(Routes)

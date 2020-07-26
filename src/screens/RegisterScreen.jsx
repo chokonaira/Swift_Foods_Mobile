@@ -8,7 +8,7 @@ import {
   KeyboardAvoidingView,
   ScrollView,
 } from "react-native";
-import Banner from "../../assets/images/rice-chicken-blur.jpg";
+import { globalImages } from '../styles/globalImages'
 import { GlobalStyles } from "../styles/globalStyles";
 import { Formik } from "formik";
 import { registerSchema } from "../helpers/formValidationSchema";
@@ -22,7 +22,7 @@ class Register extends Component {
 
   render() {
     return (
-      <ImageBackground style={GlobalStyles.image} source={Banner}>
+      <ImageBackground style={GlobalStyles.image} source={globalImages.RegisterBanner}>
         <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
           <ScrollView>
             <View style={GlobalStyles.authForm}>
@@ -47,7 +47,7 @@ class Register extends Component {
                       placeholder="First Name"
                       onChangeText={props.handleChange("first_name")}
                       value={props.values.first_name}
-                      placeholderTextColor={"#fff"}
+                      placeholderTextColor={"black"}
                       autoCorrect={false}
                       enablesReturnKeyAutomatically={true}
                     />
@@ -59,7 +59,7 @@ class Register extends Component {
                       placeholder="Last Name"
                       onChangeText={props.handleChange("last_name")}
                       value={props.values.last_name}
-                      placeholderTextColor={"#fff"}
+                      placeholderTextColor={"black"}
                       autoCorrect={false}
                       enablesReturnKeyAutomatically={true}
                     />
@@ -71,7 +71,7 @@ class Register extends Component {
                       placeholder="Email"
                       onChangeText={props.handleChange("email")}
                       value={props.values.email}
-                      placeholderTextColor={"#fff"}
+                      placeholderTextColor={"black"}
                       autoCapitalize="none"
                       autoCorrect={false}
                       enablesReturnKeyAutomatically={true}
@@ -85,7 +85,7 @@ class Register extends Component {
                       placeholder="Phone"
                       onChangeText={props.handleChange("phone")}
                       value={props.values.phone}
-                      placeholderTextColor={"#fff"}
+                      placeholderTextColor={"black"}
                       keyboardType={"numeric"}
                       autoCorrect={false}
                       enablesReturnKeyAutomatically={true}
@@ -98,7 +98,7 @@ class Register extends Component {
                       placeholder="Password"
                       onChangeText={props.handleChange("password")}
                       value={props.values.password}
-                      placeholderTextColor={"#fff"}
+                      placeholderTextColor={"black"}
                       secureTextEntry={true}
                       autoCorrect={false}
                       enablesReturnKeyAutomatically={true}
@@ -110,7 +110,7 @@ class Register extends Component {
                       onPress={this.pressHandlerLogin}
                       style={GlobalStyles.loginTextSpanWrapper}
                     >
-                      <Text style={GlobalStyles.loginTextSpan}>Login</Text>
+                      <Text style={GlobalStyles.registerTextSpan}>Login</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                       style={GlobalStyles.formButton}

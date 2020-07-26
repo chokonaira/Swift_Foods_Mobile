@@ -2,7 +2,7 @@ import React from "react";
 import {
   ImageBackground,
 } from "react-native";
-import Banner from "../../assets/images/black-burger-banner.jpg";
+import {globalImages} from '../styles/globalImages';
 import Logo from "../components/Logo";
 import Button from "../components/Button";
 import {GlobalStyles} from "../styles/globalStyles"
@@ -15,7 +15,7 @@ export default function Home({ navigation }) {
   };
 
   return (
-    <ImageBackground style={GlobalStyles.image} source={Banner}>
+    <ImageBackground style={GlobalStyles.image} source={globalImages.HomeBanner}>
       <Logo />
       <Button onPress={pressHandler} title='Get Started'/>
     </ImageBackground>

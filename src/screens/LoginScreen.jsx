@@ -10,7 +10,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import Banner from "../../assets/images/login-banner-blur.jpg";
+import { globalImages } from '../styles/globalImages'
 import { GlobalStyles } from "../styles/globalStyles";
 import { Formik } from "formik";
 import { loginSchema } from "../helpers/formValidationSchema";
@@ -27,7 +27,7 @@ class Login extends Component {
 
   render() {
     return (
-      <ImageBackground style={GlobalStyles.image} source={Banner}>
+      <ImageBackground style={GlobalStyles.image} source={globalImages.LoginBanner}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
             <ScrollView style={GlobalStyles.authFormWrapper}>
@@ -50,7 +50,7 @@ class Login extends Component {
                         placeholder="Email"
                         onChangeText={props.handleChange("email")}
                         value={props.values.email}
-                        placeholderTextColor={"#fff"}
+                        placeholderTextColor={"black"}
                         autoCapitalize="none"
                         autoCorrect={false}
                         enablesReturnKeyAutomatically={true}
@@ -64,7 +64,7 @@ class Login extends Component {
                         placeholder="Password"
                         onChangeText={props.handleChange("password")}
                         value={props.values.password}
-                        placeholderTextColor={"#fff"}
+                        placeholderTextColor={"black"}
                         secureTextEntry={true}
                         autoCorrect={false}
                         enablesReturnKeyAutomatically={true}

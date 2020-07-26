@@ -19,13 +19,15 @@ export const GlobalStyles = StyleSheet.create({
   },
   registerInput: {
     borderBottomWidth: 2,
-    padding: 4,
+    padding: 5,
     fontSize: 15,
     fontWeight: "bold",
     borderRadius: 6,
-    color: "#fff",
+    color: "black",
     marginTop: "3%",
     borderColor: "#fff",
+    backgroundColor: '#fff',
+    opacity: .7,
   },
   loginInput: {
     borderBottomWidth: 1.5,
@@ -33,9 +35,11 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "bold",
     borderRadius: 6,
-    color: "#fff",
+    color: "black",
     marginTop: "4%",
     borderColor: "#fff",
+    backgroundColor: '#fff',
+    opacity: .7,
   },
   emptyInput: {},
   authFormInput: {
@@ -53,7 +57,7 @@ export const GlobalStyles = StyleSheet.create({
   },
   formButton: {
     marginTop: "5%",
-    backgroundColor: "red",
+    backgroundColor: "#FAC32D",
     alignSelf: "center",
     alignItems: "center",
     width: "50%",
@@ -88,7 +92,7 @@ export const GlobalStyles = StyleSheet.create({
   },
   button: {
     alignItems: "center",
-    backgroundColor: "red",
+    backgroundColor: "#f0a500",
     color: "#fff",
     padding: 13,
     width: "50%",
@@ -102,7 +106,7 @@ export const GlobalStyles = StyleSheet.create({
     bottom: "8%",
   },
   buttonText: {
-    color: "#fff",
+    color: "black",
     fontSize: 17,
     fontWeight: "bold",
   },
@@ -113,21 +117,16 @@ export const GlobalStyles = StyleSheet.create({
   },
   logo: {
     borderRadius: 100,
+    width: '40%',
+    height: '37%'
   },
   logoWrapper: {
     alignItems: "center",
     justifyContent: "flex-start",
     top: "8%",
+    borderRadius: 150,
     flex: 1,
-  },
-  button: {
-    alignItems: "center",
-    backgroundColor: "red",
-    color: "#fff",
-    padding: 13,
-    width: "50%",
-    borderRadius: 30,
-    padding: 17,
+   
   },
   loginText: {
     paddingRight: 7,
@@ -153,8 +152,16 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "bold",
   },
+  registerTextSpan: {
+    color: "#fff",
+    paddingRight: 12,
+    fontSize: 14,
+    fontWeight: "bold",
+    alignSelf: "flex-end",
+   
+  },
   loginTextSpan: {
-    color: "red",
+    color: "#fff",
     paddingRight: 8,
     fontSize: 14,
     fontWeight: "bold",
@@ -168,34 +175,27 @@ export const GlobalStyles = StyleSheet.create({
     flex: 1,
   },
   errorText:{
-    color: 'red',
+    color: '#fff',
     paddingTop: '.5%',
     paddingLeft: '2%',
     fontWeight: 'bold'
   },
-  header:{
-    flex:1,
-    width: '100%',
-    height: '100%',
-    flexDirection: 'row',
+  FooterWrapper:{
+    backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    backgroundColor: 'red'
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    padding:12,
+    height: '8%',
+    backgroundColor: '#f0a500',
   },
-  headerText:{
-    fontWeight: 'bold',
-    fontSize: 20,
-    color: '#444',
-    letterSpacing: 1,
-    paddingLeft: 50
-    // alignItems: 'center',
+  footerText:{
+    fontSize: 8,
   },
-  menuIcon:{
-    alignSelf: 'flex-start',
-    // flex: 1,
-    position: 'relative',
-    // justifyContent: 'flex-start',
-    left: 16,
-    // paddingRight: '50%'
+  tinyIcon: {
+    width: 30,
+    height: 30,
+    borderColor: 'grey'
+    // padding: 8
   }
 });

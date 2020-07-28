@@ -26,6 +26,8 @@ class Register extends Component {
         <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
           <ScrollView>
             <View style={GlobalStyles.authForm}>
+            <Text style={GlobalStyles.authText}>Register</Text>
+
               <Formik
                 initialValues={{
                   first_name: "",

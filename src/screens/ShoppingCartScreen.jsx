@@ -12,7 +12,6 @@ import {
   // Keyboard,
 } from "react-native";
 import { globalImages } from '../styles/globalImages'
-import Footer from "../components/Footer";
 import { GlobalStyles } from "../styles/globalStyles";
 
 
@@ -25,7 +24,7 @@ class Cart extends Component {
             <Text>Hello</Text>
           </View>
         </ScrollView>
-        <Footer navigation={this.props.navigation}/>
+        {/* <Footer navigation={this.props.navigation}/> */}
       </ImageBackground>
     )
   }

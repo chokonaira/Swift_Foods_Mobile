@@ -1,7 +1,7 @@
 import { SearchBar } from "react-native-elements";
 import React, { Component } from "react";
 import { GlobalStyles } from "../styles/globalStyles";
-
+import { View } from "react-native";
 
 class Search extends Component {
   state = {
@@ -16,18 +16,31 @@ class Search extends Component {
     const { search } = this.state;
 
     return (
-      <SearchBar
-        style={GlobalStyles.searchBar}
-        lightTheme
-        inputStyle={{backgroundColor: 'transparent', color: 'black', fontWeight:'bold', letterSpacing:1, fontSize:12, padding:6}}
-        showLoading={false}
-        containerStyle={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}
-        round
-        placeholder="Type Here..."
-        placeholderTextColor={'black'}
-        onChangeText={this.updateSearch}
-        value={search}
-      />
+      // <View>
+        <SearchBar
+          style={GlobalStyles.searchBar}
+          lightTheme
+          inputStyle={{
+            backgroundColor: "transparent",
+            color: "black",
+            fontWeight: "bold",
+            letterSpacing: 1,
+            fontSize: 12,
+            padding: 6,
+          }}
+          showLoading={false}
+          containerStyle={{
+            backgroundColor: "transparent",
+            borderBottomColor: "transparent",
+            width: "10%",
+          }}
+          round
+          placeholder="Type Here..."
+          placeholderTextColor={"black"}
+          onChangeText={this.updateSearch}
+          value={search}
+        />
+      // </View>
     );
   }
 }

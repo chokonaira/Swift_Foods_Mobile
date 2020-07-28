@@ -7,7 +7,7 @@ export const GlobalStyles = StyleSheet.create({
     height: "100%",
     padding: 43,
     justifyContent: "center",
-    top: "5%",
+    top: "10%",
   },
   authLoginForm: {
     flex: 1,
@@ -15,7 +15,7 @@ export const GlobalStyles = StyleSheet.create({
     height: "100%",
     padding: 40,
     justifyContent: "center",
-    top: "18%",
+    top: "20%",
   },
   registerInput: {
     borderBottomWidth: 2,
@@ -28,6 +28,12 @@ export const GlobalStyles = StyleSheet.create({
     borderColor: "#fff",
     backgroundColor: "#fff",
     opacity: 0.7,
+  },
+  authText:{
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 35,
+    alignSelf: "center",
   },
   loginInput: {
     borderBottomWidth: 1.5,
@@ -57,7 +63,7 @@ export const GlobalStyles = StyleSheet.create({
   },
   formButton: {
     marginTop: "5%",
-    backgroundColor: "#FAC32D",
+    backgroundColor: "#f0a500",
     alignSelf: "center",
     alignItems: "center",
     width: "50%",
@@ -73,7 +79,7 @@ export const GlobalStyles = StyleSheet.create({
     width: "100%",
     height: "100%",
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: "#fff",
   },
   text: {
     color: "#fff",
@@ -109,11 +115,6 @@ export const GlobalStyles = StyleSheet.create({
     color: "black",
     fontSize: 17,
     fontWeight: "bold",
-  },
-  image: {
-    width: "100%",
-    height: "100%",
-    flex: 1,
   },
   logo: {
     borderRadius: 100,
@@ -185,7 +186,6 @@ export const GlobalStyles = StyleSheet.create({
     padding: 10,
     height: "8%",
     backgroundColor: "#f0a500",
-    
   },
   footerText: {
     fontSize: 8,
@@ -197,35 +197,36 @@ export const GlobalStyles = StyleSheet.create({
     // padding: 8
   },
   HeaderWrapper: {
-    width: '100%',
-    // height: '8%',
-    color: '#fff',
-    // top: 5,
-    // flexDirection: 'row',
-    // alignItems: 'center',
-    // alignSelf: "center",
-    // justifyContent: 'space-between',
-    // borderColor: "grey",
-    // backgroundColor: "#f0a500",
-    // padding: 5,
-    // opacity: 0.5
+    width: "100%",
+    color: "#fff",
   },
   searchBar: {
-    width: "100%"
+    width: "100%",
+    // height: '70%',
   },
   headerText: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 20,
     color: "#fff",
     letterSpacing: 1,
   },
-  icon:{
-    color: '#fff',
-    flexDirection: 'row',
+  icon: {
+    color: "#fff",
+    flexDirection: "row",
   },
-  container:{
-    display: '',
-    height: '100%',
-    width: '100%',
-  }
+  imageCard: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FFFFFF",
+  },
+  cardText: {
+    borderRadius: 1,
+    fontSize: 10,
+    textAlign: "center",
+    margin: 5,
+  },
+  safeArea: {
+    height: "100%",
+  },
 });

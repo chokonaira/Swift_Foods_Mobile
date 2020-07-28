@@ -31,7 +31,9 @@ class Login extends Component {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
             <ScrollView style={GlobalStyles.authFormWrapper}>
+              
               <View style={GlobalStyles.authLoginForm}>
+              <Text style={GlobalStyles.authText}>Login</Text>
                 <Formik
                   initialValues={{
                     email: "",
@@ -84,6 +86,8 @@ class Login extends Component {
                       >
                         <Text style={GlobalStyles.buttonText}>Submit</Text>
                       </TouchableOpacity>
+                      <Text style={GlobalStyles.emptyInput}></Text>
+                      <Text style={GlobalStyles.emptyInput}></Text>
                       <Text style={GlobalStyles.emptyInput}></Text>
                       <Text style={GlobalStyles.emptyInput}></Text>
                     </View>

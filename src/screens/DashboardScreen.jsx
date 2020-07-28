@@ -10,30 +10,21 @@ import {
   ScrollView,
   // TouchableWithoutFeedback,
   // Keyboard,
-  Dimensions
+  Dimensions,
 } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import { globalImages } from "../styles/globalImages";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import FoodCard from "../components/FoodCard";
 
 class DashboardScreen extends Component {
   render() {
     return (
-        <ImageBackground
-          style={GlobalStyles.image}
-          source={globalImages.DashboardBanner}
-        >
-          {/* <Header /> */}
-
-          <ScrollView>
-            <View>
-              <Text>Hello</Text>
-            </View>
-          </ScrollView>
-
-          <Footer navigation={this.props.navigation} />
-        </ImageBackground>
+      <View
+        style={GlobalStyles.image}
+        // source={globalImages.DashboardBanner}
+      >
+        <FoodCard />
+      </View>
     );
   }
 }

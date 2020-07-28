@@ -4,27 +4,32 @@ import {
   ImageBackground,
   // TextInput,
   // TouchableOpacity,
-  // View,
-  // Text,
+  View,
+  Text,
   // KeyboardAvoidingView,
-  // ScrollView,
+  ScrollView,
   // TouchableWithoutFeedback,
   // Keyboard,
 } from "react-native";
 import { globalImages } from '../styles/globalImages'
+import Footer from "../components/Footer";
 import { GlobalStyles } from "../styles/globalStyles";
-import Banner from "../../assets/images/dish-side.jpg";
 
 
-class ProfileScreen extends Component {
+class Restaurant extends Component {
   render() {
     return (
-      <ImageBackground style={GlobalStyles.image} source={globalImages.}>
-        
+      <ImageBackground style={GlobalStyles.image} source={globalImages.RestaurantBanner}>
+        <ScrollView>
+          <View>
+            <Text>Hello</Text>
+          </View>
+        </ScrollView>
+        <Footer navigation={this.props.navigation}/>
       </ImageBackground>
     )
   }
 }
 
 
-export default ProfileScreen;
+export default Restaurant;

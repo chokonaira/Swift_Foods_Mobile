@@ -4,23 +4,28 @@ import {
   ImageBackground,
   // TextInput,
   // TouchableOpacity,
-  // View,
-  // Text,
+  View,
+  Text,
   // KeyboardAvoidingView,
-  // ScrollView,
+  ScrollView,
   // TouchableWithoutFeedback,
   // Keyboard,
 } from "react-native";
 import { globalImages } from '../styles/globalImages'
+import Footer from "../components/Footer";
 import { GlobalStyles } from "../styles/globalStyles";
-import Banner from "../../assets/images/dish-side.jpg";
 
 
 class ProfileScreen extends Component {
   render() {
     return (
-      <ImageBackground style={GlobalStyles.image} source={Banner}>
-        
+      <ImageBackground style={GlobalStyles.image} source={globalImages.ProfileBanner}>
+        <ScrollView>
+          <View>
+            <Text>Hello</Text>
+          </View>
+        </ScrollView>
+        <Footer navigation={this.props.navigation}/>
       </ImageBackground>
     )
   }

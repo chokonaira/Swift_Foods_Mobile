@@ -17,6 +17,7 @@ import Footer from "../components/Footer";
 
 class DashboardScreen extends Component {
   render() {
+   
     return (
       <ImageBackground style={GlobalStyles.image} source={globalImages.DashboardBanner}>
         <ScrollView>
@@ -24,38 +25,7 @@ class DashboardScreen extends Component {
             <Text>Hello</Text>
           </View>
         </ScrollView>
-        <View style={GlobalStyles.FooterWrapper}>
-          <TouchableOpacity >
-            <Image
-              style={GlobalStyles.tinyIcon}
-              source={globalImages.Foods}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity >
-            <Image
-              style={GlobalStyles.tinyIcon}
-              source={globalImages.Hotel}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity >
-            <Image
-              style={GlobalStyles.tinyIcon}
-              source={globalImages.Basket}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity >
-            <Image
-              style={GlobalStyles.tinyIcon}
-              source={globalImages.Category}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity >
-            <Image
-              style={GlobalStyles.tinyIcon}
-              source={globalImages.Profile}
-            />
-          </TouchableOpacity>
-        </View>
+        <Footer navigation={this.props.navigation}/>
       </ImageBackground>
     );
   }

@@ -26,8 +26,8 @@ export const GlobalStyles = StyleSheet.create({
     color: "black",
     marginTop: "3%",
     borderColor: "#fff",
-    backgroundColor: '#fff',
-    opacity: .7,
+    backgroundColor: "#fff",
+    opacity: 0.7,
   },
   loginInput: {
     borderBottomWidth: 1.5,
@@ -38,8 +38,8 @@ export const GlobalStyles = StyleSheet.create({
     color: "black",
     marginTop: "4%",
     borderColor: "#fff",
-    backgroundColor: '#fff',
-    opacity: .7,
+    backgroundColor: "#fff",
+    opacity: 0.7,
   },
   emptyInput: {},
   authFormInput: {
@@ -73,7 +73,7 @@ export const GlobalStyles = StyleSheet.create({
     width: "100%",
     height: "100%",
     flex: 1,
-    backgroundColor: 'black'
+    backgroundColor: "black",
   },
   text: {
     color: "#fff",
@@ -117,8 +117,8 @@ export const GlobalStyles = StyleSheet.create({
   },
   logo: {
     borderRadius: 100,
-    width: '40%',
-    height: '37%'
+    width: "40%",
+    height: "37%",
   },
   logoWrapper: {
     alignItems: "center",
@@ -126,7 +126,6 @@ export const GlobalStyles = StyleSheet.create({
     top: "8%",
     borderRadius: 150,
     flex: 1,
-   
   },
   loginText: {
     paddingRight: 7,
@@ -134,10 +133,10 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     alignSelf: "center",
-    top: '7%'
+    top: "7%",
   },
   loginTextWrapper: {
-    flexDirection:"row",
+    flexDirection: "row",
     top: 35,
     alignSelf: "center",
     color: "#fff",
@@ -158,7 +157,6 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     alignSelf: "flex-end",
-   
   },
   loginTextSpan: {
     color: "#fff",
@@ -166,36 +164,35 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     alignSelf: "flex-end",
-   
   },
-  loginTextSpanWrapper:{
+  loginTextSpanWrapper: {
     // top: '8%'
   },
   keyboardViewContainer: {
     flex: 1,
   },
-  errorText:{
-    color: '#fff',
-    paddingTop: '.5%',
-    paddingLeft: '2%',
-    fontWeight: 'bold'
+  errorText: {
+    color: "#fff",
+    paddingTop: ".5%",
+    paddingLeft: "2%",
+    fontWeight: "bold",
   },
-  FooterWrapper:{
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    padding:12,
-    height: '8%',
-    backgroundColor: '#f0a500',
+  FooterWrapper: {
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "space-around",
+    flexDirection: "row",
+    padding: 10,
+    height: "8%",
+    backgroundColor: "#f0a500",
   },
-  footerText:{
+  footerText: {
     fontSize: 8,
   },
   tinyIcon: {
-    width: 30,
-    height: 30,
-    borderColor: 'grey'
+    width: 25,
+    height: 25,
+    borderColor: "grey",
     // padding: 8
-  }
+  },
 });

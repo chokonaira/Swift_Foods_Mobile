@@ -32,10 +32,10 @@ class FoodCard extends Component {
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
                   style={{
-                    width: 179,
+                    width: 180,
                     height: 179,
                     // alignSelf: "center",
-                    margin: 11,
+                    margin: 9,
                     // justifyContent: "center",
                   }}
                 />

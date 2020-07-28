@@ -21,24 +21,23 @@ const RootNavigator = createStackNavigator({
   // },
   Dashboard: {
     screen: TabRoutes,
-   
-  },
-  Restaurant: {
-    screen: TabRoutes,
     navigationOptions: {
-      title: "Restaurants",
-      // headerStyle: { height: 0 },
-    }
+      headerTintColor: "#fff",
+      headerStyle: { backgroundColor: '#f0a500' },
+    },
   },
-  Cart: {
-    screen: TabRoutes
-  },
-  Category: {
-    screen: TabRoutes
-  },
-  Profile: {
-    screen: TabRoutes
-  }
+  // Restaurant: {
+  //   screen: TabRoutes,
+  // },
+  // Cart: {
+  //   screen: TabRoutes
+  // },
+  // Category: {
+  //   screen: TabRoutes
+  // },
+  // Profile: {
+  //   screen: TabRoutes
+  // }
 })
 
 export default createAppContainer(RootNavigator);

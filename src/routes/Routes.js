@@ -26,7 +26,7 @@ const screens = {
     screen: RegisterScreen
   },
   Dashboard:{
-    screen: DashboardScreen
+    screen: DashboardScreen,
   },
   Restaurant:{
     screen: RestaurantScreen

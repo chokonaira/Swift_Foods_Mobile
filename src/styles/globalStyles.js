@@ -31,7 +31,7 @@ export const GlobalStyles = StyleSheet.create({
   },
   loginInput: {
     borderBottomWidth: 1.5,
-    padding: 10,
+    padding: 7,
     fontSize: 15,
     fontWeight: "bold",
     borderRadius: 6,
@@ -178,13 +178,14 @@ export const GlobalStyles = StyleSheet.create({
     fontWeight: "bold",
   },
   FooterWrapper: {
-    backgroundColor: "#fff",
+    // position: "bottom",
     alignItems: "center",
     justifyContent: "space-around",
     flexDirection: "row",
     padding: 10,
     height: "8%",
     backgroundColor: "#f0a500",
+    
   },
   footerText: {
     fontSize: 8,
@@ -195,4 +196,36 @@ export const GlobalStyles = StyleSheet.create({
     borderColor: "grey",
     // padding: 8
   },
+  HeaderWrapper: {
+    width: '100%',
+    // height: '8%',
+    color: '#fff',
+    // top: 5,
+    // flexDirection: 'row',
+    // alignItems: 'center',
+    // alignSelf: "center",
+    // justifyContent: 'space-between',
+    // borderColor: "grey",
+    // backgroundColor: "#f0a500",
+    // padding: 5,
+    // opacity: 0.5
+  },
+  searchBar: {
+    width: "100%"
+  },
+  headerText: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: "#fff",
+    letterSpacing: 1,
+  },
+  icon:{
+    color: '#fff',
+    flexDirection: 'row',
+  },
+  container:{
+    display: '',
+    height: '100%',
+    width: '100%',
+  }
 });

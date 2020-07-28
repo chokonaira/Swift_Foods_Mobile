@@ -1,5 +1,6 @@
 
 export class globalImages {
+  static HeaderLogo = require("../../assets/images/custom-logo2.png");
   static HomeBanner = require("../../assets/images/new-home.jpeg");
   static LoginBanner = require("../../assets/images/login-banner.jpeg");
   static RegisterBanner = require("../../assets/images/home-banner.jpg");

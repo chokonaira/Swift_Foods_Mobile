@@ -1,13 +1,14 @@
 import { createAppContainer } from "react-navigation";
 import TabRoutes from './TabRoutes';
-import Routes from './StackRoutes';
-import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
+import StackRoutes from './StackRoutes';
+// import DrawerRoutes from './DrawerRoute';
+// import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 import { createStackNavigator } from "react-navigation-stack";
 
 
 const RootNavigator = createStackNavigator({
   Home: {
-    screen: Routes,
+    screen: StackRoutes,
     navigationOptions: {
       title: " ",
       headerStyle: { height: 0 },
@@ -22,12 +23,13 @@ const RootNavigator = createStackNavigator({
   Dashboard: {
     screen: TabRoutes,
     navigationOptions: {
-      headerTintColor: "#fff",
-      headerStyle: { backgroundColor: '#f0a500' },
+      title: "Choko Swift Foods",
+      headerTintColor: "black",
+      headerStyle: { backgroundColor: '#f0a500'},
     },
   },
   // Restaurant: {
-  //   screen: TabRoutes,
+  //   screen: DrawerRoutes,
   // },
   // Cart: {
   //   screen: TabRoutes

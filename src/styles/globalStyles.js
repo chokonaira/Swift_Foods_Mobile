@@ -205,10 +205,12 @@ export const GlobalStyles = StyleSheet.create({
     // height: '70%',
   },
   headerText: {
+    alignSelf:'center',
     fontWeight: "bold",
     fontSize: 20,
-    color: "#fff",
-    letterSpacing: 1,
+    color: "black",
+    letterSpacing: .5,
+    padding: 5
   },
   icon: {
     color: "#fff",

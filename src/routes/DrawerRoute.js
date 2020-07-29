@@ -1,12 +1,12 @@
 import {createDrawerNavigator} from 'react-navigation-drawer'
 import HomeScreen from "../screens/HomeScreen";
 import AboutScreen from "../screens/AboutScreen";
-import RegisterScreen from "../screens/RegisterScreen";
+import DashboardScreen from "../screens/DashboardScreen";
 
 
 const screens = {
-  Home: {
-    screen: HomeScreen,
+  Dashboard: {
+    screen: DashboardScreen,
   },
   About: {
     screen: AboutScreen,

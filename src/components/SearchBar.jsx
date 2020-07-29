@@ -16,7 +16,7 @@ class Search extends Component {
     const { search } = this.state;
 
     return (
-      // <View>
+      <View>
         <SearchBar
           style={GlobalStyles.searchBar}
           lightTheme
@@ -32,7 +32,8 @@ class Search extends Component {
           containerStyle={{
             backgroundColor: "transparent",
             borderBottomColor: "transparent",
-            width: "10%",
+            width: "100%",
+            // height: '15%'
           }}
           round
           placeholder="Type Here..."
@@ -40,7 +41,7 @@ class Search extends Component {
           onChangeText={this.updateSearch}
           value={search}
         />
-      // </View>
+       </View>
     );
   }
 }

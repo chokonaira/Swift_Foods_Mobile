@@ -1,12 +1,4 @@
 export class globalImages {
-  // static Food1 = require("../../assets/images/image9.jpeg");
-  // static Food2 = require("../../assets/images/image10.jpeg");
-  // static Food3 = require("../../assets/images/image11.jpeg");
-  // static Food4 = require("../../assets/images/image12.jpeg");
-  // static Food5 = require("../../assets/images/image13.jpeg");
-  // static Food6 = require("../../assets/images/image14.jpeg");
-  // static Food7 = require("../../assets/images/image15.jpeg");
-  // static Food8 = require("../../assets/images/image16.jpeg");
 
   static HeaderLogo = require("../../assets/images/custom-logo2.png");
   static HomeBanner = require("../../assets/images/new-home.jpeg");
@@ -28,7 +20,7 @@ export const foodImages = {
   food: [
     {
       id: 1,
-      foodUrl: "https://images.unsplash.com/photo-1560052859-7deb492b0baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      foodUrl: "https://images.unsplash.com/photo-1528344227352-9a704db46536?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 2,
@@ -74,6 +66,61 @@ export const foodImages = {
       id: 10,
       foodUrl:
         "https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    },
+  ],
+};
+
+
+export const RestaurantsImages = {
+  restaurant: [
+    {
+      id: 1,
+      restaurantUrl: "https://www.hrs.com/en/media/image/40/64/6e/RADISSON_BLU_AIRPORT_HOTEL_IST-Istanbul-Aussenansicht-4-60015_600x600.jpg",
+    },
+    {
+      id: 2,
+      restaurantUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQgMO_SsO2kKnUlzzmqhMLJB8V6Zu0nT4Mzdw&usqp=CAU",
+    },
+    {
+      id: 3,
+      restaurantUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTCLp8hQ7qibjjvynZ3SS4zI29YkMNu53qizw&usqp=CAU",
+    },
+    {
+      id: 4,
+      restaurantUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnY4SvFXAoA-lT3I4B_FFMXa8qzd6vHPKXcg&usqp=CAU",
+    },
+    {
+      id: 5,
+      restaurantUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcREG1ozcQed5lPSfVbAx7uD5Qm99h-pkr4wRA&usqp=CAU",
+    },
+    {
+      id: 6,
+      restaurantUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSrmlw_7sgruPcQlmhCWU84z7VPKZnej5TEVQ&usqp=CAU",
+    },
+    {
+      id: 7,
+      restaurantUrl:
+        "https://media-cdn.tripadvisor.com/media/photo-s/14/a2/13/a0/living-area.jpg",
+    },
+    {
+      id: 8,
+      restaurantUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSxJdaT5H6v2tQ4bxnLvtyi-X8Dje9c727mqQ&usqp=CAU",
+    },
+    {
+      id: 9,
+      restaurantUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQY5Ak8fPrDojPEkH8R13K9jpJ1bNyPeGBeVQ&usqp=CAU",
+    },
+    {
+      id: 10,
+      restaurantUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRYWyKO2wirJni8k11AHsi02EoUfWuopsj6IA&usqp=CAU",
     },
   ],
 };

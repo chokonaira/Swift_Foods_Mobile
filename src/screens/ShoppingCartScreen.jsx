@@ -1,31 +1,20 @@
 
 import React, { Component } from 'react'
 import {
-  ImageBackground,
-  // TextInput,
-  // TouchableOpacity,
-  View,
-  Text,
-  // KeyboardAvoidingView,
-  ScrollView,
-  // TouchableWithoutFeedback,
-  // Keyboard,
+  View
 } from "react-native";
-import { globalImages } from '../styles/globalImages'
+import Header from "../components/Header"
 import { GlobalStyles } from "../styles/globalStyles";
 
 
 class Cart extends Component {
   render() {
     return (
-      <ImageBackground style={GlobalStyles.image} source={globalImages.ShoppingCartBanner}>
-        <ScrollView>
-          <View>
-            <Text>Hello</Text>
-          </View>
-        </ScrollView>
-        {/* <Footer navigation={this.props.navigation}/> */}
-      </ImageBackground>
+      <View
+      style={GlobalStyles.image}
+    >
+      <Header title='Shopping Cart'/>
+    </View>
     )
   }
 }

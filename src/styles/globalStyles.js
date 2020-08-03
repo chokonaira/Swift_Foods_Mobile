@@ -75,6 +75,12 @@ export const GlobalStyles = StyleSheet.create({
     width: "100%",
     top: "12%",
   },
+  dashboard: {
+    width: "98%",
+    height: "100%",
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   image: {
     width: "100%",
     height: "100%",
@@ -179,7 +185,6 @@ export const GlobalStyles = StyleSheet.create({
     fontWeight: "bold",
   },
   FooterWrapper: {
-    // position: "bottom",
     alignItems: "center",
     justifyContent: "space-around",
     flexDirection: "row",
@@ -194,7 +199,6 @@ export const GlobalStyles = StyleSheet.create({
     width: 25,
     height: 25,
     borderColor: "grey",
-    // padding: 8
   },
   HeaderWrapper: {
     width: "100%",
@@ -202,12 +206,11 @@ export const GlobalStyles = StyleSheet.create({
   },
   searchBar: {
     width: "100%",
-    // height: '70%',
   },
   headerText: {
-    alignSelf:'center',
+    alignSelf: 'center',
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 18,
     color: "black",
     letterSpacing: .5,
     padding: 5
@@ -231,4 +234,72 @@ export const GlobalStyles = StyleSheet.create({
   safeArea: {
     height: "100%",
   },
+  profitTop:{
+    height: "45%",
+    width: "90%",
+    padding:10,
+    margin:10,
+    backgroundColor: '#fff',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: "flex-start",
+    borderRadius: 50,
+    borderWidth:1,
+    borderColor:'#f0a500',
+  },
+  profileBottom:{
+    padding: 15,
+    height: "45%",
+    width: "90%",
+    margin:5,
+    backgroundColor: '#f0a500',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: "center",
+    borderRadius: 50,
+  },
+  profileAvartarImage:{
+    height: "80%",
+    width: "50%",
+    marginBottom:10,
+    borderRadius: 60,
+  },
+  profileWrapper:{
+    flexDirection: 'row',
+    width: "100%",
+    padding: 7
+  },
+  profileBottomText:{
+    fontWeight: "bold",
+    color: "#fff",
+    marginLeft:10,
+  },
+  profileBottomTextKey:{
+    color: 'black',
+    fontWeight: "bold",
+  },
+  profileBottomButton:{
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    alignSelf: 'center',
+    width: '30%',
+    borderRadius: 5,
+  },
+  profileBottomButtonText:{
+    fontWeight: "bold",
+    color: 'black',
+    padding: 3
+  },
+  profileTopButton:{
+    backgroundColor: '#f0a500',
+    alignItems: 'center',
+    alignSelf: 'center',
+    width: '25%',
+    borderRadius: 5,
+  },
+  profileTopButtonText:{
+    fontWeight: "bold",
+    color: 'black',
+    padding: 3
+  }
 });

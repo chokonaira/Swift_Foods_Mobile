@@ -28,20 +28,21 @@ class RestaurantCard extends Component {
                   indicatorProps={{
                     size: 50,
                     borderWidth: 0,
-                    color: "rgba(150, 150, 150, 1)",
+                    color: "#f0a500",
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
                   style={{
+                    borderRadius: 50,
                     width: 180,
-                    height: 179,
-                    // alignSelf: "center",
+                    height: 150,
+                    borderRadius:5,
                     margin: 9,
                     // justifyContent: "center",
                   }}
                 />
               </View>
               <TouchableOpacity>
-          <Text style={GlobalStyles.cardText}>Add to Cart</Text>
+          <Text style={GlobalStyles.cardText}>Restaurant</Text>
         </TouchableOpacity>
             </TouchableOpacity>
           )}

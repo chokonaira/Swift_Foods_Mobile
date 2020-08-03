@@ -24,8 +24,8 @@ const RootNavigator = createStackNavigator({
     screen: TabRoutes,
     navigationOptions: {
       title: "Choko Swift Foods",
-      headerTintColor: "black",
-      headerStyle: { backgroundColor: '#f0a500'},
+      headerTintColor: "#fff",
+      headerStyle: { height: 0 },
     },
   },
   // Restaurant: {

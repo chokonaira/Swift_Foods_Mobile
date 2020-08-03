@@ -21,6 +21,17 @@ const screens = {
       ),
     },
   },
+  Category: {
+    screen: CategoryScreen,
+    navigationOptions: {
+      tabBarLabel: "Category",
+      tabBarIcon: ({ tintColor }) => (
+        <View>
+          <Icon style={[{ color: tintColor }]} size={20} name={"th"} />
+        </View>
+      ),
+    },
+  },
   Restaurant: {
     screen: RestaurantScreen,
     navigationOptions: {
@@ -43,17 +54,6 @@ const screens = {
             size={20}
             name={"cart-arrow-down"}
           />
-        </View>
-      ),
-    },
-  },
-  Category: {
-    screen: CategoryScreen,
-    navigationOptions: {
-      tabBarLabel: "Category",
-      tabBarIcon: ({ tintColor }) => (
-        <View>
-          <Icon style={[{ color: tintColor }]} size={20} name={"th"} />
         </View>
       ),
     },

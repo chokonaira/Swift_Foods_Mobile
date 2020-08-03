@@ -12,36 +12,35 @@ class ProfileCard extends Component {
             style={GlobalStyles.profileAvartarImage}
             source={globalImages.Passport}
           />
-          <TouchableOpacity style={GlobalStyles.profileButton}>
-            <Text style={GlobalStyles.profileButtonText}>Upload</Text>
+          <TouchableOpacity style={GlobalStyles.profileTopButton}>
+            <Text style={GlobalStyles.profileTopButtonText}>Upload</Text>
           </TouchableOpacity>
         </View>
         <View style={GlobalStyles.profileBottom}>
           <View style={GlobalStyles.profileWrapper}>
-            <Text>First Name: </Text>
-            <Text>Henry </Text>
+            <Text style={GlobalStyles.profileBottomTextKey}>First Name: </Text>
+            <Text style={GlobalStyles.profileBottomText}>Henry </Text>
           </View>
           <View style={GlobalStyles.profileWrapper}>
-            <Text>Last Name: </Text>
-            <Text>Okonkwo </Text>
+            <Text style={GlobalStyles.profileBottomTextKey}>Last Name: </Text>
+            <Text style={GlobalStyles.profileBottomText}>Okonkwo </Text>
           </View>
           <View style={GlobalStyles.profileWrapper}>
-            <Text>Email: </Text>
-            <Text>okonkwo.henry2012@gmail.com </Text>
+            <Text style={GlobalStyles.profileBottomTextKey}>Email: </Text>
+            <Text style={GlobalStyles.profileBottomText}>okonkwo.henry2012@gmail.com </Text>
           </View>
           <View style={GlobalStyles.profileWrapper}>
-            <Text>Address: </Text>
-            <Text>#6, 386 St, Kagarama </Text>
+            <Text style={GlobalStyles.profileBottomTextKey}>Address: </Text>
+            <Text style={GlobalStyles.profileBottomText}>#6, 386 St, Kagarama </Text>
           </View>
           <View style={GlobalStyles.profileWrapper}>
-            <Text>Phone: </Text>
-            <Text>+2348069537560 </Text>
+            <Text style={GlobalStyles.profileBottomTextKey}>Phone: </Text>
+            <Text style={GlobalStyles.profileBottomText}>+2348069537560 </Text>
           </View>
-
-          {/* <Text>Last Name: <Text>Okonkwo </Text></Text>
-        <Text>Email: <Text>okonkwo.henry2012@gmail.com</Text></Text>
-        <Text>Address: <Text>#6, 386 St, Kagarama</Text></Text>
-        <Text>Phone: <Text>+2348069537560</Text></Text> */}
+          <Text style={GlobalStyles.emptyInput}></Text>
+          <TouchableOpacity style={GlobalStyles.profileBottomButton}>
+            <Text style={GlobalStyles.profileBottomButtonText}>Edit Details</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );

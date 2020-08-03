@@ -76,52 +76,106 @@ export const RestaurantsImages = {
   restaurant: [
     {
       id: 1,
-      restaurantUrl: "https://www.hrs.com/en/media/image/40/64/6e/RADISSON_BLU_AIRPORT_HOTEL_IST-Istanbul-Aussenansicht-4-60015_600x600.jpg",
+      restaurantUrl: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 2,
       restaurantUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQgMO_SsO2kKnUlzzmqhMLJB8V6Zu0nT4Mzdw&usqp=CAU",
+        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 3,
       restaurantUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTCLp8hQ7qibjjvynZ3SS4zI29YkMNu53qizw&usqp=CAU",
+        "https://images.unsplash.com/photo-1428515613728-6b4607e44363?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 4,
       restaurantUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnY4SvFXAoA-lT3I4B_FFMXa8qzd6vHPKXcg&usqp=CAU",
+        "https://images.unsplash.com/photo-1589769105893-3cfe4c0c8851?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 5,
       restaurantUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcREG1ozcQed5lPSfVbAx7uD5Qm99h-pkr4wRA&usqp=CAU",
+        "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 6,
       restaurantUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSrmlw_7sgruPcQlmhCWU84z7VPKZnej5TEVQ&usqp=CAU",
+        "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 7,
       restaurantUrl:
-        "https://media-cdn.tripadvisor.com/media/photo-s/14/a2/13/a0/living-area.jpg",
+        "https://images.unsplash.com/photo-1555992336-03a23c7b20ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 8,
       restaurantUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSxJdaT5H6v2tQ4bxnLvtyi-X8Dje9c727mqQ&usqp=CAU",
+        "https://images.unsplash.com/photo-1556742393-d75f468bfcb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 9,
       restaurantUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQY5Ak8fPrDojPEkH8R13K9jpJ1bNyPeGBeVQ&usqp=CAU",
+      "https://images.unsplash.com/photo-1586999768265-24af89630739?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 10,
       restaurantUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRYWyKO2wirJni8k11AHsi02EoUfWuopsj6IA&usqp=CAU",
+        "https://images.unsplash.com/photo-1585518419759-7fe2e0fbf8a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    },
+  ],
+};
+
+export const CategoryImages = {
+  category: [
+    {
+      id: 1,
+      categoryUrl: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 2,
+      categoryUrl:
+        "https://images.unsplash.com/photo-1580013759032-c96505e24c1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 3,
+      categoryUrl:
+        "https://images.unsplash.com/photo-1555554317-766200eb80d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 4,
+      categoryUrl:
+        "https://images.unsplash.com/photo-1549231479-c1f85e3fc1ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 5,
+      categoryUrl:
+        "https://images.unsplash.com/photo-1564671165093-20688ff1fffa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 6,
+      categoryUrl:
+        "https://images.unsplash.com/photo-1560684352-8497838a2229?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 7,
+      categoryUrl:
+        "https://images.unsplash.com/photo-1475566718667-b6fe2e251c6b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 8,
+      categoryUrl:
+        "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 9,
+      categoryUrl:
+      "https://images.unsplash.com/photo-1558745010-d2a3c21762ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 10,
+      categoryUrl:
+        "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
   ],
 };

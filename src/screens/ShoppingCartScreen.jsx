@@ -4,6 +4,7 @@ import {
   View
 } from "react-native";
 import Header from "../components/Header"
+import CartList from "../components/CartList"
 import { GlobalStyles } from "../styles/globalStyles";
 
 
@@ -14,6 +15,7 @@ class Cart extends Component {
       style={GlobalStyles.image}
     >
       <Header title='Shopping Cart'/>
+      <CartList/>
     </View>
     )
   }

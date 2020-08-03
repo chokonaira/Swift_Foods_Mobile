@@ -185,7 +185,6 @@ export const GlobalStyles = StyleSheet.create({
     fontWeight: "bold",
   },
   FooterWrapper: {
-    // position: "bottom",
     alignItems: "center",
     justifyContent: "space-around",
     flexDirection: "row",
@@ -200,7 +199,6 @@ export const GlobalStyles = StyleSheet.create({
     width: 25,
     height: 25,
     borderColor: "grey",
-    // padding: 8
   },
   HeaderWrapper: {
     width: "100%",
@@ -208,7 +206,6 @@ export const GlobalStyles = StyleSheet.create({
   },
   searchBar: {
     width: "100%",
-    // height: '70%',
   },
   headerText: {
     alignSelf: 'center',
@@ -247,13 +244,11 @@ export const GlobalStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: "flex-start",
     borderRadius: 50,
-    // opacity:.8,
     borderWidth:1,
     borderColor:'#f0a500',
-    // flex: 1
   },
   profileBottom:{
-    flex: 1,
+    padding: 15,
     height: "45%",
     width: "90%",
     margin:5,
@@ -267,27 +262,42 @@ export const GlobalStyles = StyleSheet.create({
     height: "80%",
     width: "50%",
     marginBottom:10,
-    borderRadius: 100,
+    borderRadius: 60,
   },
   profileWrapper:{
-    // fontWeight: "bold",
-    // color: 'black',
-    padding: 3
+    flexDirection: 'row',
+    width: "100%",
+    padding: 7
   },
   profileBottomText:{
-    height: "80%",
-    width: "50%",
-    marginBottom:10,
-    borderRadius: 100,
+    fontWeight: "bold",
+    color: "#fff",
+    marginLeft:10,
   },
-  profileButton:{
+  profileBottomTextKey:{
+    color: 'black',
+    fontWeight: "bold",
+  },
+  profileBottomButton:{
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    alignSelf: 'center',
+    width: '30%',
+    borderRadius: 5,
+  },
+  profileBottomButtonText:{
+    fontWeight: "bold",
+    color: 'black',
+    padding: 3
+  },
+  profileTopButton:{
     backgroundColor: '#f0a500',
     alignItems: 'center',
     alignSelf: 'center',
     width: '25%',
     borderRadius: 5,
   },
-  profileButtonText:{
+  profileTopButtonText:{
     fontWeight: "bold",
     color: 'black',
     padding: 3

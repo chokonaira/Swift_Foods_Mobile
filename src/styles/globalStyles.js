@@ -7,7 +7,7 @@ export const GlobalStyles = StyleSheet.create({
     height: "100%",
     padding: 43,
     justifyContent: "center",
-    top: "5%",
+    top: "10%",
   },
   authLoginForm: {
     flex: 1,
@@ -15,27 +15,37 @@ export const GlobalStyles = StyleSheet.create({
     height: "100%",
     padding: 40,
     justifyContent: "center",
-    top: "18%",
+    top: "20%",
   },
   registerInput: {
     borderBottomWidth: 2,
-    padding: 4,
+    padding: 5,
     fontSize: 15,
     fontWeight: "bold",
     borderRadius: 6,
-    color: "#fff",
+    color: "black",
     marginTop: "3%",
     borderColor: "#fff",
+    backgroundColor: "#fff",
+    opacity: 0.7,
+  },
+  authText:{
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 35,
+    alignSelf: "center",
   },
   loginInput: {
     borderBottomWidth: 1.5,
-    padding: 10,
+    padding: 7,
     fontSize: 15,
     fontWeight: "bold",
     borderRadius: 6,
-    color: "#fff",
+    color: "black",
     marginTop: "4%",
     borderColor: "#fff",
+    backgroundColor: "#fff",
+    opacity: 0.7,
   },
   emptyInput: {},
   authFormInput: {
@@ -53,7 +63,7 @@ export const GlobalStyles = StyleSheet.create({
   },
   formButton: {
     marginTop: "5%",
-    backgroundColor: "red",
+    backgroundColor: "#f0a500",
     alignSelf: "center",
     alignItems: "center",
     width: "50%",
@@ -69,7 +79,7 @@ export const GlobalStyles = StyleSheet.create({
     width: "100%",
     height: "100%",
     flex: 1,
-    backgroundColor: 'black'
+    backgroundColor: "#fff",
   },
   text: {
     color: "#fff",
@@ -88,7 +98,7 @@ export const GlobalStyles = StyleSheet.create({
   },
   button: {
     alignItems: "center",
-    backgroundColor: "red",
+    backgroundColor: "#f0a500",
     color: "#fff",
     padding: 13,
     width: "50%",
@@ -102,32 +112,21 @@ export const GlobalStyles = StyleSheet.create({
     bottom: "8%",
   },
   buttonText: {
-    color: "#fff",
+    color: "black",
     fontSize: 17,
     fontWeight: "bold",
   },
-  image: {
-    width: "100%",
-    height: "100%",
-    flex: 1,
-  },
   logo: {
     borderRadius: 100,
+    width: "40%",
+    height: "37%",
   },
   logoWrapper: {
     alignItems: "center",
     justifyContent: "flex-start",
     top: "8%",
+    borderRadius: 150,
     flex: 1,
-  },
-  button: {
-    alignItems: "center",
-    backgroundColor: "red",
-    color: "#fff",
-    padding: 13,
-    width: "50%",
-    borderRadius: 30,
-    padding: 17,
   },
   loginText: {
     paddingRight: 7,
@@ -135,10 +134,10 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     alignSelf: "center",
-    top: '7%'
+    top: "7%",
   },
   loginTextWrapper: {
-    flexDirection:"row",
+    flexDirection: "row",
     top: 35,
     alignSelf: "center",
     color: "#fff",
@@ -153,24 +152,83 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "bold",
   },
+  registerTextSpan: {
+    color: "#fff",
+    paddingRight: 12,
+    fontSize: 14,
+    fontWeight: "bold",
+    alignSelf: "flex-end",
+  },
   loginTextSpan: {
-    color: "red",
+    color: "#fff",
     paddingRight: 8,
     fontSize: 14,
     fontWeight: "bold",
     alignSelf: "flex-end",
-   
   },
-  loginTextSpanWrapper:{
+  loginTextSpanWrapper: {
     // top: '8%'
   },
   keyboardViewContainer: {
     flex: 1,
   },
-  errorText:{
-    color: 'red',
-    paddingTop: '.5%',
-    paddingLeft: '2%',
-    fontWeight: 'bold'
-  }
+  errorText: {
+    color: "#fff",
+    paddingTop: ".5%",
+    paddingLeft: "2%",
+    fontWeight: "bold",
+  },
+  FooterWrapper: {
+    // position: "bottom",
+    alignItems: "center",
+    justifyContent: "space-around",
+    flexDirection: "row",
+    padding: 10,
+    height: "8%",
+    backgroundColor: "#f0a500",
+  },
+  footerText: {
+    fontSize: 8,
+  },
+  tinyIcon: {
+    width: 25,
+    height: 25,
+    borderColor: "grey",
+    // padding: 8
+  },
+  HeaderWrapper: {
+    width: "100%",
+    color: "#fff",
+  },
+  searchBar: {
+    width: "100%",
+    // height: '70%',
+  },
+  headerText: {
+    alignSelf:'center',
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "black",
+    letterSpacing: .5,
+    padding: 5
+  },
+  icon: {
+    color: "#fff",
+    flexDirection: "row",
+  },
+  imageCard: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FFFFFF",
+  },
+  cardText: {
+    borderRadius: 1,
+    fontSize: 10,
+    textAlign: "center",
+    margin: 5,
+  },
+  safeArea: {
+    height: "100%",
+  },
 });

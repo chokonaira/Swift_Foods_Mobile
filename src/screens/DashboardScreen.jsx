@@ -1,27 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import {
-  ImageBackground,
-  // TextInput,
-  // TouchableOpacity,
-  // View,
-  // Text,
-  // KeyboardAvoidingView,
-  // ScrollView,
-  // TouchableWithoutFeedback,
-  // Keyboard,
+  View
 } from "react-native";
-import Banner from "../../assets/images/rice-chicken.webp";
-
+import { GlobalStyles } from "../styles/globalStyles";
+import FoodCard from "../components/FoodCard";
+import Header from "../components/Header"
 
 class DashboardScreen extends Component {
   render() {
     return (
-      <ImageBackground style={GlobalStyles.image} source={Banner}>
-        
-      </ImageBackground>
-    )
+      <View
+        style={GlobalStyles.image}
+      >
+        <Header title='Delicious Meals'/>
+        <FoodCard />
+      </View>
+    );
   }
 }
-
 
 export default DashboardScreen;

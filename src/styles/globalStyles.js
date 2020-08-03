@@ -75,6 +75,12 @@ export const GlobalStyles = StyleSheet.create({
     width: "100%",
     top: "12%",
   },
+  dashboard: {
+    width: "98%",
+    height: "100%",
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   image: {
     width: "100%",
     height: "100%",
@@ -205,9 +211,9 @@ export const GlobalStyles = StyleSheet.create({
     // height: '70%',
   },
   headerText: {
-    alignSelf:'center',
+    alignSelf: 'center',
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 18,
     color: "black",
     letterSpacing: .5,
     padding: 5
@@ -231,4 +237,59 @@ export const GlobalStyles = StyleSheet.create({
   safeArea: {
     height: "100%",
   },
+  profitTop:{
+    height: "45%",
+    width: "90%",
+    padding:10,
+    margin:10,
+    backgroundColor: '#fff',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: "flex-start",
+    borderRadius: 50,
+    // opacity:.8,
+    borderWidth:1,
+    borderColor:'#f0a500',
+    // flex: 1
+  },
+  profileBottom:{
+    flex: 1,
+    height: "45%",
+    width: "90%",
+    margin:5,
+    backgroundColor: '#f0a500',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: "center",
+    borderRadius: 50,
+  },
+  profileAvartarImage:{
+    height: "80%",
+    width: "50%",
+    marginBottom:10,
+    borderRadius: 100,
+  },
+  profileWrapper:{
+    // fontWeight: "bold",
+    // color: 'black',
+    padding: 3
+  },
+  profileBottomText:{
+    height: "80%",
+    width: "50%",
+    marginBottom:10,
+    borderRadius: 100,
+  },
+  profileButton:{
+    backgroundColor: '#f0a500',
+    alignItems: 'center',
+    alignSelf: 'center',
+    width: '25%',
+    borderRadius: 5,
+  },
+  profileButtonText:{
+    fontWeight: "bold",
+    color: 'black',
+    padding: 3
+  }
 });

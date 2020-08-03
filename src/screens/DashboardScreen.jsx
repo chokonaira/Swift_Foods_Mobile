@@ -10,7 +10,7 @@ class DashboardScreen extends Component {
   render() {
     return (
       <View
-        style={GlobalStyles.image}
+        style={GlobalStyles.dashboard}
       >
         <Header title='Delicious Meals'/>
         <FoodCard />

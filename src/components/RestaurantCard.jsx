@@ -33,7 +33,7 @@ class RestaurantCard extends Component {
                   }}
                   style={{
                     width: 180,
-                    height: 179,
+                    height: 150,
                     // alignSelf: "center",
                     margin: 9,
                     // justifyContent: "center",
@@ -41,7 +41,7 @@ class RestaurantCard extends Component {
                 />
               </View>
               <TouchableOpacity>
-          <Text style={GlobalStyles.cardText}>Add to Cart</Text>
+          {/* <Text style={GlobalStyles.cardText}>Add to Cart</Text> */}
         </TouchableOpacity>
             </TouchableOpacity>
           )}

@@ -18,7 +18,7 @@ class FoodCard extends Component {
           data={foodImages.food}
           renderItem={({ item }) => (
             <TouchableOpacity
-              activeOpacity={0.9}
+              activeOpacity={0.5}
               // onPress={this.GetListItem.bind(this, item.p_title)}
             >
               <View style={GlobalStyles.container}>
@@ -32,11 +32,11 @@ class FoodCard extends Component {
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
                   style={{
-                    width: 180,
-                    height: 179,
-                    // alignSelf: "center",
-                    margin: 9,
-                    // justifyContent: "center",
+                    marginLeft: 17,
+                    marginRight: 8,
+                    width: 174,
+                    height: 160,
+                    margin: 4,
                   }}
                 />
               </View>

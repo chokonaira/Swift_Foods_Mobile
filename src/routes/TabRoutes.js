@@ -1,7 +1,6 @@
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 import DashboardScreen from "../screens/DashboardScreen";
 import RestaurantScreen from "../screens/RestaurantsScreen";
-// import CartScreen from "../screens/ShoppingCartScreen";
 import CategoryScreen from "../screens/CategoryScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import React from "react";
@@ -43,21 +42,6 @@ const screens = {
       ),
     },
   },
-  // Cart: {
-  //   screen: CartScreen,
-  //   navigationOptions: {
-  //     tabBarLabel: "Cart",
-  //     tabBarIcon: ({ tintColor }) => (
-  //       <View>
-  //         <Icon
-  //           style={[{ color: tintColor }]}
-  //           size={20}
-  //           name={"cart-arrow-down"}
-  //         />
-  //       </View>
-  //     ),
-  //   },
-  // },
   Profile: {
     screen: ProfileScreen,
     navigationOptions: {

@@ -12,7 +12,6 @@ export class globalImages {
   static ProfileBanner = require("../../assets/images/new-dash4.jpeg");
   static FoodsIcon = require("../../assets/images/dinner.png");
   static RestaurantsIcon = require("../../assets/images/hotel.png");
-  static BasketIcon = require("../../assets/images/shopping-cart.png");
   static CategoryIcon = require("../../assets/images/menu.png");
   static ProfileIcon = require("../../assets/images/person.png");
 }

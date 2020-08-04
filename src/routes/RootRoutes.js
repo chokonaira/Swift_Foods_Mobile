@@ -3,6 +3,8 @@ import TabRoutes from './TabRoutes';
 import StackRoutes from './StackRoutes';
 import React from 'react'
 import ShoppingCartIcon from '../components/ShoppingCartIcon';
+import HeaderLogo from '../components/HeaderLogo';
+
 
 // import DrawerRoutes from './DrawerRoute';
 // import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
@@ -26,7 +28,8 @@ const RootNavigator = createStackNavigator({
   Dashboard: {
     screen: TabRoutes,
     navigationOptions: {
-      title: "Swift Foods",
+      title: "",
+      headerLeft: () => <HeaderLogo/>,
       headerRight: () => <ShoppingCartIcon/>,
       headerStyle: { backgroundColor: "#f0a500" },
       // headerTintColor: "#fff",

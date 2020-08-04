@@ -12,7 +12,6 @@ export class globalImages {
   static ProfileBanner = require("../../assets/images/new-dash4.jpeg");
   static FoodsIcon = require("../../assets/images/dinner.png");
   static RestaurantsIcon = require("../../assets/images/hotel.png");
-  static BasketIcon = require("../../assets/images/shopping-cart.png");
   static CategoryIcon = require("../../assets/images/menu.png");
   static ProfileIcon = require("../../assets/images/person.png");
 }
@@ -86,12 +85,12 @@ export const RestaurantsImages = {
     {
       id: 3,
       restaurantUrl:
-        "https://images.unsplash.com/photo-1428515613728-6b4607e44363?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+        "https://images.unsplash.com/photo-1586999768265-24af89630739?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 4,
       restaurantUrl:
-        "https://images.unsplash.com/photo-1589769105893-3cfe4c0c8851?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+        "https://images.unsplash.com/photo-1585518419759-7fe2e0fbf8a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 5,
@@ -116,12 +115,12 @@ export const RestaurantsImages = {
     {
       id: 9,
       restaurantUrl:
-      "https://images.unsplash.com/photo-1586999768265-24af89630739?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1428515613728-6b4607e44363?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
     {
       id: 10,
       restaurantUrl:
-        "https://images.unsplash.com/photo-1585518419759-7fe2e0fbf8a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+        "https://images.unsplash.com/photo-1589769105893-3cfe4c0c8851?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
   ],
 };

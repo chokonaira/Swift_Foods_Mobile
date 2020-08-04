@@ -14,7 +14,7 @@ class Restaurant extends Component {
       <View
         style={GlobalStyles.image}
       >
-        <Header title='Favourite Restaurants'/>
+        <Header title='Restaurants'/>
         <RestaurantCard />
       </View>
     )

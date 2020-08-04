@@ -16,7 +16,7 @@ class Category extends Component {
       <View
         style={GlobalStyles.image}
       >
-        <Header title='Meal Categories'/>
+        <Header title='Categories'/>
         <CategoryCard />
       </View>
     )

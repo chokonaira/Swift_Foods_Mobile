@@ -200,9 +200,17 @@ export const GlobalStyles = StyleSheet.create({
     height: 25,
     borderColor: "grey",
   },
-  HeaderWrapper: {
-    width: "100%",
-    color: "#fff",
+  shoppingCartNotification: {
+    position: "absolute",
+  height: 22,
+  width: 22,
+  borderRadius: 15,
+  backgroundColor: "rgba(95, 197, 123, 0.8)",
+  right: 20,
+  bottom: 15,
+  alignItems: 'center',
+  justifyContent: 'center',
+  zIndex: 2000
   },
   searchBar: {
     width: "100%",
@@ -301,5 +309,47 @@ export const GlobalStyles = StyleSheet.create({
     fontWeight: "bold",
     color: 'black',
     padding: 3
+  },
+  cartList:{
+    alignSelf: 'center',
+    backgroundColor: 'red',
+    width: '95%',
+    height: '40%',
+    padding: 3,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  cartButtonWrapper:{
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // padding:10,
+    // justifyContent: 'space-around',
+    // width: '50%',
+    flexDirection: 'row'
+  },
+  cartListText:{
+    // fontWeight: "bold",
+    color: '#fff',
+    padding: 3
+  },
+  cartListInput:{
+    // borderBottomWidth: 2,
+    fontSize: 8,
+    // padding: 5,
+    color: "#fff",
+    borderColor: "#fff",
+    backgroundColor: '#f0a500',
+    padding: 5,
+    alignItems: 'center',
+    width: '12%',
+    height: '13%'
+  },
+  cartListbutton:{
+    backgroundColor: '#f0a500',
+    alignItems: 'center',
+    width: '10%',
+    margin: 5
   }
 });

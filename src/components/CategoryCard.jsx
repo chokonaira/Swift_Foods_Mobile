@@ -32,11 +32,11 @@ class CategoryCard extends Component {
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
                   style={{
-                    width: 180,
-                    height: 150,
-                    borderRadius:50,
-                    margin: 9,
-                    // justifyContent: "center",
+                    marginLeft: 17,
+                    marginRight: 8,
+                    width: 174,
+                    height: 160,
+                    margin: 4,
                   }}
                 />
               </View>

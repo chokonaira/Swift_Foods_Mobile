@@ -5,7 +5,11 @@ import Search from "./SearchBar";
 
 class Header extends Component {
   render() {
-    return <Text style={GlobalStyles.headerText}>{this.props.title}</Text>;
+    return (
+      <View style={GlobalStyles.headerWrapper}>
+        <Text style={GlobalStyles.headerText}>{this.props.title}</Text>
+      </View>
+    );
   }
 }
 export default Header;

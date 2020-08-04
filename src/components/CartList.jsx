@@ -1,9 +1,14 @@
 import React, { Component } from "react";
-import { Text, View, TouchableOpacity, FlatList } from "react-native";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  TextInput,
+  FlatList,
+} from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Image from "react-native-image-progress";
 import ProgressBar from "react-native-progress";
-// import foodImage from "../styles/globalImages";
 import { CategoryImages } from "../styles/globalImages";
 
 class CartList extends Component {
@@ -13,7 +18,7 @@ class CartList extends Component {
 
   render() {
     return (
-      <>
+      <View>
         <FlatList
           data={CategoryImages.category}
           renderItem={({ item }) => (
@@ -21,7 +26,7 @@ class CartList extends Component {
               activeOpacity={0.9}
               // onPress={this.GetListItem.bind(this, item.p_title)}
             >
-              <View style={GlobalStyles.container}>
+              <View style={GlobalStyles.cartList}>
                 <Image
                   source={{ uri: item.categoryUrl }}
                   indicator={ProgressBar}
@@ -32,25 +37,39 @@ class CartList extends Component {
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
                   style={{
-                    width: 180,
-                    height: 150,
-                    borderRadius:50,
+                    width: 50,
+                    height: 50,
+                    borderRadius: 50,
                     margin: 9,
                     // justifyContent: "center",
                   }}
                 />
+                <View style={GlobalStyles.cartButtonWrapper}>
+                  <TouchableOpacity style={GlobalStyles.cartListbutton}>
+                    <Text style={GlobalStyles.cartListText}>+</Text>
+                  </TouchableOpacity>
+                  <TextInput
+                    style={GlobalStyles.cartListInput}
+                    placeholder="99"
+                    // onChangeText={props.handleChange("password")}
+                    // value={props.values.password}
+                    placeholderTextColor={"black"}
+                    enablesReturnKeyAutomatically={true}
+                  />
+                  <TouchableOpacity style={GlobalStyles.cartListbutton}>
+                    <Text style={GlobalStyles.cartListText}>-</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={GlobalStyles.cartListbutton}>
+                    <Text style={GlobalStyles.cartListText}>x</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
-              <TouchableOpacity>
-              <Text style={GlobalStyles.cardText}>Category</Text>
-                {/* <Text style={GlobalStyles.cardText}>Add to Cart</Text> */}
-              </TouchableOpacity>
-              
             </TouchableOpacity>
           )}
-          numColumns={2}
+          // numColumns={2}
           keyExtractor={(item, index) => index}
         />
-      </>
+      </View>
     );
   }
 }

@@ -218,7 +218,7 @@ export const GlobalStyles = StyleSheet.create({
   headerText: {
     alignSelf: 'center',
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 15,
     color: "black",
     letterSpacing: .5,
     padding: 5

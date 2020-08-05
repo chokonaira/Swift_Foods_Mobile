@@ -2,20 +2,37 @@ import React, { Component } from "react";
 import { View, Image, TouchableOpacity, Text } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import { globalImages } from "../styles/globalImages";
+import * as DocumentPicker from 'expo-document-picker';
+import ProfileFormModal from './ProfileForm'
+
 
 class ProfileCard extends Component {
+  state = {
+    modal: false,
+  };
+
+  openModal = () => {
+    this.setState({ modal: true });
+  };
+  closeModal =()=>{
+    this.setState({ modal: false });
+  }
   render() {
+    const { modal } = this.state;
     return (
+      <>
       <View style={GlobalStyles.image}>
         <View style={GlobalStyles.profitTop}>
           <Image
             style={GlobalStyles.profileAvartarImage}
             source={globalImages.Passport}
           />
+
           <TouchableOpacity style={GlobalStyles.profileTopButton}>
-            <Text style={GlobalStyles.profileTopButtonText}>Upload</Text>
+            <Text style={GlobalStyles.profileTopButtonText}>Logout</Text>
           </TouchableOpacity>
         </View>
+        
         <View style={GlobalStyles.profileBottom}>
           <View style={GlobalStyles.profileWrapper}>
             <Text style={GlobalStyles.profileBottomTextKey}>First Name: </Text>
@@ -38,11 +55,14 @@ class ProfileCard extends Component {
             <Text style={GlobalStyles.profileBottomText}>+2348069537560 </Text>
           </View>
           <Text style={GlobalStyles.emptyInput}></Text>
-          <TouchableOpacity style={GlobalStyles.profileBottomButton}>
+          <TouchableOpacity onPress={this.openModal} style={GlobalStyles.profileBottomButton}>
             <Text style={GlobalStyles.profileBottomButtonText}>Edit Details</Text>
           </TouchableOpacity>
         </View>
+      <ProfileFormModal openModal={modal} closeModal={this.closeModal}/>
+
       </View>
+      </>
     );
   }
 }

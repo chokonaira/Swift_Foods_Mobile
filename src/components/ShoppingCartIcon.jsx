@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import CartModal from "./CartModal"
+import { CartItems } from "../styles/globalImages";
+
 
 class ShoppingCartIcon extends Component {
   state = {
@@ -23,11 +25,11 @@ class ShoppingCartIcon extends Component {
         <CartModal openModal={modal} closeModal={this.closeModal}/>
         <TouchableOpacity onPress={this.openModal}>
           <View style={GlobalStyles.shoppingCartNotification}>
-            <Text style={{ color: "#fff", fontWeight: "bold" }}>0</Text>
+           <Text style={{ color: "#fff", fontWeight: "bold" }}>{CartItems.length}</Text>
           </View>
 
           <Icon
-            style={[{ marginRight: 13 }]}
+            style={[{ marginRight: 13, color: '#2c2828' }]}
             size={20}
             name={"cart-arrow-down"}
           />

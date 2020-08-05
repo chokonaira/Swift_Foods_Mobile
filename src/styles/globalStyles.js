@@ -48,6 +48,7 @@ export const GlobalStyles = StyleSheet.create({
     opacity: 0.7,
   },
   emptyInput: {},
+
   authFormInput: {
     width: "100%",
     justifyContent: "center",
@@ -260,7 +261,7 @@ export const GlobalStyles = StyleSheet.create({
     height: "45%",
     width: "90%",
     margin:5,
-    backgroundColor: '#f0a500',
+    backgroundColor: '#f7b32d',
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: "center",
@@ -269,7 +270,7 @@ export const GlobalStyles = StyleSheet.create({
   profileAvartarImage:{
     height: "80%",
     width: "50%",
-    marginBottom:10,
+    marginBottom:15,
     borderRadius: 60,
   },
   profileWrapper:{
@@ -299,7 +300,7 @@ export const GlobalStyles = StyleSheet.create({
     padding: 3
   },
   profileTopButton:{
-    backgroundColor: '#f0a500',
+    backgroundColor: 'red',
     alignItems: 'center',
     alignSelf: 'center',
     width: '25%',
@@ -307,7 +308,7 @@ export const GlobalStyles = StyleSheet.create({
   },
   profileTopButtonText:{
     fontWeight: "bold",
-    color: 'black',
+    color: '#fff',
     padding: 3
   },
   cartList:{
@@ -351,5 +352,46 @@ export const GlobalStyles = StyleSheet.create({
     alignItems: 'center',
     width: '10%',
     margin: 5
-  }
+  },
+  editProfileFormWrapper:{
+    padding: 15,
+    height: "40%",
+    width: "90%",
+    margin:5,
+    backgroundColor: '#f0a500',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: "center",
+    borderRadius: 50,
+  },
+  editProfileForm: {
+    marginTop: "10%",
+    width: "80%",
+    justifyContent: "center",
+    height: "100%",
+    // top: 10,
+  },
+  editProfileFormButton: {
+    marginTop: "5%",
+    backgroundColor: "#fff",
+    alignSelf: "center",
+    alignItems: "center",
+    width: "35%",
+    padding: 2,
+    borderRadius: 5,
+  },
+  editProfileFormTop:{
+    marginTop: 25,
+    height: "45%",
+    width: "90%",
+    padding:5,
+    margin:10,
+    backgroundColor: '#fff',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: "flex-start",
+    borderRadius: 50,
+    borderWidth:1,
+    borderColor:'#f0a500',
+  },
 });

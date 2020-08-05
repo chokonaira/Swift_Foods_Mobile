@@ -178,3 +178,57 @@ export const CategoryImages = {
     },
   ],
 };
+
+
+export const CartItems = [
+  {
+    id: 1,
+    cartImage:
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    foodName: "Pizza",
+    price: '5000Frw'
+  },
+  {
+    id: 2,
+    cartImage:
+      "https://images.unsplash.com/photo-1580013759032-c96505e24c1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    foodName: "Jollof",
+    price: '5000Frw' 
+  },
+  {
+    id: 3,
+    cartImage:
+      "https://images.unsplash.com/photo-1555554317-766200eb80d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    foodName: "Peppersoup", 
+    price:'5000Frw',
+  },
+  {
+    id: 4,
+    cartImage:
+      "https://images.unsplash.com/photo-1549231479-c1f85e3fc1ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    foodName: "Buger",
+    price: '5000Frw'
+  },
+  {
+    id: 5,
+    cartImage:
+      "https://images.unsplash.com/photo-1564671165093-20688ff1fffa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    foodName: "Beans",
+    price: '5000Frw'
+  },
+  {
+    id: 6,
+    cartImage:
+      "https://images.unsplash.com/photo-1560684352-8497838a2229?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    foodName: "Plantain",
+    price: '5000Frw'
+  },
+  {
+    id: 7,
+    cartImage:
+      "https://images.unsplash.com/photo-1475566718667-b6fe2e251c6b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    foodName: "Fries",
+    price: '5000Frw'
+  },
+  
+];

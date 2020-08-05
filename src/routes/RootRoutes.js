@@ -6,11 +6,7 @@ import DrawerRoutes from './DrawerRoute';
 import React from 'react'
 import ShoppingCartIcon from '../components/ShoppingCartIcon';
 import HeaderLogo from '../components/HeaderLogo';
-
-// import {createDrawerNavigator} from 'react-navigation-drawer'
-
-// import DrawerRoutes from './DrawerRoute';
-// import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
+import ProfileScreen from "../screens/EditProfileScreen";
 import { createStackNavigator } from "react-navigation-stack";
 
 
@@ -22,8 +18,8 @@ const RootNavigator = createStackNavigator({
       headerStyle: { height: 0 },
     }
   },
-  About: {
-    screen: DrawerRoutes,
+  Profile: {
+    screen: ProfileScreen,
   },
   // Register: {
   //   screen: Routes

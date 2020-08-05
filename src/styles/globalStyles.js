@@ -202,15 +202,15 @@ export const GlobalStyles = StyleSheet.create({
   },
   shoppingCartNotification: {
     position: "absolute",
-  height: 22,
-  width: 22,
-  borderRadius: 15,
-  backgroundColor: "rgba(95, 197, 123, 0.8)",
-  right: 20,
-  bottom: 15,
-  alignItems: 'center',
-  justifyContent: 'center',
-  zIndex: 2000
+    height: 22,
+    width: 22,
+    borderRadius: 15,
+    backgroundColor: "rgba(95, 197, 123, 0.8)",
+    right: 25,
+    bottom: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 2000
   },
   searchBar: {
     width: "100%",

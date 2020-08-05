@@ -21,7 +21,10 @@ class HeaderLogo extends Component {
             name={"bars"}
           /> */}
          {/* <Image style={{ width: 35, height: 35, borderRadius: 50}} source={globalImages.HeaderLogo}/> */}
-         <Text style={{marginLeft: 16,fontWeight: 'bold', fontSize: 12, color: '#f0a500', borderWidth:1, borderColor: 'black',backgroundColor: 'black' , padding: 5}}>Swift Foods</Text>
+         <View style={{borderRadius: 5,marginLeft: 16,backgroundColor: '#f0a500', borderWidth:2,borderColor:'black', borderStyle:'dotted'}}>
+         <Text style={{fontWeight: 'bold', fontSize: 15, color: 'black', padding: 5}}>Swift Foods</Text>
+
+         </View>
 
       </View>
     );

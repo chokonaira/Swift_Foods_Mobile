@@ -19,7 +19,7 @@ class ShoppingCartIcon extends Component {
     const { modal } = this.state;
     return (
 
-      <View style={{ paddingBottom: 10 }}>
+      <View style={{ paddingBottom: 13 }}>
         <CartModal openModal={modal} closeModal={this.closeModal}/>
         <TouchableOpacity onPress={this.openModal}>
           <View style={GlobalStyles.shoppingCartNotification}>

@@ -16,7 +16,7 @@ class ProfileScreen extends Component {
       <View
         style={GlobalStyles.image}
       >
-        <Header title='Profile Details'/>
+        {/* <Header title='Profile Details'/> */}
         <ProfileCard/>
        
       </View>

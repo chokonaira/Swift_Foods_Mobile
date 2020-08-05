@@ -5,6 +5,13 @@ import DashboardScreen from "../screens/DashboardScreen";
 
 
 const screens = {
+  Home: {
+    screen: HomeScreen,
+    navigationOptions: {
+      // title: H,
+      headerStyle: { height: 0 },
+    },
+  },
   Dashboard: {
     screen: DashboardScreen,
   },

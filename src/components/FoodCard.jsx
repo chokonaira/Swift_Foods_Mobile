@@ -13,9 +13,17 @@ class FoodCard extends Component {
 
   render() {
     return (
-      <>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 10,
+          width: "100%",
+        }}
+      >
         <FlatList
-          data={foodImages.food}
+          data={foodImages}
           renderItem={({ item }) => (
             <TouchableOpacity
               activeOpacity={0.5}
@@ -26,16 +34,13 @@ class FoodCard extends Component {
                   source={{ uri: item.foodUrl }}
                   indicator={ProgressBar}
                   indicatorProps={{
-                    size: 80,
-                    borderWidth: 0,
+                    size: 40,
                     color: "rgba(150, 150, 150, 1)",
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
                   style={{
-                    marginLeft: 17,
-                    marginRight: 8,
-                    width: 174,
-                    height: 160,
+                    width: 120,
+                    height: 110,
                     margin: 4,
                   }}
                 />
@@ -45,11 +50,11 @@ class FoodCard extends Component {
         </TouchableOpacity>
             </TouchableOpacity>
           )}
-          numColumns={2}
-          keyExtractor={(item, index) => index}
+          numColumns={3}
+          keyExtractor={(item) => item.id}
         />
         
-      </>
+      </View>
     );
   }
 }

@@ -2,7 +2,9 @@ import { createStackNavigator } from "react-navigation-stack";
 import HomeScreen from "../screens/HomeScreen";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
-import CartScreen from "../screens/ShoppingCartScreen";
+import EditProfileScreen from "../screens/EditProfileScreen";
+import ProfileScreen from "../screens/EditProfileScreen";
+
 
 const screens = {
   Home: {
@@ -18,20 +20,11 @@ const screens = {
   Register: {
     screen: RegisterScreen,
   },
-  Cart: {
-    screen: CartScreen,
-    // navigationOptions: {
-    //   tabBarLabel: "Cart",
-    //   tabBarIcon: ({ tintColor }) => (
-    //     <View>
-    //       <Icon
-    //         style={[{ color: tintColor }]}
-    //         size={20}
-    //         name={"cart-arrow-down"}
-    //       />
-    //     </View>
-    //   ),
-    // },
+  Profile: {
+    screen: ProfileScreen,
+  },
+  ProfileForm: {
+    screen: EditProfileScreen,
   },
 };
 

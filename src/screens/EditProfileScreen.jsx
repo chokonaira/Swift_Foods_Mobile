@@ -5,19 +5,19 @@ import {
 } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Header from "../components/Header"
-import ProfileCard from "../components/ProfileCard"
+import ProfileForm from "../components/ProfileFormModal"
 
 
 
 
-class ProfileScreen extends Component {
+class EdiitProfileScreen extends Component {
   render() {
     return (
       <View
         style={GlobalStyles.image}
       >
         {/* <Header title='Profile Details'/> */}
-        <ProfileCard navigation={this.props.navigation}/>
+        <ProfileForm navigation={this.props.navigation}/>
        
       </View>
     )
@@ -25,4 +25,4 @@ class ProfileScreen extends Component {
 }
 
 
-export default ProfileScreen;
+export default EdiitProfileScreen;

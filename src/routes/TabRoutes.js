@@ -58,7 +58,7 @@ const screens = {
 const TabRoutes = createMaterialBottomTabNavigator(screens, {
   // initialRouteName: 'Dashboard',
   activeColor: "white",
-  inactiveColor: "black",
+  inactiveColor: "#2c2828",
   barStyle: { backgroundColor: "#f0a500" },
 });
 export default TabRoutes;

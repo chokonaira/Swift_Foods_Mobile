@@ -13,31 +13,35 @@ class RestaurantCard extends Component {
 
   render() {
     return (
-      <>
+      <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 10,
+        width: "100%",
+        borderRadius:50
+      }}>
         <FlatList
-          data={RestaurantsImages.restaurant}
+          data={RestaurantsImages}
           renderItem={({ item }) => (
             <TouchableOpacity
-              activeOpacity={0.9}
+              activeOpacity={0.5}
               // onPress={this.GetListItem.bind(this, item.p_title)}
             >
-              <View style={GlobalStyles.container}>
+              <View >
                 <Image
                   source={{ uri: item.restaurantUrl }}
                   indicator={ProgressBar}
                   indicatorProps={{
-                    size: 50,
-                    borderWidth: 0,
-                    color: "#f0a500",
+                    size: 40,
+                    color: "rgba(150, 150, 150, 1)",
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
                   style={{
-                    borderRadius: 50,
-                    width: 180,
-                    height: 150,
-                    borderRadius:5,
-                    margin: 9,
-                    // justifyContent: "center",
+                    width: 118,
+                    height: 110,
+                    margin: 3,
                   }}
                 />
               </View>
@@ -46,11 +50,11 @@ class RestaurantCard extends Component {
         </TouchableOpacity>
             </TouchableOpacity>
           )}
-          numColumns={2}
-          keyExtractor={(item, index) => index}
+          numColumns={3}
+          keyExtractor={(item) => item.id}
         />
         
-      </>
+      </View>
     );
   }
 }

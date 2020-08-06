@@ -48,6 +48,7 @@ export const GlobalStyles = StyleSheet.create({
     opacity: 0.7,
   },
   emptyInput: {},
+
   authFormInput: {
     width: "100%",
     justifyContent: "center",
@@ -66,8 +67,8 @@ export const GlobalStyles = StyleSheet.create({
     backgroundColor: "#f0a500",
     alignSelf: "center",
     alignItems: "center",
-    width: "50%",
-    padding: 13,
+    width: "40%",
+    padding: 10,
     borderRadius: 30,
   },
   formTextWrapper: {
@@ -103,19 +104,21 @@ export const GlobalStyles = StyleSheet.create({
     bottom: "9%",
   },
   button: {
+    flexDirection: 'row',
     alignItems: "center",
+    justifyContent: 'space-around',
     backgroundColor: "#f0a500",
     color: "#fff",
     padding: 13,
-    width: "50%",
+    width: "44%",
     borderRadius: 30,
-    padding: 17,
+    // padding: 17,
   },
   buttonWrapper: {
     marginTop: "50%",
     alignItems: "center",
     width: "100%",
-    bottom: "8%",
+    bottom: "10%",
   },
   buttonText: {
     color: "black",
@@ -124,14 +127,12 @@ export const GlobalStyles = StyleSheet.create({
   },
   logo: {
     borderRadius: 100,
-    width: "40%",
-    height: "37%",
+    width: 140,
+    height: 140,
   },
   logoWrapper: {
     alignItems: "center",
-    justifyContent: "flex-start",
     top: "8%",
-    borderRadius: 150,
     flex: 1,
   },
   loginText: {
@@ -260,7 +261,7 @@ export const GlobalStyles = StyleSheet.create({
     height: "45%",
     width: "90%",
     margin:5,
-    backgroundColor: '#f0a500',
+    backgroundColor: '#f7b32d',
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: "center",
@@ -269,7 +270,7 @@ export const GlobalStyles = StyleSheet.create({
   profileAvartarImage:{
     height: "80%",
     width: "50%",
-    marginBottom:10,
+    marginBottom:15,
     borderRadius: 60,
   },
   profileWrapper:{
@@ -299,15 +300,15 @@ export const GlobalStyles = StyleSheet.create({
     padding: 3
   },
   profileTopButton:{
-    backgroundColor: '#f0a500',
+    backgroundColor: '#dd3e3e',
     alignItems: 'center',
     alignSelf: 'center',
-    width: '25%',
+    width: '20%',
     borderRadius: 5,
   },
   profileTopButtonText:{
     fontWeight: "bold",
-    color: 'black',
+    color: '#fff',
     padding: 3
   },
   cartList:{
@@ -351,5 +352,46 @@ export const GlobalStyles = StyleSheet.create({
     alignItems: 'center',
     width: '10%',
     margin: 5
-  }
+  },
+  editProfileFormWrapper:{
+    padding: 15,
+    height: "40%",
+    width: "90%",
+    margin:5,
+    backgroundColor: '#f0a500',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: "center",
+    borderRadius: 50,
+  },
+  editProfileForm: {
+    marginTop: "10%",
+    width: "80%",
+    justifyContent: "center",
+    height: "100%",
+    // top: 10,
+  },
+  editProfileFormButton: {
+    marginTop: "5%",
+    backgroundColor: "#fff",
+    alignSelf: "center",
+    alignItems: "center",
+    width: "35%",
+    padding: 2,
+    borderRadius: 5,
+  },
+  editProfileFormTop:{
+    marginTop: 25,
+    height: "45%",
+    width: "90%",
+    padding:5,
+    margin:10,
+    backgroundColor: '#fff',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: "flex-start",
+    borderRadius: 50,
+    borderWidth:1,
+    borderColor:'#f0a500',
+  },
 });

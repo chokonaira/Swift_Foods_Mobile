@@ -13,12 +13,19 @@ class CategoryCard extends Component {
 
   render() {
     return (
-      <>
+      <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 10,
+        width: "100%",
+      }}>
         <FlatList
-          data={CategoryImages.category}
+          data={ CategoryImages}
           renderItem={({ item }) => (
             <TouchableOpacity
-              activeOpacity={0.9}
+              activeOpacity={0.5}
               // onPress={this.GetListItem.bind(this, item.p_title)}
             >
               <View style={GlobalStyles.container}>
@@ -26,17 +33,14 @@ class CategoryCard extends Component {
                   source={{ uri: item.categoryUrl }}
                   indicator={ProgressBar}
                   indicatorProps={{
-                    size: 50,
-                    borderWidth: 0,
+                    size: 40,
                     color: "rgba(150, 150, 150, 1)",
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
                   style={{
-                    marginLeft: 17,
-                    marginRight: 8,
-                    width: 174,
-                    height: 160,
-                    margin: 4,
+                    width: 118,
+                    height: 110,
+                    margin: 3,
                   }}
                 />
               </View>
@@ -47,10 +51,10 @@ class CategoryCard extends Component {
               
             </TouchableOpacity>
           )}
-          numColumns={2}
-          keyExtractor={(item, index) => index}
+          numColumns={3}
+          keyExtractor={(item) => item.id}
         />
-      </>
+      </View>
     );
   }
 }

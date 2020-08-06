@@ -54,7 +54,7 @@ class CartModal extends Component {
               >
                 Your Basket
               </Text>
-              <Icon style={[{ color: "#0c9463"}]} size={20} name={"cart-arrow-down"} />
+              <Icon style={[{ color: "#2c2828"}]} size={20} name={"cart-arrow-down"} />
               <Icon
                 onPress={this.props.closeModal}
                 style={[{ left: 100, color: "#2c2828" }]}
@@ -62,22 +62,28 @@ class CartModal extends Component {
                 name={"arrow-right"}
               />
             </View>
-            <View style={{flexDirection: 'row', alignItems:'center', marginBottom: 10,justifyContent:'space-between', width:'85%'}}>
+            <View style={{flexDirection: 'row', alignItems:'center', marginBottom: 10,justifyContent:'space-between', width:'95%'}}>
             <Text style={{fontWeight:'bold', fontSize:20, color: '#2c2828'}}>Total Payable: $5,000 </Text>
-            <TouchableOpacity style={{borderRadius: 3,backgroundColor: '#0c9463'}}>
+            <TouchableOpacity style={{alignItems:'center',borderRadius: 3,backgroundColor: '#0c9463', flexDirection: 'row', paddingLeft:3, paddingRight:5}}>
               <Text style={{fontWeight:'bold', fontSize: 12, color:'#fff', padding:7}}>Checkout</Text>
+              <Icon
+                // onPress={this.props.closeModal}
+                // style={[{ left: 100, color: "#2c2828" }]}
+                size={14}
+                name={"check-circle"}
+              />
             </TouchableOpacity>
             </View>
             <ScrollView style={{width: '100%', marginLeft:15}}>
                 {
                   CartItems.map((cartItem, index) => (
-                    <View key={cartItem.id} style={{ marginBottom: 10,borderRadius: 3,alignItems: "center",flexDirection:'row', width: "95%", backgroundColor: "#fff",color: "black", padding: 7, borderStyle:'dashed', borderWidth:1, borderColor: 'black'}}>
+                    <View key={cartItem.id} style={{ marginBottom: 10,borderRadius: 3,alignItems: "center",flexDirection:'row', width: "95%", backgroundColor: "#ececeb",color: "black", padding: 7, borderStyle:'dashed', borderWidth:1, borderColor: 'black'}}>
                     <Text style={{ marginRight: 10,fontSize: 15}}>{index + 1}</Text>
       
                     <View style={{ alignItems: "center", flexDirection: 'row', justifyContent:'space-between',  width: "88%"}}>
                       <Image style={{borderRadius: 3,width:30, height:30}} source={{uri: cartItem.cartImage}} />
-                      <Text style={{ alignSelf:"center", fontSize: 12, fontWeight: "bold",color: "black" }}> {cartItem.foodName} </Text>
-                      <Text style={{  marginRight: 15, alignSelf:"center", fontSize: 12, fontWeight: "bold",color: "black" }}> {cartItem.price} </Text>
+                      <Text style={{ alignSelf:"center", fontSize: 13, fontWeight: "bold",color: "black" }}> {cartItem.foodName} </Text>
+                      <Text style={{  marginRight: 15, alignSelf:"center", fontSize: 13, fontWeight: "bold",color: "black" }}> {cartItem.price} </Text>
                     </View>
                     <Icon   
                           onPress={this.props.closeModal}

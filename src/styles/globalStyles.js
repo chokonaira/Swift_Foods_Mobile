@@ -67,8 +67,8 @@ export const GlobalStyles = StyleSheet.create({
     backgroundColor: "#f0a500",
     alignSelf: "center",
     alignItems: "center",
-    width: "50%",
-    padding: 13,
+    width: "40%",
+    padding: 10,
     borderRadius: 30,
   },
   formTextWrapper: {
@@ -104,19 +104,21 @@ export const GlobalStyles = StyleSheet.create({
     bottom: "9%",
   },
   button: {
+    flexDirection: 'row',
     alignItems: "center",
+    justifyContent: 'space-around',
     backgroundColor: "#f0a500",
     color: "#fff",
     padding: 13,
-    width: "50%",
+    width: "44%",
     borderRadius: 30,
-    padding: 17,
+    // padding: 17,
   },
   buttonWrapper: {
     marginTop: "50%",
     alignItems: "center",
     width: "100%",
-    bottom: "8%",
+    bottom: "10%",
   },
   buttonText: {
     color: "black",
@@ -125,14 +127,12 @@ export const GlobalStyles = StyleSheet.create({
   },
   logo: {
     borderRadius: 100,
-    width: "40%",
-    height: "37%",
+    width: 140,
+    height: 140,
   },
   logoWrapper: {
     alignItems: "center",
-    justifyContent: "flex-start",
     top: "8%",
-    borderRadius: 150,
     flex: 1,
   },
   loginText: {
@@ -300,10 +300,10 @@ export const GlobalStyles = StyleSheet.create({
     padding: 3
   },
   profileTopButton:{
-    backgroundColor: 'red',
+    backgroundColor: '#dd3e3e',
     alignItems: 'center',
     alignSelf: 'center',
-    width: '25%',
+    width: '20%',
     borderRadius: 5,
   },
   profileTopButtonText:{

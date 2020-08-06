@@ -3,7 +3,7 @@ import { View, Image, TouchableOpacity, Text } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import { globalImages } from "../styles/globalImages";
 import * as DocumentPicker from 'expo-document-picker';
-import ProfileFormModal from './ProfileForm'
+import ProfileFormModal from './ProfileFormModal'
 
 
 class ProfileCard extends Component {

@@ -5,7 +5,7 @@ import {
 } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Header from "../components/Header"
-import ProfileForm from "../components/ProfileForm"
+import ProfileForm from "../components/ProfileFormModal"
 
 
 

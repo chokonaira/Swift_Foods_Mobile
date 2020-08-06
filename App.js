@@ -9,7 +9,7 @@ YellowBox.ignoreWarnings(["Remote debugger"]);
 export default function App() {
   return (
     <>
-    <StatusBar barStyle='light-content' />
+    <StatusBar barStyle='default-content' />
     <Provider store={store}>
       <Navigator/>
     </Provider>

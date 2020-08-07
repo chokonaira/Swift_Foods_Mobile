@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { View, Image, TouchableOpacity, Text } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import { globalImages } from "../styles/globalImages";
-import * as DocumentPicker from 'expo-document-picker';
 import ProfileFormModal from './ProfileFormModal'
 
 

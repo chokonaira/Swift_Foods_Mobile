@@ -29,9 +29,9 @@ class ShoppingCartIcon extends Component {
           </View>
 
           <Icon
-            style={[{ marginRight: 13, color: '#2c2828' }]}
+            style={[{ marginRight: 13, color: '#474744' }]}
             size={20}
-            name={"cart-plus"}
+            name={"cart-arrow-down"}
           />
         </TouchableOpacity>
       </View>

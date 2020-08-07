@@ -48,7 +48,7 @@ const screens = {
       tabBarLabel: "Profile",
       tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{ color: tintColor }]} size={20} name={"user"} />
+          <Icon style={[{color: '#2c2828', }]} size={20} name={"user"} />
         </View>
       ),
     },
@@ -57,8 +57,8 @@ const screens = {
 
 const TabRoutes = createMaterialBottomTabNavigator(screens, {
   // initialRouteName: 'Dashboard',
-  activeColor: "white",
+  activeColor: '#fff',
   inactiveColor: "#2c2828",
-  barStyle: { backgroundColor: "#f0a500" },
+  barStyle: { backgroundColor: "#f0a500"},
 });
 export default TabRoutes;

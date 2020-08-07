@@ -4,12 +4,24 @@ import { GlobalStyles } from "../styles/globalStyles";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { globalImages } from "../styles/globalImages";
 import { CartItems } from "../styles/globalImages";
+import CheckoutFormModal from './CheckoutFormModal'
 
 
 
 class CartModal extends Component {
-  
+  state = {
+    modal: false,
+  };
+
+  openModal = () => {
+    this.setState({ modal: true });
+  };
+  closeModal =()=>{
+    this.setState({ modal: false });
+  }
   render() {
+    const { modal } = this.state;
+
     return (
       <View
         style={{
@@ -63,8 +75,8 @@ class CartModal extends Component {
               />
             </View>
             <View style={{flexDirection: 'row', alignItems:'center', marginBottom: 10,justifyContent:'space-between', width:'95%'}}>
-            <Text style={{fontWeight:'bold', fontSize:20, color: '#2c2828'}}>Total Payable: $5,000 </Text>
-            <TouchableOpacity style={{alignItems:'center',borderRadius: 3,backgroundColor: '#0c9463', flexDirection: 'row', paddingLeft:3, paddingRight:5}}>
+            <Text style={{fontWeight:'bold', fontSize:16, color: '#2c2828'}}>Total Payable: $5,000 </Text>
+            <TouchableOpacity onPress={this.openModal}  style={{alignItems:'center',borderRadius: 3,backgroundColor: 'rgba(95, 197, 123, 1)', flexDirection: 'row', paddingLeft:3, paddingRight:5}}>
               <Text style={{fontWeight:'bold', fontSize: 12, color:'#fff', padding:7}}>Checkout</Text>
               <Icon
                 // onPress={this.props.closeModal}
@@ -87,7 +99,7 @@ class CartModal extends Component {
                     </View>
                     <Icon   
                           onPress={this.props.closeModal}
-                          style={[{marginLeft: 5, backgroundColor: "red", paddingLeft: 3,paddingRight: 3, borderRadius: 5, color: "#fff" }]}
+                          style={[{marginLeft: 5, backgroundColor: "#dd3e3e", paddingLeft: 3,paddingRight: 3, borderRadius: 5, color: "#fff" }]}
                           // style={[{ left: 100, color: "#fff" }]}
                           size={18}
                           name={"times"}
@@ -103,6 +115,7 @@ class CartModal extends Component {
             
           </View>
         </Modal>
+        <CheckoutFormModal openModal={modal} closeModal={this.closeModal}/>
       </View>
     );
   }

@@ -18,7 +18,7 @@ class HeaderLogo extends Component {
          {/* <Image style={{ width: 35, height: 35, borderRadius: 50}} source={globalImages.HeaderLogo}/> */}
          <TouchableOpacity onPress={()=> this.props.navigation.navigate('Home')}>
           <View  style={{borderRadius: 5,marginLeft: 16,backgroundColor: '#f0a500', borderWidth:2,borderColor:'#2c2828', borderStyle:'dotted'}}>
-            <Text style={{fontWeight: 'bold', fontSize: 15, color: '#2c2828', padding: 5}}>Swift Foods</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 15, color: 'black', padding: 5}}>Swift Foods</Text>
           </View>
          </TouchableOpacity>
 

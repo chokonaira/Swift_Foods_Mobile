@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import { View, TouchableOpacity, Text, Modal, TextInput, Image} from "react-native";
+import { View, TouchableOpacity, Text, Modal, TextInput, Image, ScrollView} from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
-import Icon from "react-native-vector-icons/FontAwesome5";
+import Icon from "react-native-vector-icons/Fontisto";
 import { globalImages } from "../styles/globalImages";
 import { CartItems } from "../styles/globalImages";
 
 
 
-class ProfileFormModal extends Component {
+class CheckoutFormModal extends Component {
   
   render() {
-
     return (
+      <ScrollView>
       <View
         style={{
           flex: 1,
@@ -37,54 +37,78 @@ class ProfileFormModal extends Component {
               style={{
                 flexDirection: "row",
                 width: "100%",
+                alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "#fff",
-                // padding: 10,
-                // marginBottom: 15,
-                // borderWidth: .5,
+                backgroundColor: "#f0a500",
+                padding: 10,
+                marginBottom: 3,
+                borderWidth: .5, 
               }}
             >
               <Text
                 style={{
                   textAlign: "center",
-                  fontSize: 17,
+                  fontSize: 18,
                   color: "#2c2828",
                   fontWeight: "bold",
-                  // paddingRight: 10,
+                  paddingRight: 5,
                 }}
               >
-                Edit your Profile
+                Checkout
               </Text>
+              <Icon style={[{ color: "#2c2828"}]} size={20} name={"shopping-bag-1"} />
               <Icon
                 onPress={this.props.closeModal}
                 style={[{ left: 100, color: "#2c2828" }]}
-                size={22}
+                size={18}
                 name={"arrow-right"}
               />
             </View>
-            <View style={GlobalStyles.editProfileFormTop}>
+            <View style={{marginTop: 25,
+                      height: "45%",
+                      width: "90%",
+                      padding:5,
+                      // margin:10,
+                      // backgroundColor: '#fff',
+                      alignSelf: 'center',
+                      alignItems: 'center',
+                      justifyContent: "flex-start",
+                      // borderRadius: 50,
+                      // borderWidth:1,
+                     }}>
               <Image
-                style={GlobalStyles.profileAvartarImage}
-                source={globalImages.Passport}
+                style={{ 
+                height: "70%",
+                width: "90%",
+                marginBottom:10,
+                borderRadius: 0,}}
+                source={globalImages.Card}
               />
               <TouchableOpacity
                 style={{
-                  
+                  padding: 1,
+                  flexDirection: 'row',
                   backgroundColor: "#f0a500",
                   alignItems: "center",
                   alignSelf: "center",
-                  width: "35%",
+                  width: "28%",
                   borderRadius: 5,
                 }}
               >
-                <Text style={GlobalStyles.profileTopButtonText}>Change Image</Text>
+                <Text style={GlobalStyles.profileTopButtonText}>Add Card</Text>
+                <Icon
+                // onPress={this.props.closeModal}
+                // style={[{ left: 100, color: "#2c2828" }]}
+                size={15}
+                name={"credit-card"}
+              />
               </TouchableOpacity>
             </View>
             <View style={GlobalStyles.editProfileFormWrapper}>
             <View style={GlobalStyles.editProfileForm}>
                     <TextInput
                       style={GlobalStyles.registerInput}
-                      placeholder="First Name"
+                      placeholder="Full Name"
                       // onChangeText={props.handleChange("first_name")}
                       // value={props.values.first_name}
                       placeholderTextColor={"black"}
@@ -96,7 +120,7 @@ class ProfileFormModal extends Component {
                     </Text> */}
                     <TextInput
                       style={GlobalStyles.registerInput}
-                      placeholder="Last Name"
+                      placeholder="Delivery Address"
                       // onChangeText={props.handleChange("last_name")}
                       // value={props.values.last_name}
                       placeholderTextColor={"black"}
@@ -106,17 +130,6 @@ class ProfileFormModal extends Component {
                     {/* <Text style={GlobalStyles.errorText}>
                       {props.touched.last_name && props.errors.last_name}
                     </Text> */}
-                    <TextInput
-                      style={GlobalStyles.registerInput}
-                      placeholder="Email"
-                      // onChangeText={props.handleChange("email")}
-                      // value={props.values.email}
-                      placeholderTextColor={"black"}
-                      autoCapitalize="none"
-                      autoCorrect={false}
-                      enablesReturnKeyAutomatically={true}
-                      keyboardType={"email-address"}
-                    />
                     {/* <Text style={GlobalStyles.errorText}>
                       {props.touched.email && props.errors.email}
                     </Text> */}
@@ -144,10 +157,25 @@ class ProfileFormModal extends Component {
                       {/* <Text style={GlobalStyles.registerTextSpan}>Login</Text> */}
                     </TouchableOpacity>
                     <TouchableOpacity
-                      style={GlobalStyles.editProfileFormButton}
+                      style={{ 
+                      flexDirection: 'row',
+                      marginTop: "5%",
+                      backgroundColor: "#fff",
+                      alignSelf: "center",
+                      alignItems: "center",
+                      justifyContent:'space-around',
+                      width: "23%",
+                      padding: 1,
+                      borderRadius: 5,}}
                       // onPress={props.handleSubmit}
                     >
-                      <Text style={GlobalStyles.buttonText}>Submit</Text>
+                      <Text style={GlobalStyles.buttonText}>Pay</Text>
+                      <Icon
+                        // onPress={this.props.closeModal}
+                        // style={[{ left: 100, color: "#2c2828" }]}
+                        size={15}
+                        name={"credit-card"}
+                      />
                     </TouchableOpacity>
                     <Text style={GlobalStyles.emptyInput}></Text>
                     <Text style={GlobalStyles.emptyInput}></Text>
@@ -166,9 +194,12 @@ class ProfileFormModal extends Component {
             </View>
           </View>
         </Modal>
+        
       </View>
+      </ScrollView>
     );
   }
 }
 
-export default ProfileFormModal;
+export default CheckoutFormModal;
+

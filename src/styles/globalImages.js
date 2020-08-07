@@ -1,4 +1,5 @@
 export class globalImages {
+  static Card = require("../../assets/images/card.jpg");
   static Avartar = require("../../assets/images/avatar.jpg");
   static Passport = require("../../assets/images/thumbnail.jpg");
   static HeaderLogo = require("../../assets/images/custom-logo2.png");

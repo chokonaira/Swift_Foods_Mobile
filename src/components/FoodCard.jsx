@@ -55,7 +55,7 @@ class FoodCard extends Component {
                 <TouchableOpacity >
                 <Icon
                   style={[{ color: '#474744',  }]}
-                  size={22}
+                  size={20}
                   name={"cart-plus"}
                 />
                </TouchableOpacity>

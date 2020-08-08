@@ -17,7 +17,7 @@ export default function Button({ title, onPress }) {
         <Icon
                 // onPress={this.props.closeModal}
                 // style={[{ left: 100, color: "#2c2828" }]}
-                size={22}
+                size={20}
                 name={"arrow-right"}
               />
         {/* </View> */}

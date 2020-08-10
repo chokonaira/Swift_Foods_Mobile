@@ -3,6 +3,9 @@ import { Text, View, TouchableOpacity, FlatList } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Image from "react-native-image-progress";
 import ProgressBar from "react-native-progress";
+import Icon from "react-native-vector-icons/FontAwesome5";
+import Iconik from "react-native-vector-icons/Ionicons";
+
 // import foodImage from "../styles/globalImages";
 import { foodImages } from "../styles/globalImages";
 
@@ -18,18 +21,17 @@ class FoodCard extends Component {
           flex: 1,
           justifyContent: "center",
           alignItems: "center",
-          marginTop: 10,
-          width: "100%",
+          marginTop: 5,
+          // width: "100%",
         }}
       >
         <FlatList
           data={foodImages}
           renderItem={({ item }) => (
-            <TouchableOpacity
-              activeOpacity={0.5}
+            <View
+              // activeOpacity={0.5}
               // onPress={this.GetListItem.bind(this, item.p_title)}
-            >
-              <View style={GlobalStyles.container}>
+              >
                 <Image
                   source={{ uri: item.foodUrl }}
                   indicator={ProgressBar}
@@ -39,18 +41,29 @@ class FoodCard extends Component {
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
                   style={{
-                    width: 120,
-                    height: 110,
+                    width: 170,
+                    height: 140,
                     margin: 4,
                   }}
                 />
-              </View>
-              <TouchableOpacity>
-          <Text style={GlobalStyles.cardText}>Add to Cart</Text>
-        </TouchableOpacity>
-            </TouchableOpacity>
+                <View style={{flexDirection:'row', justifyContent:'space-around'}}>
+                <View>
+                  <Text style={{fontWeight:'bold', fontSize:13,color:'rgba(95, 197, 123, 1)'}}>Salad peperoni </Text>
+                  <Text style={{fontWeight:'bold', fontSize:12, color:'#2c2828'}}>Fwr 5000 </Text>
+                  
+                </View>
+                <TouchableOpacity >
+                <Icon
+                  style={[{ color: '#474744',  }]}
+                  size={20}
+                  name={"cart-plus"}
+                />
+               </TouchableOpacity>
+                </View>
+              
+            </View>
           )}
-          numColumns={3}
+          numColumns={2}
           keyExtractor={(item) => item.id}
         />
         

@@ -12,17 +12,51 @@ import { globalImages } from '../styles/globalImages'
 import { GlobalStyles } from "../styles/globalStyles";
 import { Formik } from "formik";
 import { registerSchema } from "../helpers/formValidationSchema";
+import { connect } from 'react-redux';
+import { registerUser } from '../redux/actions/RegisterAction';
+import Spinner from 'react-native-loading-spinner-overlay';
+import { showMessage } from "react-native-flash-message";
 
 class Register extends Component {
+
+  state = {
+    spinner: false
+  };
   
   pressHandlerLogin = () => {
     this.props.navigation.navigate("Login");
   };
 
+  componentDidUpdate() {
+     const { isAuthenticated, isError } = this.props.newUser
+      if(isAuthenticated) {
+        showMessage({
+          message: "Registration succesfull, Login",
+          type: "success",
+        });
+      this.pressHandlerLogin();
+    } else if(isError){
+      showMessage({
+        message: "Opps something went wrong, try again",
+        type: "danger",
+      });
+    }
+  }
+
 
   render() {
+    const { loading } = this.props.newUser
     return (
       <ImageBackground style={GlobalStyles.image} source={globalImages.RegisterBanner}>
+        <Spinner
+          animation="none"
+          color='#f0a500'
+          visible={loading}
+          textContent={'Loading...'}
+          textStyle={{color: '#f0a500'}}
+          overlayColor='rgba(0, 0, 0, .5)'
+
+        />
         <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
           <ScrollView>
             <View style={GlobalStyles.authForm}>
@@ -39,7 +73,7 @@ class Register extends Component {
                 validationSchema={registerSchema}
                 onSubmit={(values, actions) => {
                   actions.resetForm();
-                  console.log(values, "values");
+                  this.props.registerUser(values);
                 }}
               >
                 {(props) => (
@@ -133,4 +167,8 @@ class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = (state) => ({
+  newUser: state.newUser
+})
+
+export default connect(mapStateToProps, {registerUser})(Register);

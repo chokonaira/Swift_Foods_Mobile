@@ -1,25 +1,39 @@
-import { LOGIN, LOGIN_LOADING } from '../actions';
+import * as types from '../actions';
 
 const initialState = {
-  user: {},
+  newUser: {},
   loading: false,
+  isAuthenticated: false,
+  isError: false
 };
-const loginReducer = (state = initialState, action) => {
+const registerReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_LOADING:
+    case types.REGISTER_LOADING:
       return {
         ...state,
         loading: true,
+        isAuthenticated: false,
+        isError: false
       };
-    case LOGIN:
+    case types.REGISTER_SUCCESS:
       return {
         ...state,
-        user: action.payload,
+        newUser: action.payload,
         loading: false,
+        isAuthenticated: true,
+        
+      };
+      case types.REGISTER_FAILURE:
+      return {
+        ...state,
+        newUser: action.payload,
+        loading: false,
+        isError: true
+        
       };
     default:
       return state;
   }
 };
 
-export default loginReducer;
+export default registerReducer;

@@ -19,10 +19,6 @@ import { showMessage } from "react-native-flash-message";
 
 class Register extends Component {
 
-  state = {
-    spinner: false
-  };
-  
   pressHandlerLogin = () => {
     this.props.navigation.navigate("Login");
   };

@@ -3,7 +3,6 @@ import { View, TouchableOpacity, Text, Modal, TextInput, Image, ScrollView} from
 import { GlobalStyles } from "../styles/globalStyles";
 import Icon from "react-native-vector-icons/Fontisto";
 import { globalImages } from "../styles/globalImages";
-import { CartItems } from "../styles/globalImages";
 
 
 
@@ -21,12 +20,10 @@ class CheckoutFormModal extends Component {
         }}
       >
         <Modal
-          // transparent={true}
-          visible={this.props.openModal}
+          visible={this.props.openCheckoutModal}
         >
           <View
             style={{
-              // flex: 1,
               justifyContent: "flex-start",
               alignItems: "center",
               marginTop: 22,
@@ -58,7 +55,7 @@ class CheckoutFormModal extends Component {
               </Text>
               <Icon style={[{ color: "#2c2828"}]} size={20} name={"shopping-bag-1"} />
               <Icon
-                onPress={this.props.closeModal}
+                onPress={this.props.closeCheckoutModal}
                 style={[{ left: 100, color: "#2c2828" }]}
                 size={18}
                 name={"arrow-right"}

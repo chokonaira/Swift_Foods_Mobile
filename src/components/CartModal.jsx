@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { View, TouchableOpacity, Text, Modal, Image, ScrollView, SafeAreaView} from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Icon from "react-native-vector-icons/FontAwesome5";
-import { globalImages } from "../styles/globalImages";
 import { CartItems } from "../styles/globalImages";
 import CheckoutFormModal from './CheckoutFormModal'
 
@@ -13,10 +12,10 @@ class CartModal extends Component {
     modal: false,
   };
 
-  openModal = () => {
+  openCheckoutModal = () => {
     this.setState({ modal: true });
   };
-  closeModal =()=>{
+  closeCheckoutModal =()=>{
     this.setState({ modal: false });
   }
   render() {
@@ -32,7 +31,6 @@ class CartModal extends Component {
         }}
       >
         <Modal
-          // transparent={true}
           visible={this.props.openModal}
         >
           <View
@@ -76,7 +74,7 @@ class CartModal extends Component {
             </View>
             <View style={{flexDirection: 'row', alignItems:'center', marginBottom: 10,justifyContent:'space-between', width:'95%'}}>
             <Text style={{fontWeight:'bold', fontSize:16, color: '#2c2828'}}>Total Payable: $5,000 </Text>
-            <TouchableOpacity onPress={this.openModal}  style={{alignItems:'center',borderRadius: 3,backgroundColor: 'rgba(95, 197, 123, 1)', flexDirection: 'row', paddingLeft:3, paddingRight:5}}>
+            <TouchableOpacity onPress={this.openCheckoutModal}  style={{alignItems:'center',borderRadius: 3,backgroundColor: 'rgba(95, 197, 123, 1)', flexDirection: 'row', paddingLeft:3, paddingRight:5}}>
               <Text style={{fontWeight:'bold', fontSize: 12, color:'#fff', padding:7}}>Checkout</Text>
               <Icon
                 // onPress={this.props.closeModal}
@@ -86,36 +84,30 @@ class CartModal extends Component {
               />
             </TouchableOpacity>
             </View>
-            <ScrollView style={{width: '100%', marginLeft:15}}>
+            <ScrollView style={GlobalStyles.cartModalScroolView}>
                 {
                   CartItems.map((cartItem, index) => (
                     <View key={cartItem.id} style={{ marginBottom: 10,borderRadius: 3,alignItems: "center",flexDirection:'row', width: "95%", backgroundColor: "#ececeb",color: "black", padding: 7, borderStyle:'dashed', borderWidth:1, borderColor: 'black'}}>
-                    <Text style={{ marginRight: 10,fontSize: 15}}>{index + 1}</Text>
+                        <Text style={{ marginRight: 10,fontSize: 15}}>{index + 1}</Text>
       
-                    <View style={{ alignItems: "center", flexDirection: 'row', justifyContent:'space-between',  width: "88%"}}>
-                      <Image style={{borderRadius: 3,width:30, height:30}} source={{uri: cartItem.cartImage}} />
-                      <Text style={{ alignSelf:"center", fontSize: 13, fontWeight: "bold",color: "black" }}> {cartItem.foodName} </Text>
-                      <Text style={{  marginRight: 15, alignSelf:"center", fontSize: 13, fontWeight: "bold",color: "black" }}> {cartItem.price} </Text>
+                    <View style={GlobalStyles.cartItemViewWrapper}>
+                      <Image style={GlobalStyles.cartItemViewImage} source={{uri: cartItem.cartImage}} />
+                      <Text style={GlobalStyles.cartItemViewText}> {cartItem.foodName} </Text>
+                      <Text style={GlobalStyles.cartItemViewText2}> {cartItem.price} </Text>
                     </View>
-                    <Icon   
+                        <Icon   
                           onPress={this.props.closeModal}
-                          style={[{marginLeft: 5, backgroundColor: "#dd3e3e", paddingLeft: 3,paddingRight: 3, borderRadius: 5, color: "#fff" }]}
-                          // style={[{ left: 100, color: "#fff" }]}
+                          style={GlobalStyles.cartItemViewIcon}
                           size={18}
                           name={"times"}
                         />
-                 
-                 
                   </View>
                   ))
                 }
             </ScrollView>
-
-            
-            
           </View>
         </Modal>
-        <CheckoutFormModal openModal={modal} closeModal={this.closeModal}/>
+        <CheckoutFormModal openCheckoutModal={modal} closeCheckoutModal={this.closeCheckoutModal}/>
       </View>
     );
   }

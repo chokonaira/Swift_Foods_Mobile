@@ -1,7 +1,8 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "d": "expo diagnostics",
+    "open-ios-simulator": "open -a simulator",
+    "diagnostics": "expo diagnostics",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",

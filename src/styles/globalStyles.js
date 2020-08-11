@@ -29,7 +29,7 @@ export const GlobalStyles = StyleSheet.create({
     backgroundColor: "#fff",
     opacity: 0.7,
   },
-  authText:{
+  authText: {
     color: "#fff",
     fontWeight: "bold",
     fontSize: 35,
@@ -53,7 +53,6 @@ export const GlobalStyles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     height: "100%",
-    // top: 10,
   },
   formText: {
     color: "red",
@@ -104,15 +103,14 @@ export const GlobalStyles = StyleSheet.create({
     bottom: "9%",
   },
   button: {
-    flexDirection: 'row',
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: 'space-around',
+    justifyContent: "space-around",
     backgroundColor: "#f0a500",
     color: "#fff",
     padding: 13,
     width: "44%",
     borderRadius: 30,
-    // padding: 17,
   },
   buttonWrapper: {
     marginTop: "50%",
@@ -173,9 +171,6 @@ export const GlobalStyles = StyleSheet.create({
     fontWeight: "bold",
     alignSelf: "flex-end",
   },
-  loginTextSpanWrapper: {
-    // top: '8%'
-  },
   keyboardViewContainer: {
     flex: 1,
   },
@@ -209,20 +204,20 @@ export const GlobalStyles = StyleSheet.create({
     backgroundColor: "rgba(95, 197, 123, 0.8)",
     right: 25,
     bottom: 15,
-    alignItems: 'center',
-    justifyContent: 'center',
-    zIndex: 2000
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 2000,
   },
   searchBar: {
     width: "100%",
   },
   headerText: {
-    alignSelf: 'center',
+    alignSelf: "center",
     fontWeight: "bold",
     fontSize: 15,
     color: "black",
-    letterSpacing: .5,
-    padding: 5
+    letterSpacing: 0.5,
+    padding: 5,
   },
   icon: {
     color: "#fff",
@@ -243,124 +238,118 @@ export const GlobalStyles = StyleSheet.create({
   safeArea: {
     height: "100%",
   },
-  profitTop:{
+  profitTop: {
     height: "45%",
     width: "90%",
-    padding:10,
-    margin:10,
-    backgroundColor: '#fff',
-    alignSelf: 'center',
-    alignItems: 'center',
+    padding: 10,
+    margin: 10,
+    backgroundColor: "#fff",
+    alignSelf: "center",
+    alignItems: "center",
     justifyContent: "flex-start",
     borderRadius: 50,
-    borderWidth:1,
-    borderColor:'#f0a500',
+    borderWidth: 1,
+    borderColor: "#f0a500",
   },
-  profileBottom:{
+  profileBottom: {
     padding: 15,
     height: "45%",
     width: "90%",
-    margin:5,
-    backgroundColor: '#f7b32d',
-    alignSelf: 'center',
-    alignItems: 'center',
+    margin: 5,
+    backgroundColor: "#f7b32d",
+    alignSelf: "center",
+    alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,
   },
-  profileAvartarImage:{
+  profileAvartarImage: {
     height: "80%",
     width: "50%",
-    marginBottom:15,
+    marginBottom: 15,
     borderRadius: 60,
   },
-  profileWrapper:{
-    flexDirection: 'row',
+  profileWrapper: {
+    flexDirection: "row",
     width: "100%",
-    padding: 7
+    padding: 7,
   },
-  profileBottomText:{
+  profileBottomText: {
     fontWeight: "bold",
     color: "#fff",
-    marginLeft:10,
+    marginLeft: 10,
   },
-  profileBottomTextKey:{
-    color: 'black',
+  profileBottomTextKey: {
+    color: "black",
     fontWeight: "bold",
   },
-  profileBottomButton:{
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    alignSelf: 'center',
-    width: '30%',
+  profileBottomButton: {
+    backgroundColor: "#fff",
+    alignItems: "center",
+    alignSelf: "center",
+    width: "30%",
     borderRadius: 5,
   },
-  profileBottomButtonText:{
+  profileBottomButtonText: {
     fontWeight: "bold",
-    color: 'black',
-    padding: 3
-  },
-  profileTopButton:{
-    backgroundColor: '#dd3e3e',
-    alignItems: 'center',
-    alignSelf: 'center',
-    width: '20%',
-    borderRadius: 5,
-  },
-  profileTopButtonText:{
-    fontWeight: "bold",
-    color: '#fff',
-    padding: 3
-  },
-  cartList:{
-    alignSelf: 'center',
-    backgroundColor: 'red',
-    width: '95%',
-    height: '40%',
+    color: "black",
     padding: 3,
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
   },
-  cartButtonWrapper:{
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
-    // padding:10,
-    // justifyContent: 'space-around',
-    // width: '50%',
-    flexDirection: 'row'
+  profileTopButton: {
+    backgroundColor: "#dd3e3e",
+    alignItems: "center",
+    alignSelf: "center",
+    width: "20%",
+    borderRadius: 5,
   },
-  cartListText:{
-    // fontWeight: "bold",
-    color: '#fff',
-    padding: 3
+  profileTopButtonText: {
+    fontWeight: "bold",
+    color: "#fff",
+    padding: 3,
   },
-  cartListInput:{
-    // borderBottomWidth: 2,
+  cartList: {
+    alignSelf: "center",
+    backgroundColor: "red",
+    width: "95%",
+    height: "40%",
+    padding: 3,
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  cartButtonWrapper: {
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  cartListText: {
+    color: "#fff",
+    padding: 3,
+  },
+  cartListInput: {
     fontSize: 8,
-    // padding: 5,
     color: "#fff",
     borderColor: "#fff",
-    backgroundColor: '#f0a500',
+    backgroundColor: "#f0a500",
     padding: 5,
-    alignItems: 'center',
-    width: '12%',
-    height: '13%'
+    alignItems: "center",
+    width: "12%",
+    height: "13%",
   },
-  cartListbutton:{
-    backgroundColor: '#f0a500',
-    alignItems: 'center',
-    width: '10%',
-    margin: 5
+  cartListbutton: {
+    backgroundColor: "#f0a500",
+    alignItems: "center",
+    width: "10%",
+    margin: 5,
   },
-  editProfileFormWrapper:{
+  editProfileFormWrapper: {
     padding: 15,
     height: "40%",
     width: "90%",
-    margin:5,
-    backgroundColor: '#f0a500',
-    alignSelf: 'center',
-    alignItems: 'center',
+    margin: 5,
+    backgroundColor: "#f0a500",
+    alignSelf: "center",
+    alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,
   },
@@ -380,18 +369,54 @@ export const GlobalStyles = StyleSheet.create({
     padding: 2,
     borderRadius: 5,
   },
-  editProfileFormTop:{
+  editProfileFormTop: {
     marginTop: 25,
     height: "45%",
     width: "90%",
-    padding:5,
-    margin:10,
-    backgroundColor: '#fff',
-    alignSelf: 'center',
-    alignItems: 'center',
+    padding: 5,
+    margin: 10,
+    backgroundColor: "#fff",
+    alignSelf: "center",
+    alignItems: "center",
     justifyContent: "flex-start",
     borderRadius: 50,
-    borderWidth:1,
-    borderColor:'#f0a500',
+    borderWidth: 1,
+    borderColor: "#f0a500",
+  },
+  cartModalScroolView: {
+    width: "100%",
+    marginLeft: 15,
+  },
+  cartItemViewWrapper: {
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "88%",
+  },
+  cartItemViewImage: {
+    borderRadius: 3,
+    width: 30,
+    height: 30,
+  },
+  cartItemViewText: {
+    alignSelf: "center",
+    fontSize: 13,
+    fontWeight: "bold",
+    color: "black",
+  },
+  cartItemViewText2: {
+    marginRight: 15,
+    alignSelf: "center",
+    fontSize: 13,
+    fontWeight: "bold",
+    color: "black",
+  },
+  cartItemViewIcon: {
+    marginLeft: 5,
+    backgroundColor: "#dd3e3e",
+    paddingLeft: 3,
+    paddingRight: 3,
+    borderRadius: 5,
+    color: "#fff",
   },
 });

@@ -26,7 +26,6 @@ class CategoryCard extends Component {
           renderItem={({ item }) => (
             <TouchableOpacity
               activeOpacity={0.5}
-              // onPress={this.GetListItem.bind(this, item.p_title)}
             >
               <View style={GlobalStyles.container}>
                 <Image
@@ -46,7 +45,6 @@ class CategoryCard extends Component {
               </View>
               <TouchableOpacity>
               <Text style={GlobalStyles.cardText}>Category</Text>
-                {/* <Text style={GlobalStyles.cardText}>Add to Cart</Text> */}
               </TouchableOpacity>
               
             </TouchableOpacity>

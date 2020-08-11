@@ -12,19 +12,57 @@ import { globalImages } from '../styles/globalImages'
 import { GlobalStyles } from "../styles/globalStyles";
 import { Formik } from "formik";
 import { registerSchema } from "../helpers/formValidationSchema";
+import { connect } from 'react-redux';
+import { registerUser } from '../redux/actions/RegisterAction';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 class Register extends Component {
+
+  state = {
+    spinner: false
+  };
   
   pressHandlerLogin = () => {
     this.props.navigation.navigate("Login");
   };
 
+  // componentDidMount() {
+  //   setInterval(() => {
+  //     this.setState({
+  //       spinner: !this.state.spinner
+  //     });
+  //   }, 3000);
+  // }
+
+  registerUser = (payload) =>{
+    this.props.registerUser(payload);
+    const { loading } = this.props.newUser
+    if(loading) {
+      this.setState({spinner: true})
+    } else {
+      this.props.navigation.navigate("Login");
+    }
+      this.setState({spinner: false})
+      
+  }
+
 
   render() {
+    
     return (
       <ImageBackground style={GlobalStyles.image} source={globalImages.RegisterBanner}>
+        <Spinner
+          animation="none"
+          color='#f0a500'
+          visible={this.state.spinner}
+          textContent={'Loading...'}
+          textStyle={{color: '#f0a500'}}
+          overlayColor='rgba(0, 0, 0, .5)'
+
+        />
         <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
           <ScrollView>
+          {/* <ActivityIndicator animating={true} /> */}
             <View style={GlobalStyles.authForm}>
             <Text style={GlobalStyles.authText}>Register</Text>
 
@@ -39,7 +77,7 @@ class Register extends Component {
                 validationSchema={registerSchema}
                 onSubmit={(values, actions) => {
                   actions.resetForm();
-                  console.log(values, "values");
+                  this.registerUser(values)
                 }}
               >
                 {(props) => (
@@ -133,4 +171,8 @@ class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = (state) => ({
+  newUser: state.newUser
+})
+
+export default connect(mapStateToProps, {registerUser})(Register);

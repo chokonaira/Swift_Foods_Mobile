@@ -3,7 +3,7 @@ import * as types from '../actions';
 const initialState = {
   newUser: {},
   loading: false,
-  isAuthenticated: false,
+  isRegistered: false,
   isError: false
 };
 const registerReducer = (state = initialState, action) => {
@@ -12,7 +12,7 @@ const registerReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        isAuthenticated: false,
+        isRegistered: false,
         isError: false
       };
     case types.REGISTER_SUCCESS:
@@ -20,7 +20,7 @@ const registerReducer = (state = initialState, action) => {
         ...state,
         newUser: action.payload,
         loading: false,
-        isAuthenticated: true,
+        isRegistered: true,
         
       };
       case types.REGISTER_FAILURE:
@@ -28,6 +28,7 @@ const registerReducer = (state = initialState, action) => {
         ...state,
         newUser: action.payload,
         loading: false,
+        isRegistered: false,
         isError: true
         
       };

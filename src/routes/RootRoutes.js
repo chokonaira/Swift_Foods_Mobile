@@ -21,9 +21,6 @@ const RootNavigator = createStackNavigator({
   Profile: {
     screen: ProfileScreen,
   },
-  // Register: {
-  //   screen: Routes
-  // },
   Dashboard: {
     screen: TabRoutes,
     navigationOptions: ({navigation}) => {
@@ -33,23 +30,8 @@ const RootNavigator = createStackNavigator({
         headerRight: () => <ShoppingCartIcon navigation={navigation}/>,
         headerStyle: { backgroundColor: "#f0a500" },
       }
-      
-      // headerTintColor: "#fff",
-      // headerStyle: { height: 4 },
     },
   },
-  // Restaurant: {
-  //   screen: DrawerRoutes,
-  // },
-  // Cart: {
-  //   screen: TabRoutes
-  // },
-  // Category: {
-  //   screen: TabRoutes
-  // },
-  // Profile: {
-  //   screen: TabRoutes
-  // }
 })
 
 export default createAppContainer(RootNavigator);

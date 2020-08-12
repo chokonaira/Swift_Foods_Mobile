@@ -1,7 +1,7 @@
 import * as types from "./index";
 import axios from "axios";
 
-const baseUrl = "https://choko-swift-foods-backend.herokuapp.com/";
+const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
 
 const registerUserLoading = () => ({
   type: types.REGISTER_LOADING,
@@ -20,11 +20,11 @@ export const registerUser = (newUserData) => (dispatch) => {
   dispatch(registerUserLoading());
   axios
     .post(`${baseUrl}/signup`, newUserData)
-    .then((res) => {
-      dispatch(registerUserSuccess(res));
+    .then((response) => {
+      dispatch(registerUserSuccess(response));
     })
     .catch((error) => {
-      console.log(error.status, "error");
-      dispatch(registerUserFailure({ message: error.response }));
+      console.log(error.message, "error");
+      dispatch(registerUserFailure({ message: error.message }));
     });
 };

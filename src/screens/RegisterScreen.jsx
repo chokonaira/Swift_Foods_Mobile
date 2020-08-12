@@ -24,8 +24,8 @@ class Register extends Component {
   };
 
   componentDidUpdate() {
-     const { isAuthenticated, isError } = this.props.newUser
-      if(isAuthenticated) {
+     const { isRegistered, isError } = this.props.newUser
+      if(isRegistered) {
         showMessage({
           message: "Registration succesfull, Login",
           type: "success",
@@ -48,7 +48,7 @@ class Register extends Component {
           animation="none"
           color='#f0a500'
           visible={loading}
-          textContent={'Loading...'}
+          // textContent={'Loading...'}
           textStyle={{color: '#f0a500'}}
           overlayColor='rgba(0, 0, 0, .5)'
 

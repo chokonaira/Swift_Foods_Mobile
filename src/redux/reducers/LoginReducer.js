@@ -2,7 +2,7 @@ import * as types from '../actions';
 
 const initialState = {
   existingUser: {},
-  isLoading: false,
+  loading: false,
   isAuthenticated: false,
   isError: false
 }
@@ -13,20 +13,20 @@ const loginReducer = (state = initialState, action) => {
     case types.LOGIN_LOADING:
       return {
         ...state,
-        isLoading: true
+        loading: true
       };
     case types.LOGIN_SUCCESS:
       return {
         ...state,
         existingUser: action.payload,
-        isLoading: false,
+        loading: false,
         isAuthenticated: true
       };
     case types.LOGIN_FAILURE:
       return {
         ...state,
         existingUser: action.payload,
-        isLoading: false,
+        loading: false,
         isError: true
       };
       default: 

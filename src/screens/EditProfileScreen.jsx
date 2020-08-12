@@ -16,7 +16,6 @@ class EdiitProfileScreen extends Component {
       <View
         style={GlobalStyles.image}
       >
-        {/* <Header title='Profile Details'/> */}
         <ProfileForm navigation={this.props.navigation}/>
        
       </View>

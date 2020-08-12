@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^10.2.0",
+    "@react-native-community/async-storage": "^1.11.0",
     "@react-native-community/masked-view": "^0.1.10",
     "axios": "^0.19.2",
     "expo": "~38.0.8",
@@ -43,13 +44,15 @@
     "react-router-native": "^5.2.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
     "yup": "^0.29.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
     "babel-preset-expo": "~8.1.0",
-    "eslint-config-rallycoding": "^3.2.0"
+    "eslint-config-rallycoding": "^3.2.0",
+    "redux-logger": "^3.0.6"
   },
   "private": true
 }

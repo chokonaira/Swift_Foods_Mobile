@@ -11,27 +11,51 @@ import {
   Keyboard,
 } from "react-native";
 import { globalImages } from '../styles/globalImages'
+import { connect } from 'react-redux';
 import { GlobalStyles } from "../styles/globalStyles";
+import Spinner from 'react-native-loading-spinner-overlay';
+import { loginUser } from '../redux/actions/LoginAction';
 import { Formik } from "formik";
+import { showMessage } from "react-native-flash-message";
 import { loginSchema } from "../helpers/formValidationSchema";
 
 class Login extends Component {
-
-  pressHandlerRegister = () => {
-    this.props.navigation.navigate("Register");
-  };
 
   pressHandlerDashBoard = () => {
     this.props.navigation.navigate("Dashboard");
   };
 
+  componentDidUpdate() {
+    const { isAuthenticated, isError } = this.props.existingUser
+     if(isAuthenticated) {
+       showMessage({
+         message: "Login succesfull",
+         type: "success",
+       });
+     this.pressHandlerDashBoard();
+   } else if(isError){
+     showMessage({
+       message: "Opps something went wrong, try again",
+       type: "danger",
+     });
+   }
+ }
   render() {
+    const { loading } = this.props.existingUser
     return (
       <ImageBackground style={GlobalStyles.image} source={globalImages.LoginBanner}>
+        <Spinner
+          animation="none"
+          color='#f0a500'
+          visible={loading}
+          // textContent={'Loading...'}
+          textStyle={{color: '#f0a500'}}
+          overlayColor='rgba(0, 0, 0, .5)'
+
+        />
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
             <ScrollView style={GlobalStyles.authFormWrapper}>
-              
               <View style={GlobalStyles.authLoginForm}>
               <Text style={GlobalStyles.authText}>Login</Text>
                 <Formik
@@ -42,7 +66,7 @@ class Login extends Component {
                   validationSchema={loginSchema}
                   onSubmit={(values, actions) => {
                     actions.resetForm();
-                    console.log(values, "values");
+                    this.props.loginUser(values);
                   }}
                 >
                   {(props) => (
@@ -75,14 +99,14 @@ class Login extends Component {
                         {props.touched.password && props.errors.password}
                       </Text>
                       <TouchableOpacity
-                        onPress={this.pressHandlerRegister}
+                        onPress={() => this.props.navigation.navigate("Register")}
                         style={GlobalStyles.loginTextSpanWrapper}
                       >
                         <Text style={GlobalStyles.loginTextSpan}>Register</Text>
                       </TouchableOpacity>
                       <TouchableOpacity
                         style={GlobalStyles.formButton}
-                        onPress={this.pressHandlerDashBoard}
+                        onPress={props.handleSubmit}
                       >
                         <Text style={GlobalStyles.buttonText}>Submit</Text>
                       </TouchableOpacity>
@@ -102,4 +126,8 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = (state) => ({
+  existingUser: state.existingUser
+})
+
+export default connect(mapStateToProps, {loginUser})(Login);

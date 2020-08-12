@@ -12,7 +12,6 @@ class DashboardScreen extends Component {
       <View
         style={GlobalStyles.dashboard}
       >
-        {/* <Header title='Delicious Meals'/> */}
         <FoodCard />
       </View>
     );

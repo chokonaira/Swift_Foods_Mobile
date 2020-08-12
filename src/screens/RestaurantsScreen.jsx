@@ -5,7 +5,6 @@ import {
 } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import RestaurantCard from "../components/RestaurantCard"
-import Header from "../components/Header"
 
 
 class Restaurant extends Component {
@@ -14,7 +13,6 @@ class Restaurant extends Component {
       <View
         style={GlobalStyles.image}
       >
-        {/* <Header title='Restaurants'/> */}
         <RestaurantCard />
       </View>
     )

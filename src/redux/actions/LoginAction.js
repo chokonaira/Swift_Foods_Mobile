@@ -1,6 +1,5 @@
 import * as types from "./index";
 import axios from "axios";
-import LocalStorage from '../../helpers/localStorage'
 
 const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
 
@@ -24,9 +23,6 @@ export const loginUser = (existingUserData) => (dispatch) => {
     .post(`${baseUrl}/login`, existingUserData)
     .then((response) => {
       dispatch(loginUserSuccessful(response));
-      // const { token, id } = response.data;
-      // LocalStorage.setItem('Token', token)
-      // LocalStorage.setItem('userId', id)
     })
     .catch((error) => {
       dispatch(loginUserFailure({ message: error.message }));

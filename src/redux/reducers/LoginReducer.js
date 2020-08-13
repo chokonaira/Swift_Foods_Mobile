@@ -1,10 +1,12 @@
 import * as types from '../actions';
 
 const initialState = {
-  existingUser: {},
+  existingUser: null,
+  errors: null,
   loading: false,
   isAuthenticated: false,
-  isError: false
+  isError: false,
+  
 }
 
 
@@ -19,15 +21,19 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         existingUser: action.payload,
+        errors: null,
         loading: false,
-        isAuthenticated: true
+        isAuthenticated: true, 
+        isError: false,
       };
     case types.LOGIN_FAILURE:
       return {
         ...state,
-        existingUser: action.payload,
+        errors: action.payload,
+        existingUser: null,
+        isAuthenticated: false, 
         loading: false,
-        isError: true
+        isError: true,
       };
       default: 
         return state

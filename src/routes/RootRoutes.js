@@ -18,9 +18,6 @@ const RootNavigator = createStackNavigator({
       headerStyle: { height: 0 },
     }
   },
-  Profile: {
-    screen: ProfileScreen,
-  },
   Dashboard: {
     screen: TabRoutes,
     navigationOptions: ({navigation}) => {
@@ -29,6 +26,7 @@ const RootNavigator = createStackNavigator({
         headerLeft: () => <HeaderLogo navigation={navigation}/>,
         headerRight: () => <ShoppingCartIcon navigation={navigation}/>,
         headerStyle: { backgroundColor: "#f0a500" },
+        tranparentCard: true
       }
     },
   },

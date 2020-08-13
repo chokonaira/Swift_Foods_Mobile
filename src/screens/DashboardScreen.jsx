@@ -4,9 +4,19 @@ import {
 } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import FoodCard from "../components/FoodCard";
-import Header from "../components/Header"
+import {connect} from "react-redux";
+import { loginUser } from '../redux/actions/LoginAction';
+import { userProfile } from '../redux/actions/ProfileAction';
 
 class DashboardScreen extends Component {
+
+  componentDidMount(){
+    const {userProfile} = this.props
+    console.log(userProfile, 'userProfile')
+
+  }
+  
+
   render() {
     return (
       <View
@@ -18,4 +28,9 @@ class DashboardScreen extends Component {
   }
 }
 
-export default DashboardScreen;
+const mapStateToProps = (state) => ({
+  existingUser: state.existingUser,
+  userProfile: state.userProfile
+})
+
+export default connect(mapStateToProps, {userProfile, loginUser})(DashboardScreen);

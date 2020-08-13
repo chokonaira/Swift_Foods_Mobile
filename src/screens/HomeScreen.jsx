@@ -11,7 +11,7 @@ import {GlobalStyles} from "../styles/globalStyles"
 export default function Home({ navigation }) {
 
   const pressHandler = () => {
-    navigation.navigate("Register");
+    navigation.navigate("Login");
   };
 
   return (

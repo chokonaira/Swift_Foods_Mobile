@@ -26,12 +26,12 @@ class Login extends Component {
   };
 
   componentDidUpdate() {
-    const { isAuthenticated, isError } = this.props.existingUser
+    const { existingUser: {isAuthenticated, isError }} = this.props
      if(isAuthenticated) {
        showMessage({
          message: "Login succesfull",
          type: "success",
-       });
+       }); 
      this.pressHandlerDashBoard();
    } else if(isError){
      showMessage({
@@ -41,7 +41,7 @@ class Login extends Component {
    }
  }
   render() {
-    const { loading } = this.props.existingUser
+    const { existingUser: { loading }} = this.props
     return (
       <ImageBackground style={GlobalStyles.image} source={globalImages.LoginBanner}>
         <Spinner

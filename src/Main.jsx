@@ -10,10 +10,6 @@ import { loginUser } from './redux/actions/LoginAction';
 class Main extends Component <{}>{
   componentDidMount() {
     // console.log(this.props, "this.props");
-    // const {existingUser: {existingUser:{data: {token}}}} = this.props
-    // console.log('---------------------------------------------------')
-    // console.log(token, 'dataaaaa')
-    // console.log('---------------------------------------------------')
   }
 
   render() {
@@ -31,4 +27,5 @@ const mapStateToProps = (state) => ({
   existingUser: state.existingUser
 })
 
+// export default Main;
 export default connect(mapStateToProps, {loginUser})(Main);

@@ -8,7 +8,7 @@ import rootReducer from "./reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const persistConfig = {
-  key: "existingUser",
+  key: "root",
   storage: AsyncStorage,
   whitelist: ['existingUser']
 }

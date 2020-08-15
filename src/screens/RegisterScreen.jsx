@@ -19,9 +19,6 @@ import { showMessage } from "react-native-flash-message";
 
 class Register extends Component {
 
-  pressHandlerLogin = () => {
-    this.props.navigation.navigate("Login");
-  };
 
   componentDidUpdate() {
      const { isRegistered, isError } = this.props.newUser
@@ -30,7 +27,7 @@ class Register extends Component {
           message: "Registration succesfull, Login",
           type: "success",
         });
-      this.pressHandlerLogin();
+        this.props.navigation.navigate("Login");
     } else if(isError){
       showMessage({
         message: "Opps something went wrong, try again",

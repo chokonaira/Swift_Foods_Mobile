@@ -21,10 +21,6 @@ import { loginSchema } from "../helpers/formValidationSchema";
 
 class Login extends Component {
 
-  pressHandlerDashBoard = () => {
-    this.props.navigation.navigate("Dashboard");
-  };
-
   componentDidUpdate() {
     const { existingUser: {isAuthenticated, isError }} = this.props
      if(isAuthenticated) {
@@ -32,7 +28,7 @@ class Login extends Component {
          message: "Login succesfull",
          type: "success",
        }); 
-     this.pressHandlerDashBoard();
+       this.props.navigation.navigate("Dashboard");
    } else if(isError){
      showMessage({
        message: "Opps something went wrong, try again",
@@ -48,7 +44,6 @@ class Login extends Component {
           animation="none"
           color='#f0a500'
           visible={loading}
-          // textContent={'Loading...'}
           textStyle={{color: '#f0a500'}}
           overlayColor='rgba(0, 0, 0, .5)'
 
@@ -66,6 +61,7 @@ class Login extends Component {
                   validationSchema={loginSchema}
                   onSubmit={(values, actions) => {
                     actions.resetForm();
+                    // console.log(values, 'values')
                     this.props.loginUser(values);
                   }}
                 >

@@ -21,17 +21,13 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         existingUser: action.payload,
-        errors: null,
         loading: false,
         isAuthenticated: true, 
-        isError: false,
       };
     case types.LOGIN_FAILURE:
       return {
         ...state,
         errors: action.payload,
-        existingUser: null,
-        isAuthenticated: false, 
         loading: false,
         isError: true,
       };

@@ -15,7 +15,7 @@ class Main extends Component <{}>{
   render() {
     return (
       <React.Fragment>
-        <StatusBar backgroundColor="#f0a500" barStyle="default-content" />
+        <StatusBar barStyle="light-content" />
           <Navigator />
           <FlashMessage position="top" />
       </React.Fragment>

@@ -21,14 +21,11 @@ const profileReducer = (state = initialState, action) => {
         userProfile: action.payload,
         loading: false,
         isSuccess: true,
-        isError: false,
       };
     case types.PROFILE_FAILURE:
       return {
-        erros: action.payload,
         errors: action.payload,
         loading: false,
-        isSuccess: false,
         isError: true,
       };
     default:

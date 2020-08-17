@@ -11,8 +11,8 @@ import { userProfile } from '../redux/actions/ProfileAction';
 class DashboardScreen extends Component {
 
   componentDidMount(){
-    const {userProfile} = this.props
-    console.log(userProfile, 'userProfile')
+    const {existingUser} = this.props
+    console.log(existingUser, 'userProfile')
 
   }
   

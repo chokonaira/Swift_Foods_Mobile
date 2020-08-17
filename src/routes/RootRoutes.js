@@ -1,12 +1,9 @@
 import { createAppContainer } from "react-navigation";
 import TabRoutes from './TabRoutes';
 import StackRoutes from './StackRoutes';
-import DrawerRoutes from './DrawerRoute';
-
 import React from 'react'
 import ShoppingCartIcon from '../components/ShoppingCartIcon';
 import HeaderLogo from '../components/HeaderLogo';
-import ProfileScreen from "../screens/EditProfileScreen";
 import { createStackNavigator } from "react-navigation-stack";
 
 
@@ -30,6 +27,7 @@ const RootNavigator = createStackNavigator({
       }
     },
   },
+  
 })
 
 export default createAppContainer(RootNavigator);

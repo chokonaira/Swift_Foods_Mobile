@@ -9,7 +9,7 @@ import { persistReducer } from 'redux-persist';
 const existingUserPersistConfig = {
   key: 'existingUser',
   storage: AsyncStorage,
-  blacklist: ['errors', 'loading', 'isError']
+  blacklist: ['errors', 'loading', 'isError',]
 }
 
 

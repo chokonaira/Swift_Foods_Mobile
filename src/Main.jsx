@@ -2,15 +2,10 @@ import React, { Component } from "react";
 import Navigator from "./routes/RootRoutes";
 import { YellowBox, StatusBar } from "react-native";
 YellowBox.ignoreWarnings(["Remote debugger"]);
-import { connect } from 'react-redux';
 import FlashMessage from "react-native-flash-message";
-import { loginUser } from './redux/actions/LoginAction';
 
 
-class Main extends Component <{}>{
-  componentDidMount() {
-    // console.log(this.props, "this.props");
-  }
+class Main extends Component{
 
   render() {
     return (
@@ -23,9 +18,5 @@ class Main extends Component <{}>{
   }
 }
 
-const mapStateToProps = (state) => ({
-  existingUser: state.existingUser
-})
 
-// export default Main;
-export default connect(mapStateToProps, {loginUser})(Main);
+export default Main;

@@ -100,12 +100,18 @@ class Login extends Component {
                       >
                         <Text style={GlobalStyles.loginTextSpan}>Register</Text>
                       </TouchableOpacity>
-                      <TouchableOpacity
+                      {loading ? <TouchableOpacity
+                        style={GlobalStyles.formButton}
+                        onPress={props.handleSubmit}
+                      >
+                        <Text style={GlobalStyles.buttonText}>Loading...</Text>
+                      </TouchableOpacity> : <TouchableOpacity
                         style={GlobalStyles.formButton}
                         onPress={props.handleSubmit}
                       >
                         <Text style={GlobalStyles.buttonText}>Submit</Text>
-                      </TouchableOpacity>
+                      </TouchableOpacity>}
+                      
                       <Text style={GlobalStyles.emptyInput}></Text>
                       <Text style={GlobalStyles.emptyInput}></Text>
                       <Text style={GlobalStyles.emptyInput}></Text>

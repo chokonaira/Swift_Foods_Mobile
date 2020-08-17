@@ -22,13 +22,15 @@ class FoodCard extends Component {
           justifyContent: "center",
           alignItems: "center",
           marginTop: 5,
-          // width: "100%",
+          width: "100%",
         }}
       >
         <FlatList
+        // style={{}}
           data={foodImages}
           renderItem={({ item }) => (
             <View
+            style={{width: '50%'}}
               // activeOpacity={0.5}
               // onPress={this.GetListItem.bind(this, item.p_title)}
               >
@@ -40,11 +42,7 @@ class FoodCard extends Component {
                     color: "rgba(150, 150, 150, 1)",
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
-                  style={{
-                    width: 170,
-                    height: 140,
-                    margin: 4,
-                  }}
+                  style={GlobalStyles.flastList}
                 />
                 <View style={{flexDirection:'row', justifyContent:'space-around'}}>
                 <View>

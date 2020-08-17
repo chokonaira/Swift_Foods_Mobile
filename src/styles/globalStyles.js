@@ -1,6 +1,12 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 export const GlobalStyles = StyleSheet.create({
+  flastList:{
+
+    // width: Platform.OS === 'ios' ? 173 : 190,
+    height: 140,
+    margin: 4,
+  },
   authForm: {
     flex: 1,
     width: "100%",

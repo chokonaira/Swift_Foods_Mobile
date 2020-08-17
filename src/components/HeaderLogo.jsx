@@ -7,6 +7,7 @@ import {
 
 
 class HeaderLogo extends Component {
+
   render() {
     return (
       <View style={{width: '100%', flexDirection: 'row', alignItems:'center', justifyContent: 'space-around'}}>

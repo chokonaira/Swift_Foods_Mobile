@@ -1,7 +1,8 @@
 import * as types from '../actions';
 
 const initialState = {
-  newUser: {},
+  newUser: null,
+  errors: null,
   loading: false,
   isRegistered: false,
   isError: false
@@ -26,9 +27,8 @@ const registerReducer = (state = initialState, action) => {
       case types.REGISTER_FAILURE:
       return {
         ...state,
-        newUser: action.payload,
+        errors: action.payload,
         loading: false,
-        isRegistered: false,
         isError: true
         
       };

@@ -1,6 +1,6 @@
 import * as types from "./index";
 import axios from "axios";
-
+// import {storeData} from "../../helpers/asyncStorage"
 const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
 
 const loginUserLoading = () => ({
@@ -17,12 +17,12 @@ const loginUserFailure = (payload) => ({
   payload,
 });
 
-export const loginUser = (existingUserData) => (dispatch) => {
+export const loginUser = (payload) => (dispatch) => {
   dispatch(loginUserLoading());
   axios
-    .post(`${baseUrl}/login`, existingUserData)
+    .post(`${baseUrl}/login`, payload)
     .then((response) => {
-      dispatch(loginUserSuccessful(response));
+      dispatch(loginUserSuccessful(response.data));
     })
     .catch((error) => {
       dispatch(loginUserFailure({ message: error.message }));

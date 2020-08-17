@@ -1,4 +1,4 @@
-import * as types from '../actions';
+import * as types from "../actions";
 
 const initialState = {
   existingUser: null,
@@ -6,38 +6,41 @@ const initialState = {
   loading: false,
   isAuthenticated: false,
   isError: false,
-  
-}
-
+  isLoggout: false,
+};
 
 const loginReducer = (state = initialState, action) => {
-  switch(action.type){
+  switch (action.type) {
     case types.LOGIN_LOADING:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case types.LOGIN_SUCCESS:
       return {
         ...state,
         existingUser: action.payload,
-        errors: null,
         loading: false,
-        isAuthenticated: true, 
-        isError: false,
+        isAuthenticated: true,
       };
     case types.LOGIN_FAILURE:
       return {
         ...state,
         errors: action.payload,
-        existingUser: null,
-        isAuthenticated: false, 
         loading: false,
         isError: true,
       };
-      default: 
-        return state
+    case types.LOGOUT_SUCCESS:
+      return {
+        ...state,
+        existingUser: null,
+        loading: false,
+        isAuthenticated: false,
+        isLoggout: true,
+      };
+    default:
+      return state;
   }
-}
+};
 
 export default loginReducer;

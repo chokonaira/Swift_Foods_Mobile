@@ -3,12 +3,28 @@ import { View, Image, TouchableOpacity, Text } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import { globalImages } from "../styles/globalImages";
 import ProfileFormModal from './ProfileFormModal'
+import { connect } from "react-redux";
+import { userProfile } from "../redux/actions/ProfileAction";
+import { logoutUser } from "../redux/actions/LogoutAction";
+
 
 
 class ProfileCard extends Component {
   state = {
     modal: false,
   };
+
+  componentDidMount() {
+    // const { isAuthenticated } = this.props.existingUser;
+    // if (isAuthenticated) {
+      console.log(this.props, " Profile page");
+    //   this.props.navigation.navigate("Dashboard");
+    // }
+  }
+  onLogOut = () => {
+    this.props.logoutUser();
+    this.props.navigation.navigate('Home')
+  }
 
   openModal = () => {
     this.setState({ modal: true });
@@ -27,7 +43,7 @@ class ProfileCard extends Component {
             source={globalImages.Passport}
           />
 
-          <TouchableOpacity style={GlobalStyles.profileTopButton}>
+          <TouchableOpacity onPress={this.onLogOut} style={GlobalStyles.profileTopButton}>
             <Text style={GlobalStyles.profileTopButtonText}>Logout</Text>
           </TouchableOpacity>
         </View>
@@ -66,4 +82,9 @@ class ProfileCard extends Component {
   }
 }
 
-export default ProfileCard;
+const mapStateToProps = (state) => ({
+  existingUser: state.existingUser,
+  profile: state.userProfile,
+});
+export default connect(mapStateToProps, { logoutUser, userProfile })(ProfileCard);
+

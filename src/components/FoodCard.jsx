@@ -31,7 +31,7 @@ class FoodCard extends Component {
           renderItem={({ item }) => (
             <View
             style={{width: '50%'}}
-              // activeOpacity={0.5}
+              activeOpacity={0.5}
               // onPress={this.GetListItem.bind(this, item.p_title)}
               >
                 <Image

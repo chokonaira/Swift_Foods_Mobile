@@ -27,6 +27,7 @@ class Login extends Component {
        showMessage({
          message: "Login succesfull",
          type: "success",
+         style: {alignContent: 'center', justifyContent:'center'} 
        }); 
        this.props.navigation.navigate("Dashboard");
    } else if(isError){

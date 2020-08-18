@@ -2,9 +2,8 @@ import { StyleSheet, Platform } from "react-native";
 
 export const GlobalStyles = StyleSheet.create({
   flastList:{
-
     // width: Platform.OS === 'ios' ? 173 : 190,
-    height: 140,
+    height: 150,
     margin: 4,
   },
   authForm: {
@@ -269,9 +268,10 @@ export const GlobalStyles = StyleSheet.create({
     borderRadius: 50,
   },
   profileAvartarImage: {
-    height: "80%",
+    height: "70%",
     width: "50%",
-    marginBottom: 15,
+    marginTop: 15,
+    marginBottom: 20,
     borderRadius: 60,
   },
   profileWrapper: {
@@ -280,11 +280,13 @@ export const GlobalStyles = StyleSheet.create({
     padding: 7,
   },
   profileBottomText: {
+    fontSize: 18,
     fontWeight: "bold",
     color: "#fff",
     marginLeft: 10,
   },
   profileBottomTextKey: {
+    fontSize: 18,
     color: "black",
     fontWeight: "bold",
   },

@@ -15,11 +15,13 @@ class ProfileCard extends Component {
   };
 
   componentDidMount() {
-    // const { isAuthenticated } = this.props.existingUser;
-    // if (isAuthenticated) {
-      console.log(this.props, " Profile page");
+    const { isAuthenticated } = this.props.existingUser;
+    if (isAuthenticated) {
+    const { userProfile:{user} } = this.props.profile;
+
+      console.log(user, " Profile page");
     //   this.props.navigation.navigate("Dashboard");
-    // }
+    }
   }
   onLogOut = () => {
     this.props.logoutUser();
@@ -34,15 +36,20 @@ class ProfileCard extends Component {
   }
   render() {
     const { modal } = this.state;
+    const { userProfile:{user} } = this.props.profile;
     return (
       <>
       <View style={GlobalStyles.image}>
         <View style={GlobalStyles.profitTop}>
+          {user.image_url === null ? 
           <Image
             style={GlobalStyles.profileAvartarImage}
-            source={globalImages.Passport}
-          />
-
+            source={globalImages.Avartar}
+          /> :
+          <Image
+            style={GlobalStyles.profileAvartarImage}
+            source={{uri: user.image_url}}
+          />}
           <TouchableOpacity onPress={this.onLogOut} style={GlobalStyles.profileTopButton}>
             <Text style={GlobalStyles.profileTopButtonText}>Logout</Text>
           </TouchableOpacity>
@@ -51,23 +58,20 @@ class ProfileCard extends Component {
         <View style={GlobalStyles.profileBottom}>
           <View style={GlobalStyles.profileWrapper}>
             <Text style={GlobalStyles.profileBottomTextKey}>First Name: </Text>
-            <Text style={GlobalStyles.profileBottomText}>Henry </Text>
+            <Text style={GlobalStyles.profileBottomText}>{user.first_name} </Text>
           </View>
           <View style={GlobalStyles.profileWrapper}>
             <Text style={GlobalStyles.profileBottomTextKey}>Last Name: </Text>
-            <Text style={GlobalStyles.profileBottomText}>Okonkwo </Text>
+            <Text style={GlobalStyles.profileBottomText}>{user.last_name}</Text>
           </View>
           <View style={GlobalStyles.profileWrapper}>
             <Text style={GlobalStyles.profileBottomTextKey}>Email: </Text>
-            <Text style={GlobalStyles.profileBottomText}>okonkwo.henry2012@gmail.com </Text>
+            <Text style={GlobalStyles.profileBottomText}>{user.email}</Text>
           </View>
-          <View style={GlobalStyles.profileWrapper}>
-            <Text style={GlobalStyles.profileBottomTextKey}>Address: </Text>
-            <Text style={GlobalStyles.profileBottomText}>#6, 386 St, Kagarama </Text>
-          </View>
+          
           <View style={GlobalStyles.profileWrapper}>
             <Text style={GlobalStyles.profileBottomTextKey}>Phone: </Text>
-            <Text style={GlobalStyles.profileBottomText}>+2348069537560 </Text>
+            <Text style={GlobalStyles.profileBottomText}>{user.phone}</Text>
           </View>
           <Text style={GlobalStyles.emptyInput}></Text>
           <TouchableOpacity onPress={this.openModal} style={GlobalStyles.profileBottomButton}>

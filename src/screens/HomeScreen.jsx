@@ -26,9 +26,8 @@ class Home extends Component {
             animation="none"
             color="#f0a500"
             visible={loading}
-            textContent="Hold on"
             textStyle={{ color: "#f0a500" }}
-            overlayColor="red"
+            overlayColor="rgba(0, 0, 0, .6)"
           />
       );
     }

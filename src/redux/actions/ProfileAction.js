@@ -30,7 +30,6 @@ export const userProfile = (userId, token) => (dispatch) => {
   axios
     .get(`${baseUrl}/profile/${userId}`, {headers})
     .then((response) => {
-      console.log(response, '++++++++++++++++++++++')
       dispatch(profileSuccess(response.data));
     })
     .catch((error) => {

@@ -47,7 +47,7 @@ class Register extends Component {
           visible={loading}
           // textContent={'Loading...'}
           textStyle={{color: '#f0a500'}}
-          overlayColor='rgba(0, 0, 0, .5)'
+          overlayColor='rgba(0, 0, 0, .6)'
 
         />
         <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>

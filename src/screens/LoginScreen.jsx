@@ -45,7 +45,7 @@ class Login extends Component {
           color='#f0a500'
           visible={loading}
           textStyle={{color: '#f0a500'}}
-          overlayColor='rgba(0, 0, 0, .5)'
+          overlayColor='rgba(0, 0, 0, .6)'
 
         />
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>

@@ -22,7 +22,7 @@ class FoodCard extends Component {
           justifyContent: "center",
           alignItems: "center",
           marginTop: 5,
-          width: "100%",
+          // width: "100%",
         }}
       >
         <FlatList

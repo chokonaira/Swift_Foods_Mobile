@@ -19,15 +19,17 @@ class Home extends Component {
   }
   render() {
     const { isAuthenticated, loading } = this.props.existingUser;
-    if (loading || isAuthenticated) {
+    if (loading) {
       return (
-        <Spinner
-          animation="none"
-          color="#f0a500"
-          visible={loading}
-          textStyle={{ color: "#f0a500" }}
-          overlayColor="rgba(0, 0, 0, .5)"
-        />
+       
+          <Spinner
+            animation="none"
+            color="#f0a500"
+            visible={loading}
+            textContent="Hold on"
+            textStyle={{ color: "#f0a500" }}
+            overlayColor="red"
+          />
       );
     }
     return (

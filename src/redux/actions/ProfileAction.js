@@ -1,19 +1,15 @@
 import * as types from "./index";
 import axios from "axios";
 
+
 const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
-const token = "knknknkknkk";
-const headers = {
-  "Content-Type": "application/json",
-  Authorization: `Bearer ${token}`,
-};
 
 const profileLoading = () => ({
   type: types.PROFILE_LOADING,
 });
 
 const profileSuccess = (userId) => ({
-  type: types.PROFILE_LOADING,
+  type: types.PROFILE_SUCCESS,
   payload: userId,
 });
 
@@ -22,12 +18,20 @@ const profileFailure = (userId) => ({
   payload: userId,
 });
 
-export const userProfile = (userId) => (dispatch) => {
+
+
+
+export const userProfile = (userId, token) => (dispatch) => {
   dispatch(profileLoading());
+  headers = {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  };
   axios
-    .get(`${baseUrl}/profile/${userId}`, { headers })
+    .get(`${baseUrl}/profile/${userId}`, {headers})
     .then((response) => {
-      dispatch(profileSuccess(response));
+      console.log(response, '++++++++++++++++++++++')
+      dispatch(profileSuccess(response.data));
     })
     .catch((error) => {
       dispatch(profileFailure(error));

@@ -4,7 +4,11 @@ import { GlobalStyles } from "../styles/globalStyles";
 import Image from "react-native-image-progress";
 import ProgressBar from "react-native-progress";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import { loginUser } from "../redux/actions/LoginAction";
 import Iconik from "react-native-vector-icons/Ionicons";
+import { createShoppingBasket } from "../redux/actions/BasketAction";
+import { connect } from "react-redux";
+
 
 // import foodImage from "../styles/globalImages";
 import { foodImages } from "../styles/globalImages";
@@ -52,6 +56,7 @@ class FoodCard extends Component {
                 </View>
                 <TouchableOpacity >
                 <Icon
+                  onPress={() => addItem()}
                   style={[{ color: '#474744',  }]}
                   size={20}
                   name={"cart-plus"}
@@ -69,4 +74,13 @@ class FoodCard extends Component {
     );
   }
 }
-export default FoodCard;
+
+const mapStateToProps = (state) => ({
+  userProfile: state.userProfile,
+  basket: state.basket,
+});
+
+export default connect(mapStateToProps, {
+  loginUser,
+  createShoppingBasket,
+})(FoodCard);

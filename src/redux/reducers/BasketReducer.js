@@ -1,15 +1,17 @@
 import * as types from "../actions/index";
 
 const initialState = {
-  basket: null,
+  basket: {},
   isBasketCreated: false,
+  basketFetched: false,
   loading: false,
   errors: null,
-  isError: false
+  isError: false,
+  isLoggout: false,
 };
 
-export const createShoppingBasket = (state = initialState, actions) => {
-  switch (actions.types) {
+const createShoppingBasket = (state = initialState, action) => {
+  switch (action.types) {
     case types.BASKET_LOADING:
       return {
         ...state,
@@ -21,7 +23,6 @@ export const createShoppingBasket = (state = initialState, actions) => {
         basket: actions.payload,
         loading: false,
         isBasketCreated: true,
-        isError: false,
       };
     case types.CREATE_BASKET_FAILURE:
       return {
@@ -29,7 +30,33 @@ export const createShoppingBasket = (state = initialState, actions) => {
         errors: actions.payload,
         loading: false,
         isError: true,
-        isBasketCreated: false,
       };
+    case types.FETCH_BASKET_SUCCESS:
+      return {
+        ...state,
+        basket: actions.payload,
+        loading: false,
+        basketFetched: true,
+      };
+    case types.FETCH_BASKET_FAILURE:
+      return {
+        ...state,
+        errors: actions.payload,
+        loading: false,
+        isError: true,
+        basketFetched: false,
+      };
+    case types.LOGOUT_SUCCESS:
+      return {
+        ...state,
+        basket: null,
+        loading: false,
+        isBasketCreated: false,
+        isLoggout: true,
+      };
+    default:
+      return state;
   }
 };
+
+export default createShoppingBasket;

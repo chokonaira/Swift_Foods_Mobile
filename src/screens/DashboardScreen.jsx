@@ -5,17 +5,29 @@ import FoodCard from "../components/FoodCard";
 import { connect } from "react-redux";
 import { loginUser } from "../redux/actions/LoginAction";
 import { userProfile } from "../redux/actions/ProfileAction";
+import { createShoppingBasket, getShoppingBasket } from "../redux/actions/BasketAction";
 
 class DashboardScreen extends Component {
   componentDidMount() {
-    const { existingUser } = this.props;
-    if (existingUser.isAuthenticated) {
-      const {
-        existingUser: {
-          existingUser: { id, token },
-        },
-      } = this.props;
+    console.log(this.props, '{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}')
+    const { existingUser:{isAuthenticated} } = this.props;
+    const { basket:{isBasketCreated} } = this.props;
+    if (isAuthenticated) {
+      const { existingUser: { existingUser: { id, token }}} = this.props;
       this.props.userProfile(id, token);
+        if(!isBasketCreated){
+          this.props.createShoppingBasket(id, token);
+        }     
+    }
+  }
+
+  componentDidUpdate() {
+    const { basket:{isBasketCreated} } = this.props;
+    if (isBasketCreated) {
+      const { existingUser: { existingUser: { id, token }}} = this.props;
+      const { basket: { basket: { id: basketId }}} = this.props;
+      console.log(id, basketId, token , 'bolanle get ti boyfriend')
+      this.props.getShoppingBasket(id, basketId, token);
     }
   }
 
@@ -31,8 +43,12 @@ class DashboardScreen extends Component {
 const mapStateToProps = (state) => ({
   existingUser: state.existingUser,
   userProfile: state.userProfile,
+  basket: state.basket,
 });
 
-export default connect(mapStateToProps, { userProfile, loginUser })(
-  DashboardScreen
-);
+export default connect(mapStateToProps, {
+  userProfile,
+  loginUser,
+  createShoppingBasket,
+  getShoppingBasket
+})(DashboardScreen);

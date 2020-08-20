@@ -10,6 +10,10 @@ class ShoppingCartIcon extends Component {
     modal: false,
   };
 
+  componentDidMount() {
+    console.log('helllllll++++++++++++')
+  }
+
   openModal = () => {
     this.setState({ modal: true });
   };

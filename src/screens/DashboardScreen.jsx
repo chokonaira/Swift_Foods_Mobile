@@ -8,15 +8,16 @@ import { userProfile } from "../redux/actions/ProfileAction";
 import { createShoppingBasket, getShoppingBasket } from "../redux/actions/BasketAction";
 
 class DashboardScreen extends Component {
-  componentDidMount() {
-    console.log(this.props, '{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}')
+  async componentDidMount() {
     const { existingUser:{isAuthenticated} } = this.props;
     const { basket:{isBasketCreated} } = this.props;
     if (isAuthenticated) {
       const { existingUser: { existingUser: { id, token }}} = this.props;
-      this.props.userProfile(id, token);
+      
+      await this.props.userProfile(id, token);
         if(!isBasketCreated){
-          this.props.createShoppingBasket(id, token);
+          await this.props.createShoppingBasket(id, token);
+         console.log(isBasketCreated, 'yessssssss it was')
         }     
     }
   }
@@ -26,7 +27,7 @@ class DashboardScreen extends Component {
     if (isBasketCreated) {
       const { existingUser: { existingUser: { id, token }}} = this.props;
       const { basket: { basket: { id: basketId }}} = this.props;
-      console.log(id, basketId, token , 'bolanle get ti boyfriend')
+      console.log(id, basketId, token , 'component updated')
       this.props.getShoppingBasket(id, basketId, token);
     }
   }

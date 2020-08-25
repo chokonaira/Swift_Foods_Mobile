@@ -8,20 +8,21 @@ const profileLoading = () => ({
   type: types.PROFILE_LOADING,
 });
 
-const profileSuccess = (userId) => ({
+const profileSuccess = (payload) => ({
   type: types.PROFILE_SUCCESS,
-  payload: userId,
+  payload,
 });
 
-const profileFailure = (userId) => ({
+const profileFailure = (payload) => ({
   type: types.PROFILE_FAILURE,
-  payload: userId,
+  payload,
 });
 
 
 
 
 export const userProfile = (userId, token) => (dispatch) => {
+  // console.log(id, token, 'yessssssss it was')
   dispatch(profileLoading());
   headers = {
     "Content-Type": "application/json",
@@ -33,6 +34,6 @@ export const userProfile = (userId, token) => (dispatch) => {
       dispatch(profileSuccess(response.data));
     })
     .catch((error) => {
-      dispatch(profileFailure(error));
+      dispatch(profileFailure({message: error.message}));
     });
 };

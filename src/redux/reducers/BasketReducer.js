@@ -10,8 +10,8 @@ const initialState = {
   isLoggout: false,
 };
 
-const createShoppingBasket = (state = initialState, action) => {
-  switch (action.types) {
+const shoppingBasket = (state = initialState, action) => {
+  switch (action.type) {
     case types.BASKET_LOADING:
       return {
         ...state,
@@ -20,28 +20,28 @@ const createShoppingBasket = (state = initialState, action) => {
     case types.CREATE_BASKET_SUCCESS:
       return {
         ...state,
-        basket: actions.payload,
+        basket: action.payload,
         loading: false,
         isBasketCreated: true,
       };
     case types.CREATE_BASKET_FAILURE:
       return {
         ...state,
-        errors: actions.payload,
+        errors: action.payload,
         loading: false,
         isError: true,
       };
     case types.FETCH_BASKET_SUCCESS:
       return {
         ...state,
-        basket: actions.payload,
+        basket: action.payload,
         loading: false,
         basketFetched: true,
       };
     case types.FETCH_BASKET_FAILURE:
       return {
         ...state,
-        errors: actions.payload,
+        errors: action.payload,
         loading: false,
         isError: true,
         basketFetched: false,
@@ -53,10 +53,11 @@ const createShoppingBasket = (state = initialState, action) => {
         loading: false,
         isBasketCreated: false,
         isLoggout: true,
+        errors: null,
       };
     default:
       return state;
   }
 };
 
-export default createShoppingBasket;
+export default shoppingBasket;

@@ -8,16 +8,20 @@ import { loginUser } from "../redux/actions/LoginAction";
 import Iconik from "react-native-vector-icons/Ionicons";
 import { createShoppingBasket } from "../redux/actions/BasketAction";
 import { connect } from "react-redux";
-
-
-// import foodImage from "../styles/globalImages";
 import { foodImages } from "../styles/globalImages";
 
 class FoodCard extends Component {
+  state = {
+    cart: []
+  }
+
   openMenu = () => {
     // this.navigation.openDrawer();
   };
 
+  addItem = () => {
+    
+  }
   render() {
     return (
       <View
@@ -26,7 +30,6 @@ class FoodCard extends Component {
           justifyContent: "center",
           alignItems: "center",
           marginTop: 5,
-          // width: "100%",
         }}
       >
         <FlatList
@@ -57,7 +60,7 @@ class FoodCard extends Component {
                 <TouchableOpacity >
                 <Icon
                   onPress={() => addItem()}
-                  style={[{ color: '#474744',  }]}
+                  style={[{ color: '#474744' }]}
                   size={20}
                   name={"cart-plus"}
                 />

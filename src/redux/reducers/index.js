@@ -28,4 +28,4 @@ export default combineReducers({
 });
 
 
-export {profileReducer}
+// export {profileReducer}

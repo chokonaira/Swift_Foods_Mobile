@@ -2,6 +2,7 @@ import * as types from "./index";
 import axios from "axios";
 
 const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
+// const local = "http://127.0.0.1:3000";
 
 const basketLoading = () => ({
   type: types.BASKET_LOADING,
@@ -18,25 +19,29 @@ const createBasketFailure = (payload) => ({
 });
 
 const fetchbasketSuccess = (payload) => ({
-  type: types.CREATE_BASKET_SUCCESS,
+  type: types.FETCH_BASKET_SUCCESS,
   payload,
 });
 
 const fetchBasketFailure = (payload) => ({
-  type: types.CREATE_BASKET_FAILURE,
+  type: types.FETCH_BASKET_FAILURE,
   payload,
 });
 
-export const createShoppingBasket = (userId) => (dispatch) => {
+export const createShoppingBasket = (userId, token) => (dispatch) => {
   dispatch(basketLoading());
   const headers = {
     "Content-Type": "application/json",
-    Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MywiZW1haWwiOiJjaG9AZ21haWwuY29tIiwiZXhwIjoxNTk4NDM0NjM0fQ.E09zplU--WAr2x7Kxr6_mesHUrlY-UXf7V2qliCKnpo`,
+    Authorization: `Bearer ${token}`,
   };
   axios
-    .post(`${baseUrl}/baskets/create/${userId}`, { headers })
+    .post(`${baseUrl}/baskets/create/${userId}`, null, { headers })
     .then((response) => {
       dispatch(createbasketSuccess(response.data));
+      const {
+        basket: { id: basketId },
+      } = response.data;
+      dispatch(getShoppingBasket(userId, basketId, token));
     })
     .catch((error) => {
       dispatch(createBasketFailure({ message: error.message }));

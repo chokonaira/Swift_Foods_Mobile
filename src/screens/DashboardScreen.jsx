@@ -10,17 +10,19 @@ import { createShoppingBasket, getShoppingBasket } from "../redux/actions/Basket
 class DashboardScreen extends Component {
  componentDidMount() {
     const { existingUser:{isAuthenticated} } = this.props;
-    const { basket:{isBasketCreated} } = this.props;
+    const { createdBasket:{isBasketCreated} } = this.props;
     if (isAuthenticated) {
       const { existingUser: { existingUser: { id, token }}} = this.props;
       
       this.props.userProfile(id, token);
         if(!isBasketCreated){
          this.props.createShoppingBasket(id, token);
+         console.log(isBasketCreated,'basket was created again');
          return
         }  
-        const { basket: { basket: { id: basketId }}} = this.props;
+        const { createdBasket: { basket: { basket:{ id: basketId }}}} = this.props;
         this.props.getShoppingBasket(id, basketId, token);   
+        console.log(isBasketCreated,'basket was fetched again instead');
     }
   }
 
@@ -36,7 +38,8 @@ class DashboardScreen extends Component {
 const mapStateToProps = (state) => ({
   existingUser: state.existingUser,
   userProfile: state.userProfile,
-  basket: state.basket,
+  createdBasket: state.createdBasket,
+  existingBasket: state.existingBasket
 });
 
 export default connect(mapStateToProps, {

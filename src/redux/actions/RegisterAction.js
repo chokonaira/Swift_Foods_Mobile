@@ -24,7 +24,6 @@ export const registerUser = (newUserData) => (dispatch) => {
       dispatch(registerUserSuccess(response.data));
     })
     .catch((error) => {
-      console.log(error.message, "error");
       dispatch(registerUserFailure({ message: error.message }));
     });
 };

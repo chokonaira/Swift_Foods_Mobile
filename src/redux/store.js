@@ -9,7 +9,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 const persistConfig = {
   key: "root",
   storage: AsyncStorage,
-  blacklist: ['existingUser']
+  blacklist: ['existingUser', 'createdBasket']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

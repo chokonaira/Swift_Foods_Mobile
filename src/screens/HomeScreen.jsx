@@ -13,7 +13,6 @@ class Home extends Component {
   componentDidMount() {
     const { isAuthenticated } = this.props.existingUser;
     if (isAuthenticated) {
-      console.log(this.props, "this.props");
       this.props.navigation.navigate("Dashboard");
     }
   }

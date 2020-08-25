@@ -4,6 +4,9 @@ import loginReducer from './LoginReducer'
 import profileReducer from './ProfileReducer'
 import AsyncStorage from "@react-native-community/async-storage";
 import { persistReducer } from 'redux-persist';
+import createShoppingBasket from './CreateBasketReducer'
+import fetchShoppingBasket from './GetBasketReducer'
+
 
 
 const existingUserPersistConfig = {
@@ -12,9 +15,21 @@ const existingUserPersistConfig = {
   blacklist: ['errors', 'loading', 'isError',]
 }
 
+const existingUserBasketPersistConfig = {
+  key: 'createdBasket',
+  storage: AsyncStorage,
+  blacklist: ['errors', 'isError', 'loading']
+}
+
 
 export default combineReducers({ 
   newUser: registerReducer,
   existingUser: persistReducer(existingUserPersistConfig, loginReducer),
   userProfile: profileReducer,
+  createdBasket: persistReducer(existingUserBasketPersistConfig, createShoppingBasket),
+  existingBasket: fetchShoppingBasket
+
 });
+
+
+// export {profileReducer}

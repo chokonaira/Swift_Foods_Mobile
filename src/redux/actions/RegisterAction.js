@@ -21,10 +21,9 @@ export const registerUser = (newUserData) => (dispatch) => {
   axios
     .post(`${baseUrl}/signup`, newUserData)
     .then((response) => {
-      dispatch(registerUserSuccess(response));
+      dispatch(registerUserSuccess(response.data));
     })
     .catch((error) => {
-      console.log(error.message, "error");
       dispatch(registerUserFailure({ message: error.message }));
     });
 };

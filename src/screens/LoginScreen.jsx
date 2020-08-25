@@ -27,6 +27,7 @@ class Login extends Component {
        showMessage({
          message: "Login succesfull",
          type: "success",
+         style: {alignContent: 'center', justifyContent:'center'} 
        }); 
        this.props.navigation.navigate("Dashboard");
    } else if(isError){
@@ -45,7 +46,7 @@ class Login extends Component {
           color='#f0a500'
           visible={loading}
           textStyle={{color: '#f0a500'}}
-          overlayColor='rgba(0, 0, 0, .5)'
+          overlayColor='rgba(0, 0, 0, .6)'
 
         />
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -100,12 +101,18 @@ class Login extends Component {
                       >
                         <Text style={GlobalStyles.loginTextSpan}>Register</Text>
                       </TouchableOpacity>
-                      <TouchableOpacity
+                      {loading ? <TouchableOpacity
+                        style={GlobalStyles.formButton}
+                        onPress={props.handleSubmit}
+                      >
+                        <Text style={GlobalStyles.buttonText}>Loading...</Text>
+                      </TouchableOpacity> : <TouchableOpacity
                         style={GlobalStyles.formButton}
                         onPress={props.handleSubmit}
                       >
                         <Text style={GlobalStyles.buttonText}>Submit</Text>
-                      </TouchableOpacity>
+                      </TouchableOpacity>}
+                      
                       <Text style={GlobalStyles.emptyInput}></Text>
                       <Text style={GlobalStyles.emptyInput}></Text>
                       <Text style={GlobalStyles.emptyInput}></Text>

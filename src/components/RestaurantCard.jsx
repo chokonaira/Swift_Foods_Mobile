@@ -18,15 +18,16 @@ class RestaurantCard extends Component {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 10,
+        marginTop: 5,
         width: "100%",
-        borderRadius:50
+        // borderRadius:50
       }}>
         <FlatList
           data={RestaurantsImages}
           renderItem={({ item }) => (
             <TouchableOpacity
               activeOpacity={0.5}
+              style={{width: '49.8%', borderRadius:5}}
               // onPress={this.GetListItem.bind(this, item.p_title)}
             >
               <View >
@@ -38,11 +39,7 @@ class RestaurantCard extends Component {
                     color: "rgba(150, 150, 150, 1)",
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
-                  style={{
-                    width: 118,
-                    height: 110,
-                    margin: 3,
-                  }}
+                  style={GlobalStyles.flastList}
                 />
               </View>
               <TouchableOpacity>
@@ -50,7 +47,7 @@ class RestaurantCard extends Component {
         </TouchableOpacity>
             </TouchableOpacity>
           )}
-          numColumns={3}
+          numColumns={2}
           keyExtractor={(item) => item.id}
         />
         

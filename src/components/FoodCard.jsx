@@ -4,16 +4,24 @@ import { GlobalStyles } from "../styles/globalStyles";
 import Image from "react-native-image-progress";
 import ProgressBar from "react-native-progress";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import { loginUser } from "../redux/actions/LoginAction";
 import Iconik from "react-native-vector-icons/Ionicons";
-
-// import foodImage from "../styles/globalImages";
+import { createShoppingBasket } from "../redux/actions/BasketAction";
+import { connect } from "react-redux";
 import { foodImages } from "../styles/globalImages";
 
 class FoodCard extends Component {
+  state = {
+    cart: []
+  }
+
   openMenu = () => {
     // this.navigation.openDrawer();
   };
 
+  addItem = () => {
+    
+  }
   render() {
     return (
       <View
@@ -22,14 +30,15 @@ class FoodCard extends Component {
           justifyContent: "center",
           alignItems: "center",
           marginTop: 5,
-          // width: "100%",
         }}
       >
         <FlatList
+        // style={{}}
           data={foodImages}
           renderItem={({ item }) => (
             <View
-              // activeOpacity={0.5}
+            style={{width: '50%'}}
+              activeOpacity={0.5}
               // onPress={this.GetListItem.bind(this, item.p_title)}
               >
                 <Image
@@ -40,11 +49,7 @@ class FoodCard extends Component {
                     color: "rgba(150, 150, 150, 1)",
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
-                  style={{
-                    width: 170,
-                    height: 140,
-                    margin: 4,
-                  }}
+                  style={GlobalStyles.flastList}
                 />
                 <View style={{flexDirection:'row', justifyContent:'space-around'}}>
                 <View>
@@ -54,7 +59,8 @@ class FoodCard extends Component {
                 </View>
                 <TouchableOpacity >
                 <Icon
-                  style={[{ color: '#474744',  }]}
+                  onPress={() => addItem()}
+                  style={[{ color: '#474744' }]}
                   size={20}
                   name={"cart-plus"}
                 />
@@ -71,4 +77,13 @@ class FoodCard extends Component {
     );
   }
 }
-export default FoodCard;
+
+const mapStateToProps = (state) => ({
+  userProfile: state.userProfile,
+  basket: state.basket,
+});
+
+export default connect(mapStateToProps, {
+  loginUser,
+  createShoppingBasket,
+})(FoodCard);

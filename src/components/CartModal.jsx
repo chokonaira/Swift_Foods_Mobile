@@ -4,6 +4,11 @@ import { GlobalStyles } from "../styles/globalStyles";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { CartItems } from "../styles/globalImages";
 import CheckoutFormModal from './CheckoutFormModal'
+import { userProfile } from "../redux/actions/ProfileAction";
+import { getShoppingBasket } from "../redux/actions/BasketAction";
+import { connect } from "react-redux";
+import { loginUser } from "../redux/actions/LoginAction";
+
 
 
 
@@ -12,11 +17,35 @@ class CartModal extends Component {
     modal: false,
   };
 
+  componentDidMount() {
+    const { existingUser } = this.props;
+    if (existingUser.isAuthenticated) {
+      const {
+        existingUser: {
+          existingUser: { id, token },
+        },
+      } = this.props;
+
+      
+      // this.props.userProfile(id, token);
+      // this.props.getShoppingBasket(id, token);
+    }
+  }
+
   openCheckoutModal = () => {
     this.setState({ modal: true });
   };
   closeCheckoutModal =()=>{
     this.setState({ modal: false });
+  }
+
+
+  deleteCartItem =()=> {
+    CartItems.filter(item => {
+      return item.id !== id
+    })
+    // (cartItem) => cartItem !== cartItem.id 
+    console.log('cart item deleted .......')
   }
   render() {
     const { modal } = this.state;
@@ -96,7 +125,7 @@ class CartModal extends Component {
                       <Text style={GlobalStyles.cartItemViewText2}> {cartItem.price} </Text>
                     </View>
                         <Icon   
-                          onPress={this.props.closeModal}
+                          onPress={() => {this.deleteCartItem}}
                           style={GlobalStyles.cartItemViewIcon}
                           size={18}
                           name={"times"}
@@ -104,6 +133,13 @@ class CartModal extends Component {
                   </View>
                   ))
                 }
+                <TouchableOpacity style={{marginRight: 20,alignSelf: "flex-end",alignItems:'center',borderRadius: 3,backgroundColor: '#dd3e3e', flexDirection: 'row', paddingLeft:3, paddingRight:5, width:'23%'}}>
+              <Text style={{fontWeight:'bold', fontSize: 12, color:'#fff', padding:7}}>Clear cart</Text>
+              <Icon
+                size={14}
+                name={"check-circle"}
+              />
+            </TouchableOpacity>
             </ScrollView>
           </View>
         </Modal>
@@ -112,5 +148,15 @@ class CartModal extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  existingUser: state.existingUser,
+  userProfile: state.userProfile,
+  basket: state.basket,
+});
 
-export default CartModal;
+export default connect(mapStateToProps, {
+  userProfile,
+  loginUser,
+  getShoppingBasket,
+})(CartModal);
+

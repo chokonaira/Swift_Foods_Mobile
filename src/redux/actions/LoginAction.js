@@ -1,7 +1,7 @@
 import * as types from "./index";
 import axios from "axios";
-// import {storeData} from "../../helpers/asyncStorage"
 const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
+// const local = "http://127.0.0.1:3000";
 
 const loginUserLoading = () => ({
   type: types.LOGIN_LOADING,

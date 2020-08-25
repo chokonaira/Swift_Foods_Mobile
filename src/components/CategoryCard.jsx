@@ -18,16 +18,17 @@ class CategoryCard extends Component {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 10,
-        width: "100%",
+        marginTop: 5,
+        // width: "100%",
       }}>
         <FlatList
           data={ CategoryImages}
           renderItem={({ item }) => (
             <TouchableOpacity
               activeOpacity={0.5}
+              style={{width: '33.2%'}}
             >
-              <View style={GlobalStyles.container}>
+              <View >
                 <Image
                   source={{ uri: item.categoryUrl }}
                   indicator={ProgressBar}
@@ -36,11 +37,7 @@ class CategoryCard extends Component {
                     color: "rgba(150, 150, 150, 1)",
                     unfilledColor: "rgba(200, 200, 200, 0.2)",
                   }}
-                  style={{
-                    width: 118,
-                    height: 110,
-                    margin: 3,
-                  }}
+                  style={GlobalStyles.flastList}
                 />
               </View>
               <TouchableOpacity>

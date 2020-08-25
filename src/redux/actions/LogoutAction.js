@@ -1,5 +1,6 @@
 import * as types from "./index";
 import {clearData} from '../../helpers/asyncStorage'
+import { showMessage } from "react-native-flash-message";
 
 const logoutUserSuccessful = () => ({
   type: types.LOGOUT_SUCCESS,

@@ -18,18 +18,20 @@ class CartModal extends Component {
   };
 
   componentDidMount() {
-    const { existingUser } = this.props;
-    if (existingUser.isAuthenticated) {
-      const {
-        existingUser: {
-          existingUser: { id, token },
-        },
-      } = this.props;
+  console.log(this.props.products,'available here....');
+
+    // const { existingUser } = this.props;
+    // if (existingUser.isAuthenticated) {
+    //   const {
+    //     existingUser: {
+    //       existingUser: { id, token },
+    //     },
+    //   } = this.props;
 
       
-      // this.props.userProfile(id, token);
-      // this.props.getShoppingBasket(id, token);
-    }
+    //   // this.props.userProfile(id, token);
+    //   // this.props.getShoppingBasket(id, token);
+    // }
   }
 
   openCheckoutModal = () => {

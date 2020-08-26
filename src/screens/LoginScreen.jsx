@@ -13,6 +13,7 @@ import {
 import { globalImages } from '../styles/globalImages'
 import { connect } from 'react-redux';
 import { GlobalStyles } from "../styles/globalStyles";
+import { userProfile } from "../redux/actions/ProfileAction";
 import Spinner from 'react-native-loading-spinner-overlay';
 import { loginUser } from '../redux/actions/LoginAction';
 import { Formik } from "formik";
@@ -20,6 +21,18 @@ import { showMessage } from "react-native-flash-message";
 import { loginSchema } from "../helpers/formValidationSchema";
 
 class Login extends Component {
+  componentDidMount() {
+    const { isAuthenticated } = this.props.existingUser;
+    if (isAuthenticated) {
+      const {
+        userProfile: { user },
+      } = this.props.profile;
+      if (user === undefined) {
+        return this.onLogOut;
+      }
+      this.props.navigation.navigate("Dashboard");
+    }
+  }
 
   componentDidUpdate() {
     const { existingUser: {isAuthenticated, isError }} = this.props
@@ -130,7 +143,8 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  profile: state.userProfile,
   existingUser: state.existingUser
 })
 
-export default connect(mapStateToProps, {loginUser})(Login);
+export default connect(mapStateToProps, {loginUser, userProfile})(Login);

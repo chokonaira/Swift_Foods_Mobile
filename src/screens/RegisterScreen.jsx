@@ -8,6 +8,7 @@ import {
   KeyboardAvoidingView,
   ScrollView,
 } from "react-native";
+import { userProfile } from "../redux/actions/ProfileAction";
 import { globalImages } from '../styles/globalImages'
 import { GlobalStyles } from "../styles/globalStyles";
 import { Formik } from "formik";
@@ -19,6 +20,18 @@ import { showMessage } from "react-native-flash-message";
 
 class Register extends Component {
 
+  componentDidMount() {
+    const { isAuthenticated } = this.props.existingUser;
+    if (isAuthenticated) {
+      const {
+        userProfile: { user },
+      } = this.props.profile;
+      if (user === undefined) {
+        return this.onLogOut;
+      }
+      this.props.navigation.navigate("Dashboard");
+    }
+  }
 
   componentDidUpdate() {
      const { isRegistered, isError } = this.props.newUser
@@ -161,7 +174,8 @@ class Register extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  profile: state.userProfile,
   newUser: state.newUser
 })
 
-export default connect(mapStateToProps, {registerUser})(Register);
+export default connect(mapStateToProps, {registerUser, userProfile})(Register);

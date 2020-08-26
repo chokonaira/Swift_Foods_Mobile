@@ -18,9 +18,8 @@ class ProfileCard extends Component {
     const { isAuthenticated } = this.props.existingUser;
     if (isAuthenticated) {
     const { userProfile:{user} } = this.props.profile;
-    console.log(user, 'jjjjjjjjjjjjj')
     if(user === undefined){
-      return his.onLogOut
+      return this.onLogOut
     }
       this.props.navigation.navigate("Dashboard");
     }

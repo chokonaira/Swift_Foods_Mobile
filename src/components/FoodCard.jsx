@@ -54,17 +54,17 @@ class FoodCard extends Component {
                   }}
                   style={GlobalStyles.flastList}
                 />
-                <View style={{flexDirection:'row', justifyContent:'space-around', alignItems: 'center', backgroundColor: 'rgba(240,165,0, 0.8)'}}>
-                <View>
+                <View style={{flexDirection:'row', justifyContent:'space-between', alignItems: 'center', backgroundColor: 'rgba(240,165,0, 0.8)', padding: 3,width: '100%' }}>
+                <View style={{marginLeft:10, width: '80%'}}>
                   <Text style={{fontWeight:'bold', fontSize:12,color:'black'}}>{item.name}</Text>
-                  <Text style={{fontWeight:'bold', fontSize:10, color:'green'}}>{item.price}</Text>
+                  <Text style={{fontWeight:'bold', fontSize:10, color:'green'}}>Rwf: {item.price}</Text>
                   
                 </View>
-                <TouchableOpacity >
+                <TouchableOpacity style={{marginRight:12}} >
                 <Icon
-                  onPress={() => addItem()}
+                  // onPress={() => addItem()}
                   style={[{ color: 'black' }]}
-                  size={18}
+                  size={20}
                   name={"cart-plus"}
                 />
                </TouchableOpacity>

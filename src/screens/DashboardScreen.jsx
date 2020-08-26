@@ -28,7 +28,7 @@ class DashboardScreen extends Component {
          return
         }  
         const { createdBasket: { basket: { basket:{ id: basketId }}}} = this.props;
-        this.props.getShoppingBasket(id, basketId, token);   
+        this.props.getShoppingBasket(id, 15, token);   
     }
   }
 

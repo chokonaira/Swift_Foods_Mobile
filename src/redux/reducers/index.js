@@ -8,6 +8,7 @@ import createShoppingBasket from './CreateBasketReducer'
 import fetchShoppingBasket from './GetBasketReducer'
 import {fetchAllProductReducer, fetchAllProductsByCategoryReducer} from './ProductReducer'
 import { fetchAllCategoryReducer, fetchAllCategoriesByRestaurantsReducer} from './CategoryReducer'
+import { fetchAllRestaurantsReducer } from './RestaurantReducer'
 
 
 
@@ -33,8 +34,6 @@ export default combineReducers({
   products: fetchAllProductReducer,
   productsByCategory: fetchAllProductsByCategoryReducer,
   categories: fetchAllCategoryReducer,
-  categoriesByRestaurant: fetchAllCategoriesByRestaurantsReducer
+  categoriesByRestaurant: fetchAllCategoriesByRestaurantsReducer,
+  restaurants: fetchAllRestaurantsReducer
 });
-
-
-// export {profileReducer}

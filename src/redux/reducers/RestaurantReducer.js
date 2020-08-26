@@ -8,7 +8,6 @@ const initialState = {
   isError: false,
 };
 
-
 export const fetchAllRestaurantsReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.FETCH_ALL_RESTAURANTS_LOADING:

@@ -46,7 +46,8 @@ export const fetchCategoriesByRestaurants = (restaurantId, token) => (dispatch) 
     .catch((error) => {
       dispatch(fetchCategoriesRestaurantsError({ message: error.message }));
     });
-
+  }
+  
 export const fetchAllRestaurants = (token) => (dispatch) => {
   dispatch(fetchAllRestaurantsLoading());
   headers = {

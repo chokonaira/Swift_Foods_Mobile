@@ -5,7 +5,6 @@ import Image from "react-native-image-progress";
 import ProgressBar from "react-native-progress";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { loginUser } from "../redux/actions/LoginAction";
-import Iconik from "react-native-vector-icons/Ionicons";
 import { createShoppingBasket } from "../redux/actions/BasketAction";
 import { connect } from "react-redux";
 import { foodImages } from "../styles/globalImages";
@@ -23,6 +22,7 @@ class FoodCard extends Component {
     
   }
   render() {
+    const {products:{products}} = this.props.allProducts;
     return (
       <View
         style={{
@@ -35,7 +35,7 @@ class FoodCard extends Component {
       >
         <FlatList
         // style={{}}
-          data={foodImages}
+          data={products}
           renderItem={({ item }) => (
             <View
             style={{width: '50%'}}
@@ -45,7 +45,7 @@ class FoodCard extends Component {
               <View style={{borderWidth: .7, borderRadius: 3, borderColor: '#f0a500', margin: 1}} >
 
                 <Image
-                  source={{ uri: item.foodUrl }}
+                  source={{ uri: item.image_url }}
                   indicator={ProgressBar}
                   indicatorProps={{
                     size: 40,
@@ -56,8 +56,8 @@ class FoodCard extends Component {
                 />
                 <View style={{flexDirection:'row', justifyContent:'space-around', alignItems: 'center', backgroundColor: 'rgba(240,165,0, 0.8)'}}>
                 <View>
-                  <Text style={{fontWeight:'bold', fontSize:12,color:'black'}}>Salad peperoni </Text>
-                  <Text style={{fontWeight:'bold', fontSize:10, color:'green'}}>Fwr 5000 </Text>
+                  <Text style={{fontWeight:'bold', fontSize:12,color:'black'}}>{item.name}</Text>
+                  <Text style={{fontWeight:'bold', fontSize:10, color:'green'}}>{item.price}</Text>
                   
                 </View>
                 <TouchableOpacity >

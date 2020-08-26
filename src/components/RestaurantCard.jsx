@@ -7,11 +7,13 @@ import ProgressBar from "react-native-progress";
 import { RestaurantsImages } from "../styles/globalImages";
 
 class RestaurantCard extends Component {
+
   openMenu = () => {
     // this.navigation.openDrawer();
   };
 
   render() {
+    const {restaurants: {hotels_restaurants}} = this.props.restaurants
     return (
       <View
         style={{
@@ -24,7 +26,7 @@ class RestaurantCard extends Component {
         }}
       >
         <FlatList
-          data={RestaurantsImages}
+          data={hotels_restaurants}
           renderItem={({ item }) => (
             <TouchableOpacity
               activeOpacity={0.5}
@@ -41,7 +43,7 @@ class RestaurantCard extends Component {
                   }}
                 >
                   <Image
-                    source={{ uri: item.restaurantUrl }}
+                    source={{ uri: item.image_url }}
                     indicator={ProgressBar}
                     indicatorProps={{
                       size: 40,
@@ -52,7 +54,7 @@ class RestaurantCard extends Component {
                   />
 
                   <View style={{ backgroundColor: "rgba(240,165,0, 0.8)" }}>
-                    <Text style={GlobalStyles.cardText}>Restaurant</Text>
+                    <Text style={GlobalStyles.cardText}>{item.name}</Text>
                   </View>
                 </View>
               </View>

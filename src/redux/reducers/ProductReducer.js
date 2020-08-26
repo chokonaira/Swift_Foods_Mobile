@@ -2,13 +2,14 @@ import * as types from "../actions";
 
 const initialState = {
   products: [],
+  productsByCategory: [],
   loading: false,
   errror: [],
-  isFetched: false,
+  isProductsFetched: false,
   isError: false,
 };
 
-const fetchProductReducer = (state = initialState, action) => {
+export const fetchAllProductReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.FETCH_FOOD_LOADING:
       return {
@@ -20,7 +21,7 @@ const fetchProductReducer = (state = initialState, action) => {
         ...state,
         products: action.payload,
         loading: false,
-        isFetched: true,
+        isProductsFetched: true,
       };
     case types.FETCH_FOOD_FAILURE:
       return {
@@ -34,4 +35,28 @@ const fetchProductReducer = (state = initialState, action) => {
   }
 };
 
-export default fetchProductReducer;
+export const fetchAllProductsByCategoryReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case types.FETCH_A_CATEGORY_LOADING:
+      return {
+        ...state,
+        loading: true,
+      };
+    case types.FETCH_A_CATEGORY_SUCCESS:
+      return {
+        ...state,
+        productsByCategory: action.payload,
+        loading: false,
+        isProductsFetched: true,
+      };
+    case types.FETCH_A_CATEGORY_FAILURE:
+      return {
+        ...state,
+        errors: action.payload,
+        loading: false,
+        isError: true,
+      };
+    default:
+      return state;
+  }
+};

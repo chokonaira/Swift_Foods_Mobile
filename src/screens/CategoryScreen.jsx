@@ -34,7 +34,7 @@ class Category extends Component {
           visible={loading}
           textStyle={{color: '#f0a500'}}
           overlayColor='rgba(0, 0, 0, .6)'
-          textContent='+++++++'
+          textContent='Hold on..'
         />
         <CategoryCard categories={this.props.categories}/>
       </View>

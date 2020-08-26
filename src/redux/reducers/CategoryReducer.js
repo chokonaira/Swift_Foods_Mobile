@@ -2,38 +2,11 @@ import * as types from "../actions";
 
 const initialState = {
   categories: [],
-  category: {},
+  categoryByRestaurant: {},
   loading: false,
   errror: {},
-  allCategoryFetched: false,
-  aCatgoryFetched: false,
+  isCategoriesFetched: false,
   isError: false,
-};
-
-export const fetchAProductByCategoryReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.FETCH_A_CATEGORY_LOADING:
-      return {
-        ...state,
-        loading: true,
-      };
-    case types.FETCH_A_CATEGORY_SUCCESS:
-      return {
-        ...state,
-        category: action.payload,
-        loading: false,
-        aCatgoryFetched: true,
-      };
-    case types.FETCH_A_CATEGORY_FAILURE:
-      return {
-        ...state,
-        errors: action.payload,
-        loading: false,
-        isError: true,
-      };
-    default:
-      return state;
-  }
 };
 
 export const fetchAllCategoryReducer = (state = initialState, action) => {
@@ -48,9 +21,35 @@ export const fetchAllCategoryReducer = (state = initialState, action) => {
         ...state,
         categories: action.payload,
         loading: false,
-        allCategoryFetched: true,
+        isCategoriesFetched: true,
       };
     case types.FETCH_ALL_CATEGORY_FAILURE:
+      return {
+        ...state,
+        errors: action.payload,
+        loading: false,
+        isError: true,
+      };
+    default:
+      return state;
+  }
+};
+
+export const fetchAllCategoriesByRestaurantsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case types.FETCH_A_RESTAURANT_LOADING:
+      return {
+        ...state,
+        loading: true,
+      };
+    case types.FETCH_A_RESTAURANT_SUCCESS:
+      return {
+        ...state,
+        productsByCategory: action.payload,
+        loading: false,
+        isCategoriesFetched: true,
+      };
+    case types.FETCH_A_RESTAURANT_FAILURE:
       return {
         ...state,
         errors: action.payload,

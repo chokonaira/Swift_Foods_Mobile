@@ -33,7 +33,7 @@ class ShoppingCartIcon extends Component {
           </View>
 
           <Icon
-            style={[{ marginRight: 13, color: "#474744" }]}
+            style={[{ marginRight: 13, color: "black" }]}
             size={20}
             name={"cart-arrow-down"}
           />

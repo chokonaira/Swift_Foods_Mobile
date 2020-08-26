@@ -29,7 +29,8 @@ class FoodCard extends Component {
           flex: 1,
           justifyContent: "center",
           alignItems: "center",
-          marginTop: 5,
+          marginTop: 2,
+          width: "100%",
         }}
       >
         <FlatList
@@ -41,6 +42,8 @@ class FoodCard extends Component {
               activeOpacity={0.5}
               // onPress={this.GetListItem.bind(this, item.p_title)}
               >
+              <View style={{borderWidth: .7, borderRadius: 3, borderColor: '#f0a500', margin: 1}} >
+
                 <Image
                   source={{ uri: item.foodUrl }}
                   indicator={ProgressBar}
@@ -51,20 +54,21 @@ class FoodCard extends Component {
                   }}
                   style={GlobalStyles.flastList}
                 />
-                <View style={{flexDirection:'row', justifyContent:'space-around'}}>
+                <View style={{flexDirection:'row', justifyContent:'space-around', alignItems: 'center', backgroundColor: 'rgba(240,165,0, 0.8)'}}>
                 <View>
-                  <Text style={{fontWeight:'bold', fontSize:13,color:'rgba(95, 197, 123, 1)'}}>Salad peperoni </Text>
-                  <Text style={{fontWeight:'bold', fontSize:12, color:'#2c2828'}}>Fwr 5000 </Text>
+                  <Text style={{fontWeight:'bold', fontSize:12,color:'black'}}>Salad peperoni </Text>
+                  <Text style={{fontWeight:'bold', fontSize:10, color:'green'}}>Fwr 5000 </Text>
                   
                 </View>
                 <TouchableOpacity >
                 <Icon
                   onPress={() => addItem()}
-                  style={[{ color: '#474744' }]}
-                  size={20}
+                  style={[{ color: 'black' }]}
+                  size={18}
                   name={"cart-plus"}
                 />
                </TouchableOpacity>
+                </View>
                 </View>
               
             </View>

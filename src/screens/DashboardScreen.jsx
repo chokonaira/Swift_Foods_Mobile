@@ -12,7 +12,7 @@ import { fetchAProductsByCategory } from "../redux/actions/CategoryAction";
 
 class DashboardScreen extends Component {
  componentDidMount() {
-  console.log(this.props,'this.popopopopopopopo');
+  // console.log(this.props,'this.popopopopopopopo');
 
     const { existingUser:{isAuthenticated} } = this.props;
     const { createdBasket:{isBasketCreated} } = this.props;

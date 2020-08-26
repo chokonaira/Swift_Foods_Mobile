@@ -17,6 +17,20 @@ const fetchAProductsByCategoryError = (payload) => ({
   payload,
 });
 
+const fetchAllCategoryLoading = () => ({
+  type: types.FETCH_ALL_CATEGORY_LOADING,
+});
+
+const fetchAllCategorySuccess = (payload) => ({
+  type: types.FETCH_ALL_CATEGORY_SUCCESS,
+  payload,
+});
+
+const fetchAllCategoryError = (payload) => ({
+  type: types.FETCH_ALL_CATEGORY_FAILURE,
+  payload,
+});
+
 export const fetchAProductsByCategory = (categoryId, token) => (dispatch) => {
   dispatch(fetchAProductsByCategoryLoading());
   headers = {
@@ -31,6 +45,23 @@ export const fetchAProductsByCategory = (categoryId, token) => (dispatch) => {
     })
     .catch((error) => {
       dispatch(fetchAProductsByCategoryError({ message: error.message }));
+    });
+};
+
+export const fetchAllCategory = (token) => (dispatch) => {
+  dispatch(fetchAllCategoryLoading());
+  headers = {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  };
+
+  axios
+    .get(`${baseUrl}/products/categories`, { headers })
+    .then((response) => {
+      dispatch(fetchAllCategorySuccess(response.data));
+    })
+    .catch((error) => {
+      dispatch(fetchAllCategoryError({ message: error.message }));
     });
 };
 

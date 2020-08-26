@@ -1,14 +1,16 @@
 import * as types from "../actions";
 
 const initialState = {
+  categories: [],
   category: {},
   loading: false,
   errror: {},
-  isFetched: false,
+  allCategoryFetched: false,
+  aCatgoryFetched: false,
   isError: false,
 };
 
-const fetchACategoryReducer = (state = initialState, action) => {
+export const fetchAProductByCategoryReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.FETCH_A_CATEGORY_LOADING:
       return {
@@ -20,7 +22,7 @@ const fetchACategoryReducer = (state = initialState, action) => {
         ...state,
         category: action.payload,
         loading: false,
-        isFetched: true,
+        aCatgoryFetched: true,
       };
     case types.FETCH_A_CATEGORY_FAILURE:
       return {
@@ -34,4 +36,28 @@ const fetchACategoryReducer = (state = initialState, action) => {
   }
 };
 
-export default fetchACategoryReducer;
+export const fetchAllCategoryReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case types.FETCH_ALL_CATEGORY_LOADING:
+      return {
+        ...state,
+        loading: true,
+      };
+    case types.FETCH_ALL_CATEGORY_SUCCESS:
+      return {
+        ...state,
+        categories: action.payload,
+        loading: false,
+        allCategoryFetched: true,
+      };
+    case types.FETCH_ALL_CATEGORY_FAILURE:
+      return {
+        ...state,
+        errors: action.payload,
+        loading: false,
+        isError: true,
+      };
+    default:
+      return state;
+  }
+};

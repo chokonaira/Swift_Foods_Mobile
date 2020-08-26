@@ -7,7 +7,7 @@ import { persistReducer } from 'redux-persist';
 import createShoppingBasket from './CreateBasketReducer'
 import fetchShoppingBasket from './GetBasketReducer'
 import fetchProductReducer from './ProductReducer'
-import fetchACategoryReducer from './CategoryReducer'
+import {fetchAProductByCategoryReducer, fetchAllCategoryReducer} from './CategoryReducer'
 
 
 
@@ -31,7 +31,8 @@ export default combineReducers({
   createdBasket: persistReducer(existingUserBasketPersistConfig, createShoppingBasket),
   existingBasket: fetchShoppingBasket,
   products: fetchProductReducer,
-  category: fetchACategoryReducer
+  category: fetchAProductByCategoryReducer,
+  categories: fetchAllCategoryReducer,
 });
 
 

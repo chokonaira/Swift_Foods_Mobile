@@ -9,6 +9,7 @@ import fetchShoppingBasket from './GetBasketReducer'
 import {fetchAllProductReducer, fetchAllProductsByCategoryReducer} from './ProductReducer'
 import { fetchAllCategoryReducer, fetchAllCategoriesByRestaurantsReducer} from './CategoryReducer'
 import { fetchAllRestaurantsReducer } from './RestaurantReducer'
+import { basketItemsReducer } from './BasketItemsReducer'
 
 
 
@@ -35,5 +36,6 @@ export default combineReducers({
   productsByCategory: fetchAllProductsByCategoryReducer,
   categories: fetchAllCategoryReducer,
   categoriesByRestaurant: fetchAllCategoriesByRestaurantsReducer,
-  restaurants: fetchAllRestaurantsReducer
+  restaurants: fetchAllRestaurantsReducer,
+  basketItems: basketItemsReducer
 });

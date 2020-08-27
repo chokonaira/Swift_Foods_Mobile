@@ -31,7 +31,7 @@ const fetchAllCategoryError = (payload) => ({
   payload,
 });
 
-export const fetchAProductsByCategory = (categoryId, token) => (dispatch) => {
+export const fetchAllProductsByCategory = (categoryId, token) => (dispatch) => {
   dispatch(fetchAProductsByCategoryLoading());
   headers = {
     "Content-Type": "application/json",

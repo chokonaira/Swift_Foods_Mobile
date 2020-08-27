@@ -7,15 +7,13 @@ import { loginUser } from "../redux/actions/LoginAction";
 import { userProfile } from "../redux/actions/ProfileAction";
 import { createShoppingBasket, getShoppingBasket } from "../redux/actions/BasketAction";
 import Spinner from 'react-native-loading-spinner-overlay';
-import { fetchAProductsByCategory } from "../redux/actions/CategoryAction";
+import { fetchAllProductsByCategory } from "../redux/actions/CategoryAction";
 import { fetchAllProducts } from "../redux/actions/ProductAction";
 
 
 
 class DashboardScreen extends Component {
  componentDidMount() {
-  // console.log(this.props,'this.popopopopopopopo');
-
     const { existingUser:{isAuthenticated} } = this.props;
     const { createdBasket:{isBasketCreated} } = this.props;
     if (isAuthenticated) {
@@ -28,11 +26,13 @@ class DashboardScreen extends Component {
          return
         }  
         const { createdBasket: { basket: { basket:{ id: basketId }}}} = this.props;
-        this.props.getShoppingBasket(id, 15, token);   
+        this.props.getShoppingBasket(id, basketId, token);   
     }
   }
 
   render() {
+    const { state } = this.props.navigation;
+    console.log(state.params && state.params.categoryId, 'categoryId')
     const {loading} = this.props.existingBasket;
     return (
       <View style={GlobalStyles.dashboard}>
@@ -44,7 +44,7 @@ class DashboardScreen extends Component {
           overlayColor='rgba(0, 0, 0, .6)'
           textContent='Fetching Meals...'
         />
-        <FoodCard productsByCategory={this.props.productsByCategory} allProducts={this.props.allProducts}/>
+        <FoodCard navigation={this.props.navigation} productsByCategory={this.props.productsByCategory} allProducts={this.props.allProducts}/>
       </View>
     );
   }
@@ -64,6 +64,6 @@ export default connect(mapStateToProps, {
   loginUser,
   createShoppingBasket,
   getShoppingBasket,
-  fetchAProductsByCategory,
-  fetchAllProducts
+  fetchAllProductsByCategory,
+  fetchAllProducts,
 })(DashboardScreen);

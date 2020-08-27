@@ -22,6 +22,7 @@ class FoodCard extends Component {
     
   }
   render() {
+    
     const {products:{products}} = this.props.allProducts;
     return (
       <View

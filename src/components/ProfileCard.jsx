@@ -37,21 +37,21 @@ class ProfileCard extends Component {
   }
   render() {
     const { modal } = this.state;
-    const { userProfile:{user} } = this.props.profile;
+    // const { userProfile:{user} } = this.props.profile;
     
-    
+    const { userProfile } = this.props.profile;
     return (
       <>
       <View style={GlobalStyles.image}>
         <View style={GlobalStyles.profitTop}>
-          {user.image_url === null ? 
+          {userProfile && userProfile.user.image_url === null ? 
           <Image
             style={GlobalStyles.profileAvartarImage}
             source={globalImages.Avartar}
           /> :
           <Image
             style={GlobalStyles.profileAvartarImage}
-            source={{uri: user.image_url}}
+            source={{uri: userProfile && userProfile.user.image_url}}
           />}
           <TouchableOpacity onPress={this.onLogOut} style={GlobalStyles.profileTopButton}>
             <Text style={GlobalStyles.profileTopButtonText}>Logout</Text>
@@ -61,20 +61,20 @@ class ProfileCard extends Component {
         <View style={GlobalStyles.profileBottom}>
           <View style={GlobalStyles.profileWrapper}>
             <Text style={GlobalStyles.profileBottomTextKey}>First Name: </Text>
-            <Text style={GlobalStyles.profileBottomText}>{user.first_name} </Text>
+            <Text style={GlobalStyles.profileBottomText}>{userProfile && userProfile.user.first_name} </Text>
           </View>
           <View style={GlobalStyles.profileWrapper}>
             <Text style={GlobalStyles.profileBottomTextKey}>Last Name: </Text>
-            <Text style={GlobalStyles.profileBottomText}>{user.last_name}</Text>
+            <Text style={GlobalStyles.profileBottomText}>{userProfile && userProfile.user.last_name}</Text>
           </View>
           <View style={GlobalStyles.profileWrapper}>
             <Text style={GlobalStyles.profileBottomTextKey}>Email: </Text>
-            <Text style={GlobalStyles.profileBottomText}>{user.email}</Text>
+            <Text style={GlobalStyles.profileBottomText}>{userProfile && userProfile.user.email}</Text>
           </View>
           
           <View style={GlobalStyles.profileWrapper}>
             <Text style={GlobalStyles.profileBottomTextKey}>Phone: </Text>
-            <Text style={GlobalStyles.profileBottomText}>{user.phone}</Text>
+            <Text style={GlobalStyles.profileBottomText}>{userProfile && userProfile.user.phone}</Text>
           </View>
           <Text style={GlobalStyles.emptyInput}></Text>
           <TouchableOpacity onPress={this.openModal} style={GlobalStyles.profileBottomButton}>

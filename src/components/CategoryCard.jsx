@@ -8,6 +8,7 @@ import { CategoryImages } from "../styles/globalImages";
 
 class CategoryCard extends Component {
   componentDidMount() {
+   
     this.props.categories;
   }
 
@@ -16,10 +17,11 @@ class CategoryCard extends Component {
   };
 
   render() {
+    
     const {
       categories: { categories },
     } = this.props.categories;
-    console.log(categories, "this.categories");
+    // console.log(categories, "this.categories");
     return (
       <View
         style={{
@@ -33,7 +35,15 @@ class CategoryCard extends Component {
         <FlatList
           data={categories}
           renderItem={({ item }) => (
-            <TouchableOpacity activeOpacity={0.5} style={{ width: "33%" }}>
+            <TouchableOpacity 
+              activeOpacity={0.5} 
+              style={{ width: "33%" }}
+              onPress={() => {
+                this.props.navigation.navigate('Dashboard', {
+                  categoryId: item.id,
+                });
+              }}
+            >
               <View
                 style={{
                   borderWidth: 0.7,

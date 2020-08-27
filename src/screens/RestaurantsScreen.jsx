@@ -17,6 +17,7 @@ class Restaurant extends Component {
   componentDidMount() {
     const { existingUser: { existingUser: { token }}} = this.props;
     this.props.fetchAllRestaurants(token)
+    // console.log(this.props, 'jjejjejjejjejej')
   }
   render() {
     const {loading} = this.props.restaurants;
@@ -33,7 +34,7 @@ class Restaurant extends Component {
           overlayColor='rgba(0, 0, 0, .6)'
           textContent='Fetching Restaurants...'
         />
-        <RestaurantCard restaurants={this.props.restaurants}/>
+        <RestaurantCard navigation={this.props.navigation} restaurants={this.props.restaurants}/>
       </View>
     )
   }

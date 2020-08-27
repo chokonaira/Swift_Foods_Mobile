@@ -7,50 +7,62 @@ import ProgressBar from "react-native-progress";
 import { RestaurantsImages } from "../styles/globalImages";
 
 class RestaurantCard extends Component {
+
   openMenu = () => {
     // this.navigation.openDrawer();
   };
 
   render() {
+    const {restaurants: {hotels_restaurants}} = this.props.restaurants
     return (
       <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 5,
-        width: "100%",
-        // borderRadius:50
-      }}>
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 2,
+          width: "100%",
+          // borderRadius:50
+        }}
+      >
         <FlatList
-          data={RestaurantsImages}
+          data={hotels_restaurants}
           renderItem={({ item }) => (
             <TouchableOpacity
               activeOpacity={0.5}
-              style={{width: '49.8%', borderRadius:5}}
+              style={{ width: "49.8%"}}
               // onPress={this.GetListItem.bind(this, item.p_title)}
             >
-              <View >
-                <Image
-                  source={{ uri: item.restaurantUrl }}
-                  indicator={ProgressBar}
-                  indicatorProps={{
-                    size: 40,
-                    color: "rgba(150, 150, 150, 1)",
-                    unfilledColor: "rgba(200, 200, 200, 0.2)",
+              <View>
+                <View
+                  style={{
+                    borderWidth: 0.7,
+                    borderRadius: 3,
+                    borderColor: "#f0a500",
+                    margin: 1,
                   }}
-                  style={GlobalStyles.flastList}
-                />
+                >
+                  <Image
+                    source={{ uri: item.image_url }}
+                    indicator={ProgressBar}
+                    indicatorProps={{
+                      size: 40,
+                      color: "rgba(150, 150, 150, 1)",
+                      unfilledColor: "rgba(200, 200, 200, 0.2)",
+                    }}
+                    style={GlobalStyles.flastList}
+                  />
+
+                  <View style={{ backgroundColor: "rgba(240,165,0, 0.8)" }}>
+                    <Text style={GlobalStyles.cardText}>{item.name}</Text>
+                  </View>
+                </View>
               </View>
-              <TouchableOpacity>
-          <Text style={GlobalStyles.cardText}>Restaurant</Text>
-        </TouchableOpacity>
             </TouchableOpacity>
           )}
           numColumns={2}
           keyExtractor={(item) => item.id}
         />
-        
       </View>
     );
   }

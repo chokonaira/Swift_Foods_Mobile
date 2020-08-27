@@ -18,18 +18,19 @@ class CartModal extends Component {
   };
 
   componentDidMount() {
-    const { existingUser } = this.props;
-    if (existingUser.isAuthenticated) {
-      const {
-        existingUser: {
-          existingUser: { id, token },
-        },
-      } = this.props;
+
+    // const { existingUser } = this.props;
+    // if (existingUser.isAuthenticated) {
+    //   const {
+    //     existingUser: {
+    //       existingUser: { id, token },
+    //     },
+    //   } = this.props;
 
       
-      // this.props.userProfile(id, token);
-      // this.props.getShoppingBasket(id, token);
-    }
+    //   // this.props.userProfile(id, token);
+    //   // this.props.getShoppingBasket(id, token);
+    // }
   }
 
   openCheckoutModal = () => {
@@ -49,7 +50,12 @@ class CartModal extends Component {
   }
   render() {
     const { modal } = this.state;
-
+    const {shoppingBasket} = this.props
+    console.log(this.props.shoppingBasket.product,'shoppingBasket');
+    
+    const add = (total, num) => (total + parseInt(num.price))
+    const totalPrice = shoppingBasket.product.reduce(add, 0)
+    console.log(totalPrice, 'totalPrice')
     return (
       <View
         style={{
@@ -101,8 +107,11 @@ class CartModal extends Component {
                 name={"arrow-right"}
               />
             </View>
-            <View style={{flexDirection: 'row', alignItems:'center', marginBottom: 10,justifyContent:'space-between', width:'95%'}}>
-            <Text style={{fontWeight:'bold', fontSize:16, color: '#2c2828'}}>Total Payable: $5,000 </Text>
+            { shoppingBasket && shoppingBasket.product.length === 0 ? (<View><Text style={{fontSize: 20, fontWeight: 'bold'}}>No Item in Shopping Basket</Text></View>) : 
+              (
+                <React.Fragment>
+              <View style={{flexDirection: 'row', alignItems:'center', marginBottom: 10,justifyContent:'space-between', width:'95%'}}>
+            <Text style={{fontWeight:'bold', fontSize:16, color: '#2c2828'}}>Total Payable: {totalPrice}Rwf </Text>
             <TouchableOpacity onPress={this.openCheckoutModal}  style={{alignItems:'center',borderRadius: 3,backgroundColor: 'rgba(95, 197, 123, 1)', flexDirection: 'row', paddingLeft:3, paddingRight:5}}>
               <Text style={{fontWeight:'bold', fontSize: 12, color:'#fff', padding:7}}>Checkout</Text>
               <Icon
@@ -115,13 +124,13 @@ class CartModal extends Component {
             </View>
             <ScrollView style={GlobalStyles.cartModalScroolView}>
                 {
-                  CartItems.map((cartItem, index) => (
+                  shoppingBasket && shoppingBasket.product.map((cartItem, index) => (
                     <View key={cartItem.id} style={{ marginBottom: 10,borderRadius: 3,alignItems: "center",flexDirection:'row', width: "95%", backgroundColor: "#ececeb",color: "black", padding: 7, borderStyle:'dashed', borderWidth:1, borderColor: 'black'}}>
                         <Text style={{ marginRight: 10,fontSize: 15}}>{index + 1}</Text>
       
                     <View style={GlobalStyles.cartItemViewWrapper}>
-                      <Image style={GlobalStyles.cartItemViewImage} source={{uri: cartItem.cartImage}} />
-                      <Text style={GlobalStyles.cartItemViewText}> {cartItem.foodName} </Text>
+                      <Image style={GlobalStyles.cartItemViewImage} source={{uri: cartItem.image_url}} />
+                      <Text style={GlobalStyles.cartItemViewText}> {cartItem.name} </Text>
                       <Text style={GlobalStyles.cartItemViewText2}> {cartItem.price} </Text>
                     </View>
                         <Icon   
@@ -141,6 +150,9 @@ class CartModal extends Component {
               />
             </TouchableOpacity>
             </ScrollView>
+            </React.Fragment>
+            )}
+            
           </View>
         </Modal>
         <CheckoutFormModal openCheckoutModal={modal} closeCheckoutModal={this.closeCheckoutModal}/>

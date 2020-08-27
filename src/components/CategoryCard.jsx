@@ -7,30 +7,43 @@ import ProgressBar from "react-native-progress";
 import { CategoryImages } from "../styles/globalImages";
 
 class CategoryCard extends Component {
+  componentDidMount() {
+    this.props.categories;
+  }
+
   openMenu = () => {
     // this.navigation.openDrawer();
   };
 
   render() {
+    const {
+      categories: { categories },
+    } = this.props.categories;
+    console.log(categories, "this.categories");
     return (
       <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 5,
-        // width: "100%",
-      }}>
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 2,
+          // width: "100%",
+        }}
+      >
         <FlatList
-          data={ CategoryImages}
+          data={categories}
           renderItem={({ item }) => (
-            <TouchableOpacity
-              activeOpacity={0.5}
-              style={{width: '33.2%'}}
-            >
-              <View >
+            <TouchableOpacity activeOpacity={0.5} style={{ width: "33%" }}>
+              <View
+                style={{
+                  borderWidth: 0.7,
+                  borderRadius: 3,
+                  borderColor: "#f0a500",
+                  margin: 0.8,
+                }}
+              >
                 <Image
-                  source={{ uri: item.categoryUrl }}
+                  source={{ uri: item.image_url }}
                   indicator={ProgressBar}
                   indicatorProps={{
                     size: 40,
@@ -39,11 +52,11 @@ class CategoryCard extends Component {
                   }}
                   style={GlobalStyles.flastList}
                 />
+
+                <View style={{ backgroundColor: "rgba(240,165,0, 0.8)" }}>
+                  <Text style={GlobalStyles.cardText}>{item.name}</Text>
+                </View>
               </View>
-              <TouchableOpacity>
-              <Text style={GlobalStyles.cardText}>Category</Text>
-              </TouchableOpacity>
-              
             </TouchableOpacity>
           )}
           numColumns={3}

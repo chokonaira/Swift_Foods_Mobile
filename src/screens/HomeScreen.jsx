@@ -13,6 +13,12 @@ class Home extends Component {
   componentDidMount() {
     const { isAuthenticated } = this.props.existingUser;
     if (isAuthenticated) {
+      const {
+        userProfile: { user },
+      } = this.props.profile;
+      if (user === undefined) {
+        return this.onLogOut;
+      }
       this.props.navigation.navigate("Dashboard");
     }
   }
@@ -20,14 +26,13 @@ class Home extends Component {
     const { isAuthenticated, loading } = this.props.existingUser;
     if (loading) {
       return (
-       
-          <Spinner
-            animation="none"
-            color="#f0a500"
-            visible={loading}
-            textStyle={{ color: "#f0a500" }}
-            overlayColor="rgba(0, 0, 0, .6)"
-          />
+        <Spinner
+          animation="none"
+          color="#f0a500"
+          visible={loading}
+          textStyle={{ color: "#f0a500" }}
+          overlayColor="rgba(0, 0, 0, .6)"
+        />
       );
     }
     return (

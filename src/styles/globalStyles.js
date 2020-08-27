@@ -207,7 +207,7 @@ export const GlobalStyles = StyleSheet.create({
     width: 22,
     borderRadius: 15,
     backgroundColor: "#1eb2a6",
-    right: 25,
+    right: 28,
     bottom: 15,
     alignItems: "center",
     justifyContent: "center",

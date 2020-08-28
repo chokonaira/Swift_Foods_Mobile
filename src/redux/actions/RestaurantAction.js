@@ -3,16 +3,16 @@ import axios from "axios";
 
 const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
 
-const fetchCategoriesByRestaurantsLoading = () => ({
+const fetchARestaurantLoading = () => ({
   type: types.FETCH_A_RESTAURANT_LOADING,
 });
 
-const fetchCategoriesRestaurantsBySuccess = (payload) => ({
+const fetchARestaurantSuccess = (payload) => ({
   type: types.FETCH_A_RESTAURANT_SUCCESS,
   payload,
 });
 
-const fetchCategoriesRestaurantsError = (payload) => ({
+const fetchARestaurantError = (payload) => ({
   type: types.FETCH_A_RESTAURANT_FAILURE,
   payload,
 });
@@ -31,8 +31,8 @@ const fetchAllRestaurantsError = (payload) => ({
   payload,
 });
 
-export const fetchCategoriesByRestaurants = (restaurantId, token) => (dispatch) => {
-  dispatch(fetchCategoriesByRestaurantsLoading());
+export const fetchARestaurant = (restaurantId, token) => (dispatch) => {
+  dispatch(fetchARestaurantLoading());
   headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
@@ -41,13 +41,13 @@ export const fetchCategoriesByRestaurants = (restaurantId, token) => (dispatch) 
   axios
     .get(`${baseUrl}/restaurants/${restaurantId}`, { headers })
     .then((response) => {
-      dispatch(fetchCategoriesRestaurantsBySuccess(response.data));
+      dispatch(fetchARestaurantSuccess(response.data));
     })
     .catch((error) => {
-      dispatch(fetchCategoriesRestaurantsError({ message: error.message }));
+      dispatch(fetchARestaurantError({ message: error.message }));
     });
   }
-  
+
 export const fetchAllRestaurants = (token) => (dispatch) => {
   dispatch(fetchAllRestaurantsLoading());
   headers = {

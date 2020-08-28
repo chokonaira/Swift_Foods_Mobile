@@ -6,9 +6,9 @@ import AsyncStorage from "@react-native-community/async-storage";
 import { persistReducer } from 'redux-persist';
 import createShoppingBasket from './CreateBasketReducer'
 import fetchShoppingBasket from './GetBasketReducer'
-import {fetchAllProductReducer, fetchAllProductsByCategoryReducer} from './ProductReducer'
-import { fetchAllCategoryReducer, fetchAllCategoriesByRestaurantsReducer} from './CategoryReducer'
-import { fetchAllRestaurantsReducer } from './RestaurantReducer'
+import {fetchAllProductReducer } from './ProductReducer'
+import { fetchACategoryReducer, fetchAllCategoryReducer } from './CategoryReducer'
+import { fetchARestaurantsReducer, fetchAllRestaurantsReducer } from './RestaurantReducer'
 import { basketItemsReducer } from './BasketItemsReducer'
 
 
@@ -33,9 +33,9 @@ export default combineReducers({
   createdBasket: persistReducer(existingUserBasketPersistConfig, createShoppingBasket),
   existingBasket: fetchShoppingBasket,
   products: fetchAllProductReducer,
-  productsByCategory: fetchAllProductsByCategoryReducer,
+  category: fetchACategoryReducer,
   categories: fetchAllCategoryReducer,
-  categoriesByRestaurant: fetchAllCategoriesByRestaurantsReducer,
+  restaurant: fetchARestaurantsReducer,
   restaurants: fetchAllRestaurantsReducer,
   basketItems: basketItemsReducer
 });

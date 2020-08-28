@@ -5,9 +5,9 @@ import Image from "react-native-image-progress";
 import ProgressBar from "react-native-progress";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { loginUser } from "../redux/actions/LoginAction";
-import { createShoppingBasket } from "../redux/actions/BasketAction";
+import { getShoppingBasket } from "../redux/actions/BasketAction";
 import { connect } from "react-redux";
-import { foodImages } from "../styles/globalImages";
+import { addBasketItem, deleteBasketItem } from "../redux/actions/BasketItemsAction";
 
 class FoodCard extends Component {
   state = {
@@ -22,7 +22,10 @@ class FoodCard extends Component {
     
   }
   render() {
-    
+    // const {existingBasket:{basket}} = this.props;
+    // const basketId = basket.basket && basket.basket.id
+    // console.log(basketId, 'opopopopopopopoppopopop')
+
     const {products:{products}} = this.props.allProducts;
     return (
       <View
@@ -63,7 +66,7 @@ class FoodCard extends Component {
                 </View>
                 <TouchableOpacity style={{marginRight:12}} >
                 <Icon
-                  // onPress={() => addItem()}
+                  // onPress={() => addItem(item.id, quantity = 1)}
                   style={[{ color: 'black' }]}
                   size={20}
                   name={"cart-plus"}
@@ -85,10 +88,13 @@ class FoodCard extends Component {
 
 const mapStateToProps = (state) => ({
   userProfile: state.userProfile,
-  basket: state.basket,
+  existingBasket: state.existingBasket,
+  basketItems: state.basketItems
 });
 
 export default connect(mapStateToProps, {
   loginUser,
-  createShoppingBasket,
+  getShoppingBasket,
+  addBasketItem,
+  deleteBasketItem
 })(FoodCard);

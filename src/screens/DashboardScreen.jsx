@@ -7,7 +7,7 @@ import { loginUser } from "../redux/actions/LoginAction";
 import { userProfile } from "../redux/actions/ProfileAction";
 import { createShoppingBasket, getShoppingBasket } from "../redux/actions/BasketAction";
 import Spinner from 'react-native-loading-spinner-overlay';
-import { fetchAllProductsByCategory } from "../redux/actions/CategoryAction";
+import { fetchACategory } from "../redux/actions/CategoryAction";
 import { fetchAllProducts } from "../redux/actions/ProductAction";
 
 
@@ -19,7 +19,7 @@ class DashboardScreen extends Component {
     if (isAuthenticated) {
       const { existingUser: { existingUser: { id, token }}} = this.props;
       this.props.fetchAllProducts(token)
-      // this.props.fetchAProductsByCategory(1, token)
+      // this.props.fetchACategory(1, token)
       this.props.userProfile(id, token);
         if(!isBasketCreated){
          this.props.createShoppingBasket(id, token);
@@ -44,7 +44,7 @@ class DashboardScreen extends Component {
           overlayColor='rgba(0, 0, 0, .6)'
           textContent='Fetching Meals...'
         />
-        <FoodCard navigation={this.props.navigation} productsByCategory={this.props.productsByCategory} allProducts={this.props.allProducts}/>
+        <FoodCard navigation={this.props.navigation} category={this.props.category} allProducts={this.props.allProducts}/>
       </View>
     );
   }
@@ -55,8 +55,8 @@ const mapStateToProps = (state) => ({
   userProfile: state.userProfile,
   createdBasket: state.createdBasket,
   existingBasket: state.existingBasket,
-  productsByCategory: state.category,
-  allProducts: state.products
+  allProducts: state.products,
+  category: state.category
 });
 
 export default connect(mapStateToProps, {
@@ -64,6 +64,6 @@ export default connect(mapStateToProps, {
   loginUser,
   createShoppingBasket,
   getShoppingBasket,
-  fetchAllProductsByCategory,
   fetchAllProducts,
+  fetchACategory
 })(DashboardScreen);

@@ -9,8 +9,8 @@ import { GlobalStyles } from "../styles/globalStyles";
 import { fetchAllCategory } from "../redux/actions/CategoryAction";
 import { loginUser } from "../redux/actions/LoginAction";
 import CategoryCard from "../components/CategoryCard"
-
-
+import {fetchARestaurant} from '../redux/actions/RestaurantAction';
+import {NavigationEvents} from 'react-navigation';
 
 
 class Category extends Component {
@@ -20,7 +20,16 @@ class Category extends Component {
     this.props.fetchAllCategory(token)
   }
 
+  getRestaurant = (restaurantId) => {
+    const { existingUser: { existingUser: { token }}} = this.props;
+    if(restaurantId){
+      return this.props.fetchARestaurant(restaurantId, token)
+    }
+  }
+
   render() {
+    const { state } = this.props.navigation;
+    const restaurantId = state.params && state.params.restaurantId
     const {loading} = this.props.categories;
     return (
       <View
@@ -34,7 +43,8 @@ class Category extends Component {
           overlayColor='rgba(0, 0, 0, .6)'
           textContent='Fetching Categories...'
         />
-        <CategoryCard categories={this.props.categories}/>
+         <NavigationEvents onDidFocus={() => this.getRestaurant(restaurantId)} />
+        <CategoryCard navigation={this.props.navigation} restaurantId={restaurantId} restaurant={this.props.restaurant} categories={this.props.categories}/>
       </View>
     )
   }
@@ -43,11 +53,13 @@ class Category extends Component {
 
 const mapStateToProps = (state) => ({
   existingUser: state.existingUser,
-  categories: state.categories
+  categories: state.categories,
+  restaurant: state.restaurant
 });
 
 
 export default connect(mapStateToProps, {
   loginUser,
-  fetchAllCategory
+  fetchAllCategory,
+  fetchARestaurant
 })(Category);

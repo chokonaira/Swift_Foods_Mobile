@@ -24,9 +24,9 @@ class Register extends Component {
     const { isAuthenticated } = this.props.existingUser;
     if (isAuthenticated) {
       const {
-        userProfile: { user },
+        userProfile
       } = this.props.profile;
-      if (user === undefined) {
+      if (userProfile && userProfile.user === undefined) {
         return this.onLogOut;
       }
       this.props.navigation.navigate("Dashboard");

@@ -22,16 +22,15 @@ class ShoppingCartIcon extends Component {
   };
   render() {
     const { modal } = this.state;
-    const {basket} = this.props.existingBasket
-    // console.log(basket.product.length,'basket...');
+    const {existingBasket} = this.props
 
     return (
       <View style={{ paddingBottom: 13 }}>
-        <CartModal shoppingBasket={basket} openModal={modal} closeModal={this.closeModal} />
+        <CartModal shoppingBasket={existingBasket && existingBasket.basket} openModal={modal} closeModal={this.closeModal} />
         <TouchableOpacity onPress={this.openModal}>
           <View style={GlobalStyles.shoppingCartNotification}>
             <Text style={{ color: "#fff", fontWeight: "bold" }}>
-              {basket && basket.product.length}
+              {existingBasket.basket.product && existingBasket.basket.product.length}
             </Text>
           </View>
 

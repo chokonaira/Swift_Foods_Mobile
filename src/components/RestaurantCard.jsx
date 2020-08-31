@@ -13,6 +13,8 @@ class RestaurantCard extends Component {
   };
 
   render() {
+
+    // console.log(this.props, 'na here we dey so')
     const {restaurants: {hotels_restaurants}} = this.props.restaurants
     return (
       <View
@@ -31,7 +33,11 @@ class RestaurantCard extends Component {
             <TouchableOpacity
               activeOpacity={0.5}
               style={{ width: "49.8%"}}
-              // onPress={this.GetListItem.bind(this, item.p_title)}
+              onPress={() => {
+                this.props.navigation.navigate('Category', {
+                  restaurantId: item.id,
+                });
+              }}
             >
               <View>
                 <View

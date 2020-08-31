@@ -3,16 +3,16 @@ import axios from "axios";
 
 const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
 
-const fetchAProductsByCategoryLoading = () => ({
+const fetchACategoryLoading = () => ({
   type: types.FETCH_A_CATEGORY_LOADING,
 });
 
-const fetchAProductsByCategorySuccess = (payload) => ({
+const fetchACategorySuccess = (payload) => ({
   type: types.FETCH_A_CATEGORY_SUCCESS,
   payload,
 });
 
-const fetchAProductsByCategoryError = (payload) => ({
+const fetchACategoryError = (payload) => ({
   type: types.FETCH_A_CATEGORY_FAILURE,
   payload,
 });
@@ -31,8 +31,8 @@ const fetchAllCategoryError = (payload) => ({
   payload,
 });
 
-export const fetchAProductsByCategory = (categoryId, token) => (dispatch) => {
-  dispatch(fetchAProductsByCategoryLoading());
+export const fetchACategory = (categoryId, token) => (dispatch) => {
+  dispatch(fetchACategoryLoading());
   headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
@@ -41,10 +41,10 @@ export const fetchAProductsByCategory = (categoryId, token) => (dispatch) => {
   axios
     .get(`${baseUrl}/products/categories/${categoryId}`, { headers })
     .then((response) => {
-      dispatch(fetchAProductsByCategorySuccess(response.data));
+      dispatch(fetchACategorySuccess(response.data));
     })
     .catch((error) => {
-      dispatch(fetchAProductsByCategoryError({ message: error.message }));
+      dispatch(fetchACategoryError({ message: error.message }));
     });
 };
 

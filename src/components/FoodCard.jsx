@@ -5,24 +5,43 @@ import Image from "react-native-image-progress";
 import ProgressBar from "react-native-progress";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { loginUser } from "../redux/actions/LoginAction";
-import { createShoppingBasket } from "../redux/actions/BasketAction";
+import { getShoppingBasket } from "../redux/actions/BasketAction";
 import { connect } from "react-redux";
-import { foodImages } from "../styles/globalImages";
+import { addBasketItem, deleteBasketItem } from "../redux/actions/BasketItemsAction";
 
 class FoodCard extends Component {
   state = {
     cart: []
   }
 
-  openMenu = () => {
-    // this.navigation.openDrawer();
-  };
-
   addItem = () => {
     
   }
   render() {
-    const {products:{products}} = this.props.allProducts;
+    const {categoryId} = this.props;
+    let products 
+    if (categoryId) {
+    products = this.props.category.category.products
+    } else { 
+    products = this.props.allProducts.products.products
+    }
+    
+    if (products.length < 1){
+      return (
+      <View
+         style={{
+           flex: 1,
+           justifyContent: "center",
+           alignItems: "center",
+           marginTop: 2,
+         }}
+       >
+         <Text style={{fontWeight:'bold', fontSize: 15}}>There are currently no Products </Text>
+         <Text style={{fontWeight:'bold', fontSize: 15}}>for this category at the moment</Text>
+
+       </View>)
+     }
+
     return (
       <View
         style={{
@@ -34,7 +53,6 @@ class FoodCard extends Component {
         }}
       >
         <FlatList
-        // style={{}}
           data={products}
           renderItem={({ item }) => (
             <View
@@ -62,7 +80,7 @@ class FoodCard extends Component {
                 </View>
                 <TouchableOpacity style={{marginRight:12}} >
                 <Icon
-                  // onPress={() => addItem()}
+                  // onPress={() => addItem(item.id, quantity = 1)}
                   style={[{ color: 'black' }]}
                   size={20}
                   name={"cart-plus"}
@@ -84,10 +102,13 @@ class FoodCard extends Component {
 
 const mapStateToProps = (state) => ({
   userProfile: state.userProfile,
-  basket: state.basket,
+  existingBasket: state.existingBasket,
+  basketItems: state.basketItems
 });
 
 export default connect(mapStateToProps, {
   loginUser,
-  createShoppingBasket,
+  getShoppingBasket,
+  addBasketItem,
+  deleteBasketItem
 })(FoodCard);

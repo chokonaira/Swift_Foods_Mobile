@@ -33,7 +33,7 @@ class Restaurant extends Component {
           overlayColor='rgba(0, 0, 0, .6)'
           textContent='Fetching Restaurants...'
         />
-        <RestaurantCard restaurants={this.props.restaurants}/>
+        <RestaurantCard navigation={this.props.navigation} restaurants={this.props.restaurants}/>
       </View>
     )
   }

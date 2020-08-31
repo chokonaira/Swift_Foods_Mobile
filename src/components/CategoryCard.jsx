@@ -3,23 +3,33 @@ import { Text, View, TouchableOpacity, FlatList } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Image from "react-native-image-progress";
 import ProgressBar from "react-native-progress";
-// import foodImage from "../styles/globalImages";
-import { CategoryImages } from "../styles/globalImages";
 
 class CategoryCard extends Component {
-  componentDidMount() {
-    this.props.categories;
-  }
-
-  openMenu = () => {
-    // this.navigation.openDrawer();
-  };
 
   render() {
-    const {
-      categories: { categories },
-    } = this.props.categories;
-    console.log(categories, "this.categories");
+
+    const {restaurantId} = this.props;
+    let categories;
+    if (restaurantId){
+      categories = this.props.restaurant.restaurant.categories;
+    } else {
+      categories = this.props.categories.categories.categories;
+    }
+    if (categories.length < 1){
+     return (
+     <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 2,
+        }}
+      >
+        <Text style={{fontWeight:'bold', fontSize: 15}}>There are currently no Categories </Text>
+         <Text style={{fontWeight:'bold', fontSize: 15}}>for this Restaurant at the moment</Text>
+      </View>)
+    }
+
     return (
       <View
         style={{
@@ -27,13 +37,20 @@ class CategoryCard extends Component {
           justifyContent: "center",
           alignItems: "center",
           marginTop: 2,
-          // width: "100%",
         }}
       >
         <FlatList
           data={categories}
           renderItem={({ item }) => (
-            <TouchableOpacity activeOpacity={0.5} style={{ width: "33%" }}>
+            <TouchableOpacity 
+              activeOpacity={0.5} 
+              style={{ width: "33%" }}
+              onPress={() => {
+                this.props.navigation.navigate('Dashboard', {
+                  categoryId: item.id,
+                });
+              }}
+            >
               <View
                 style={{
                   borderWidth: 0.7,

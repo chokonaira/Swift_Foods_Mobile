@@ -15,7 +15,7 @@ class CategoryCard extends Component {
     } else {
       categories = this.props.categories.categories.categories;
     }
-    if (categories.length < 1){
+    if (categories && categories.length < 1){
      return (
      <View
         style={{

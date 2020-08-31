@@ -14,10 +14,16 @@ class FoodCard extends Component {
     cart: []
   }
 
-  addItem = () => {
-    
+  addItem = (basketItem) => {
+    console.log(basketItem, 'basketItem added')
+
+    //const { existingUser: { existingUser: { token }}} = this.props;
+    //this.props.addBasketItem(basketItem, token)
   }
   render() {
+
+    const {basket} = this.props.existingBasket
+    const basketId = basket.basket && basket.basket.id
     const {categoryId} = this.props;
     let products 
     if (categoryId) {
@@ -25,8 +31,9 @@ class FoodCard extends Component {
     } else { 
     products = this.props.allProducts.products.products
     }
+
     
-    if (products.length < 1){
+    if (products && products.length < 1){
       return (
       <View
          style={{
@@ -80,7 +87,7 @@ class FoodCard extends Component {
                 </View>
                 <TouchableOpacity style={{marginRight:12}} >
                 <Icon
-                  // onPress={() => addItem(item.id, quantity = 1)}
+                  onPress={() => this.addItem({basket_id: basketId, product_id: item.id, quantity:1})}
                   style={[{ color: 'black' }]}
                   size={20}
                   name={"cart-plus"}
@@ -101,6 +108,7 @@ class FoodCard extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  existingUser: state.existingUser,
   userProfile: state.userProfile,
   existingBasket: state.existingBasket,
   basketItems: state.basketItems

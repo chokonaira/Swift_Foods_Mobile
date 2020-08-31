@@ -169,7 +169,7 @@ class CartModal extends Component {
                   {shoppingBasket.product &&
                     shoppingBasket.product.map((cartItem, index) => (
                       <View
-                        key={cartItem.id}
+                        key={index + 1}
                         style={{
                           marginBottom: 10,
                           borderRadius: 3,

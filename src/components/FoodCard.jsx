@@ -14,11 +14,10 @@ class FoodCard extends Component {
     cart: []
   }
 
-  addItem = (basketItem) => {
-    console.log(basketItem, 'basketItem added')
-
-    //const { existingUser: { existingUser: { token }}} = this.props;
-    //this.props.addBasketItem(basketItem, token)
+  addItem = (payload) => {
+    // console.log(basketItem, 'basketItem added')
+    const { existingUser: { existingUser: { id, token }}} = this.props;
+    this.props.addBasketItem(id, payload, token)
   }
   render() {
 

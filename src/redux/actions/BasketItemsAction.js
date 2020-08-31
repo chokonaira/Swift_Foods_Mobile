@@ -1,6 +1,6 @@
 import * as types from "./index";
 import axios from "axios";
-
+import { getShoppingBasket } from "./BasketAction"
 const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
 
 const basketItemLoading = () => ({
@@ -37,7 +37,7 @@ const deleteAllBasketItemsError = (payload) => ({
   payload,
 });
 
-export const addBasketItem = (payload, token) => (dispatch) => {
+export const addBasketItem = (id, payload, token) => (dispatch) => {
   dispatch(basketItemLoading());
   headers = {
     "Content-Type": "application/json",
@@ -48,6 +48,8 @@ export const addBasketItem = (payload, token) => (dispatch) => {
     .post(`${baseUrl}/basket_items/add`, payload, { headers })
     .then((response) => {
       dispatch(addBasketItemSuccess(response.data));
+      const {basket_item:{basket_id}} = response.data;
+      dispatch(getShoppingBasket(id, basket_id, token))
     })
     .catch((error) => {
       dispatch(addBasketItemError({ message: error.message }));

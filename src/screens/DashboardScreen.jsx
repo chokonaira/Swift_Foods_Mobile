@@ -8,6 +8,7 @@ import { userProfile } from "../redux/actions/ProfileAction";
 import { createShoppingBasket, getShoppingBasket } from "../redux/actions/BasketAction";
 import Spinner from 'react-native-loading-spinner-overlay';
 import { fetchACategory } from "../redux/actions/CategoryAction";
+import {NavigationEvents} from 'react-navigation';
 import { fetchAllProducts } from "../redux/actions/ProductAction";
 
 
@@ -30,9 +31,17 @@ class DashboardScreen extends Component {
     }
   }
 
+  getCategory = (categoryId) => {
+    // console.log(restaurantId, 'restaurantId')
+    const { existingUser: { existingUser: { token }}} = this.props;
+    if(categoryId){
+      return this.props.fetchACategory(categoryId, token)
+    }
+  }
+
   render() {
     const { state } = this.props.navigation;
-    console.log(state.params && state.params.categoryId, 'categoryId')
+    const categoryId = state.params && state.params.categoryId;
     const {loading} = this.props.existingBasket;
     return (
       <View style={GlobalStyles.dashboard}>
@@ -44,7 +53,8 @@ class DashboardScreen extends Component {
           overlayColor='rgba(0, 0, 0, .6)'
           textContent='Fetching Meals...'
         />
-        <FoodCard navigation={this.props.navigation} category={this.props.category} allProducts={this.props.allProducts}/>
+         <NavigationEvents onDidFocus={() => this.getCategory(categoryId)} />
+        <FoodCard categoryId={categoryId} navigation={this.props.navigation} category={this.props.category} allProducts={this.props.allProducts}/>
       </View>
     );
   }

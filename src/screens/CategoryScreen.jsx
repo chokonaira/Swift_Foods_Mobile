@@ -23,7 +23,7 @@ class Category extends Component {
   }
 
   getRestaurant = (restaurantId) => {
-    console.log(restaurantId, 'restaurantId')
+    // console.log(restaurantId, 'restaurantId')
     const { existingUser: { existingUser: { token }}} = this.props;
     if(restaurantId){
       return this.props.fetchARestaurant(restaurantId, token)
@@ -31,7 +31,6 @@ class Category extends Component {
   }
 
   render() {
-    console.log(this.props.restaurant, 'categoriesByRestaurant........')
     const { state } = this.props.navigation;
     const restaurantId = state.params && state.params.restaurantId
     
@@ -49,7 +48,7 @@ class Category extends Component {
           textContent='Fetching Categories...'
         />
          <NavigationEvents onDidFocus={() => this.getRestaurant(restaurantId)} />
-        <CategoryCard navigation={this.props.navigation} restaurant={this.props.restaurant} categories={this.props.categories}/>
+        <CategoryCard navigation={this.props.navigation} restaurantId={restaurantId} restaurant={this.props.restaurant} categories={this.props.categories}/>
       </View>
     )
   }

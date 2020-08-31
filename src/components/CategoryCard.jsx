@@ -3,25 +3,19 @@ import { Text, View, TouchableOpacity, FlatList } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Image from "react-native-image-progress";
 import ProgressBar from "react-native-progress";
-// import foodImage from "../styles/globalImages";
-import { CategoryImages } from "../styles/globalImages";
 
 class CategoryCard extends Component {
-  componentDidMount() {
-   
-    this.props.categories;
-  }
-
-  openMenu = () => {
-    // this.navigation.openDrawer();
-  };
 
   render() {
+
+    const {restaurantId} = this.props;
+    let categories;
+    if (restaurantId){
+      categories = this.props.restaurant.restaurant.categories;
+    } else {
+      categories = this.props.categories.categories.categories;
+    }
     
-    const {
-      categories: { categories },
-    } = this.props.categories;
-    // console.log(categories, "this.categories");
     return (
       <View
         style={{
@@ -29,7 +23,6 @@ class CategoryCard extends Component {
           justifyContent: "center",
           alignItems: "center",
           marginTop: 2,
-          // width: "100%",
         }}
       >
         <FlatList

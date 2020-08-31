@@ -15,7 +15,21 @@ class CategoryCard extends Component {
     } else {
       categories = this.props.categories.categories.categories;
     }
-    
+    if (categories.length < 1){
+     return (
+     <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 2,
+        }}
+      >
+        <Text style={{fontWeight:'bold', fontSize: 15}}>There are currently no Categories </Text>
+         <Text style={{fontWeight:'bold', fontSize: 15}}>for this Restaurant at the moment</Text>
+      </View>)
+    }
+
     return (
       <View
         style={{

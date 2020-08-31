@@ -20,7 +20,6 @@ class DashboardScreen extends Component {
     if (isAuthenticated) {
       const { existingUser: { existingUser: { id, token }}} = this.props;
       this.props.fetchAllProducts(token)
-      // this.props.fetchACategory(1, token)
       this.props.userProfile(id, token);
         if(!isBasketCreated){
          this.props.createShoppingBasket(id, token);
@@ -32,7 +31,6 @@ class DashboardScreen extends Component {
   }
 
   getCategory = (categoryId) => {
-    // console.log(restaurantId, 'restaurantId')
     const { existingUser: { existingUser: { token }}} = this.props;
     if(categoryId){
       return this.props.fetchACategory(categoryId, token)

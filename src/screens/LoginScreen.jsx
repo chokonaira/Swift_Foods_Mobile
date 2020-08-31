@@ -75,7 +75,6 @@ class Login extends Component {
                   validationSchema={loginSchema}
                   onSubmit={(values, actions) => {
                     actions.resetForm();
-                    // console.log(values, 'values')
                     this.props.loginUser(values);
                   }}
                 >

@@ -17,7 +17,6 @@ class Restaurant extends Component {
   componentDidMount() {
     const { existingUser: { existingUser: { token }}} = this.props;
     this.props.fetchAllRestaurants(token)
-    // console.log(this.props, 'jjejjejjejjejej')
   }
   render() {
     const {loading} = this.props.restaurants;

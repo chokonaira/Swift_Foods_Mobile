@@ -18,12 +18,9 @@ class Category extends Component {
   componentDidMount() {
     const { existingUser: { existingUser: { token }}} = this.props;
     this.props.fetchAllCategory(token)
-    // console.log(this.props.navigation, 'navigation')
-   
   }
 
   getRestaurant = (restaurantId) => {
-    // console.log(restaurantId, 'restaurantId')
     const { existingUser: { existingUser: { token }}} = this.props;
     if(restaurantId){
       return this.props.fetchARestaurant(restaurantId, token)
@@ -33,7 +30,6 @@ class Category extends Component {
   render() {
     const { state } = this.props.navigation;
     const restaurantId = state.params && state.params.restaurantId
-    
     const {loading} = this.props.categories;
     return (
       <View

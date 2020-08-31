@@ -14,19 +14,34 @@ class FoodCard extends Component {
     cart: []
   }
 
-  openMenu = () => {
-    // this.navigation.openDrawer();
-  };
-
   addItem = () => {
     
   }
   render() {
-    // const {existingBasket:{basket}} = this.props;
-    // const basketId = basket.basket && basket.basket.id
-    // console.log(basketId, 'opopopopopopopoppopopop')
+    const {categoryId} = this.props;
+    let products 
+    if (categoryId) {
+    products = this.props.category.category.products
+    } else { 
+    products = this.props.allProducts.products.products
+    }
+    
+    if (products.length < 1){
+      return (
+      <View
+         style={{
+           flex: 1,
+           justifyContent: "center",
+           alignItems: "center",
+           marginTop: 2,
+         }}
+       >
+         <Text style={{fontWeight:'bold', fontSize: 15}}>There are currently no Products </Text>
+         <Text style={{fontWeight:'bold', fontSize: 15}}>for this category at the moment</Text>
 
-    const {products:{products}} = this.props.allProducts;
+       </View>)
+     }
+
     return (
       <View
         style={{
@@ -38,7 +53,6 @@ class FoodCard extends Component {
         }}
       >
         <FlatList
-        // style={{}}
           data={products}
           renderItem={({ item }) => (
             <View

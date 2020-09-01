@@ -9,8 +9,9 @@ import { createShoppingBasket, getShoppingBasket } from "../redux/actions/Basket
 import Spinner from 'react-native-loading-spinner-overlay';
 import { fetchACategory } from "../redux/actions/CategoryAction";
 import {NavigationEvents} from 'react-navigation';
+import { logoutUser } from "../redux/actions/LogoutAction";
 import { fetchAllProducts } from "../redux/actions/ProductAction";
-
+import jwtDecode from "jwt-decode";
 
 
 class DashboardScreen extends Component {
@@ -19,6 +20,7 @@ class DashboardScreen extends Component {
     const { createdBasket:{isBasketCreated} } = this.props;
     if (isAuthenticated) {
       const { existingUser: { existingUser: { id, token }}} = this.props;
+      this.checkTokenExpirationMiddleware(token)
       this.props.fetchAllProducts(token)
       this.props.userProfile(id, token);
         if(!isBasketCreated){
@@ -29,6 +31,13 @@ class DashboardScreen extends Component {
         this.props.getShoppingBasket(id, basketId, token);   
     }
   }
+
+  checkTokenExpirationMiddleware = async (token) => {
+      if (jwtDecode(token).exp < Date.now() / 1000) {
+        await this.logoutUser();
+        this.props.navigation.navigate('Home')
+      }
+  };
 
   getCategory = (categoryId) => {
     const { existingUser: { existingUser: { token }}} = this.props;
@@ -73,5 +82,5 @@ export default connect(mapStateToProps, {
   createShoppingBasket,
   getShoppingBasket,
   fetchAllProducts,
-  fetchACategory
+  fetchACategory,
 })(DashboardScreen);

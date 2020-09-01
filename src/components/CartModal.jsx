@@ -6,7 +6,6 @@ import {
   Modal,
   Image,
   ScrollView,
-  SafeAreaView,
 } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Icon from "react-native-vector-icons/FontAwesome5";
@@ -52,10 +51,9 @@ class CartModal extends Component {
   render() {
     const { modal } = this.state;
     const { shoppingBasket } = this.props;
-    // console.log(this.props.shoppingBasket.product, "shoppingBasket");
 
     const add = (total, num) => total + parseInt(num.price);
-    // const totalPrice = shoppingBasket.product.reduce(add, 0);
+    const totalPrice = shoppingBasket.product.reduce(add, 0);
     // console.log(totalPrice, "totalPrice");
     return (
       <View
@@ -134,7 +132,7 @@ class CartModal extends Component {
                       color: "#2c2828",
                     }}
                   >
-                    {/* Total Payable: {totalPrice}Rwf{" "} */}
+                    Total Payable: {totalPrice}Rwf{" "}
                   </Text>
                   <TouchableOpacity
                     onPress={this.openCheckoutModal}

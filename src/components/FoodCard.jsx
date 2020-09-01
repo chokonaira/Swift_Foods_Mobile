@@ -17,6 +17,8 @@ class FoodCard extends Component {
   addItem = (payload) => {
     // console.log(basketItem, 'basketItem added')
     const { existingUser: { existingUser: { id, token }}} = this.props;
+    console.log(token, 'token there again')
+
     this.props.addBasketItem(id, payload, token)
   }
   render() {

@@ -7,7 +7,6 @@ import { createShoppingBasket, getShoppingBasket } from "../redux/actions/Basket
 import { loginUser } from "../redux/actions/LoginAction";
 import CartModal from "./CartModal";
 import { connect } from "react-redux";
-import { CartItems } from "../styles/globalImages";
 
 class ShoppingCartIcon extends Component {
   state = {

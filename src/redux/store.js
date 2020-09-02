@@ -20,7 +20,6 @@ const store = createStore(
   persistedReducer,
   composeWithDevTools(applyMiddleware(...middleware, logger))
 );
-console.log(store.getState(), 'na store be main this oo')
 
 const persistor = persistStore(store);
 

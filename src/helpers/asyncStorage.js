@@ -1,8 +1,5 @@
 import AsyncStorage from "@react-native-community/async-storage";
 import { showMessage } from "react-native-flash-message";
-import { logoutUser } from "../redux/actions/LogoutAction";
-import jwtDecode from "jwt-decode";
-import { store } from "../redux/store";
 
 export const storeData = async (key, value) => {
   try {

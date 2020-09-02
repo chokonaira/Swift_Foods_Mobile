@@ -32,12 +32,17 @@ class DashboardScreen extends Component {
     }
   }
 
-  checkTokenExpirationMiddleware = async (token) => {
+  checkTokenExpirationMiddleware = (token) => {
+    console.log(jwtDecode(token).exp, 'jwtDecode expiry')
       if (jwtDecode(token).exp < Date.now() / 1000) {
-        await this.logoutUser();
-        this.props.navigation.navigate('Home')
+        return this.onLogOut()
       }
   };
+
+  onLogOut = () => {
+    this.props.logoutUser();
+    this.props.navigation.navigate('Home')
+  }
 
   getCategory = (categoryId) => {
     const { existingUser: { existingUser: { token }}} = this.props;
@@ -58,7 +63,7 @@ class DashboardScreen extends Component {
           visible={loading}
           textStyle={{color: '#f0a500'}}
           overlayColor='rgba(0, 0, 0, .6)'
-          textContent='Fetching Meals...'
+          // textContent='Fetching Meals...'
         />
          <NavigationEvents onDidFocus={() => this.getCategory(categoryId)} />
         <FoodCard categoryId={categoryId} navigation={this.props.navigation} category={this.props.category} allProducts={this.props.allProducts}/>
@@ -83,4 +88,5 @@ export default connect(mapStateToProps, {
   getShoppingBasket,
   fetchAllProducts,
   fetchACategory,
+  logoutUser,
 })(DashboardScreen);

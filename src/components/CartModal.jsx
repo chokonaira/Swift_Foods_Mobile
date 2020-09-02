@@ -9,30 +9,17 @@ import {
 } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Icon from "react-native-vector-icons/FontAwesome5";
-import { CartItems } from "../styles/globalImages";
 import CheckoutFormModal from "./CheckoutFormModal";
 import { userProfile } from "../redux/actions/ProfileAction";
 import { getShoppingBasket } from "../redux/actions/BasketAction";
 import { connect } from "react-redux";
+import { deleteBasketItem, deleteAllBasketItems } from "../redux/actions/BasketItemsAction";
 import { loginUser } from "../redux/actions/LoginAction";
 
 class CartModal extends Component {
   state = {
     modal: false,
   };
-
-  componentDidMount() {
-    // const { existingUser } = this.props;
-    // if (existingUser.isAuthenticated) {
-    //   const {
-    //     existingUser: {
-    //       existingUser: { id, token },
-    //     },
-    //   } = this.props;
-    //   // this.props.userProfile(id, token);
-    //   // this.props.getShoppingBasket(id, token);
-    // }
-  }
 
   openCheckoutModal = () => {
     this.setState({ modal: true });
@@ -41,20 +28,31 @@ class CartModal extends Component {
     this.setState({ modal: false });
   };
 
-  deleteCartItem = () => {
-    CartItems.filter((item) => {
-      return item.id !== id;
-    });
-    // (cartItem) => cartItem !== cartItem.id
-    console.log("cart item deleted .......");
+  deleteCartItem = (basketItem) => {
+    const {
+      existingUser: {
+        existingUser: { id, token },
+      },
+    } = this.props;
+    const { id: basketItemId, basket_id } = basketItem;
+    this.props.deleteBasketItem(id, basket_id, basketItemId, token);
   };
+
+  clearBasketItems = () => {
+    const {
+      existingUser: {
+        existingUser: { id, token },
+      },
+    } = this.props;
+    const {basket:{basket:{id: basketId}}} = this.props.existingBasket
+    this.props.deleteAllBasketItems(id, basketId, token)
+  }
+
   render() {
     const { modal } = this.state;
     const { shoppingBasket } = this.props;
-
     const add = (total, num) => total + parseInt(num.price);
     const totalPrice = shoppingBasket.product.reduce(add, 0);
-    // console.log(totalPrice, "totalPrice");
     return (
       <View
         style={{
@@ -165,52 +163,57 @@ class CartModal extends Component {
                 </View>
                 <ScrollView style={GlobalStyles.cartModalScroolView}>
                   {shoppingBasket.product &&
-                    shoppingBasket.product.map((cartItem, index) => (
-                      <View
-                        key={index + 1}
-                        style={{
-                          marginBottom: 10,
-                          borderRadius: 3,
-                          alignItems: "center",
-                          flexDirection: "row",
-                          width: "95%",
-                          backgroundColor: "#ececeb",
-                          color: "black",
-                          padding: 7,
-                          borderStyle: "dashed",
-                          borderWidth: 1,
-                          borderColor: "black",
-                        }}
-                      >
-                        <Text style={{ marginRight: 10, fontSize: 15 }}>
-                          {index + 1}
-                        </Text>
-
-                        <View style={GlobalStyles.cartItemViewWrapper}>
-                          <Image
-                            style={GlobalStyles.cartItemViewImage}
-                            source={{ uri: cartItem.image_url }}
-                          />
-                          <Text style={GlobalStyles.cartItemViewText}>
-                            {" "}
-                            {cartItem.name}{" "}
-                          </Text>
-                          <Text style={GlobalStyles.cartItemViewText2}>
-                            {" "}
-                            {cartItem.price}{" "}
-                          </Text>
-                        </View>
-                        <Icon
-                          onPress={() => {
-                            this.deleteCartItem;
+                    shoppingBasket.product.map((cartItem, index) => {
+                      const { basket_items } = shoppingBasket;
+                      return (
+                        <View
+                          key={index + 1}
+                          style={{
+                            marginBottom: 10,
+                            borderRadius: 3,
+                            alignItems: "center",
+                            flexDirection: "row",
+                            width: "95%",
+                            backgroundColor: "#ececeb",
+                            color: "black",
+                            padding: 7,
+                            borderStyle: "dashed",
+                            borderWidth: 1,
+                            borderColor: "black",
                           }}
-                          style={GlobalStyles.cartItemViewIcon}
-                          size={18}
-                          name={"times"}
-                        />
-                      </View>
-                    ))}
+                        >
+                          {console.log(cartItem, "cartItem")}
+                          <Text style={{ marginRight: 10, fontSize: 15 }}>
+                            {index + 1}
+                          </Text>
+
+                          <View style={GlobalStyles.cartItemViewWrapper}>
+                            <Image
+                              style={GlobalStyles.cartItemViewImage}
+                              source={{ uri: cartItem.image_url }}
+                            />
+                            <Text style={GlobalStyles.cartItemViewText}>
+                              {" "}
+                              {cartItem.name}{" "}
+                            </Text>
+                            <Text style={GlobalStyles.cartItemViewText2}>
+                              {" "}
+                              {cartItem.price}{" "}
+                            </Text>
+                          </View>
+                          <Icon
+                            onPress={() =>
+                              this.deleteCartItem(basket_items[index])
+                            }
+                            style={GlobalStyles.cartItemViewIcon}
+                            size={18}
+                            name={"times"}
+                          />
+                        </View>
+                      );
+                    })}
                   <TouchableOpacity
+                    onPress={this.clearBasketItems}
                     style={{
                       marginRight: 20,
                       alignSelf: "flex-end",
@@ -251,11 +254,14 @@ class CartModal extends Component {
 const mapStateToProps = (state) => ({
   existingUser: state.existingUser,
   userProfile: state.userProfile,
-  basket: state.basket,
+  existingBasket: state.existingBasket,
+  basketItems: state.basketItems,
 });
 
 export default connect(mapStateToProps, {
   userProfile,
   loginUser,
   getShoppingBasket,
+  deleteBasketItem,
+  deleteAllBasketItems
 })(CartModal);

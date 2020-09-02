@@ -24,7 +24,7 @@ class FoodCard extends Component {
   render() {
 
     const {basket} = this.props.existingBasket
-    const basketId = basket.basket && basket.basket.id
+    const basketId = basket && basket.basket.id
     const {categoryId} = this.props;
     let products 
     if (categoryId) {

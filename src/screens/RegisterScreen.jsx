@@ -15,23 +15,13 @@ import { Formik } from "formik";
 import { registerSchema } from "../helpers/formValidationSchema";
 import { connect } from 'react-redux';
 import { registerUser } from '../redux/actions/RegisterAction';
+import { loginUser } from "../redux/actions/LoginAction";
 import Spinner from 'react-native-loading-spinner-overlay';
+import {NavigationEvents} from 'react-navigation';
 import { showMessage } from "react-native-flash-message";
+import { logoutUser } from "../redux/actions/LogoutAction";
 
 class Register extends Component {
-
-  componentDidMount() {
-    const { isAuthenticated } = this.props.existingUser;
-    if (isAuthenticated) {
-      const {
-        userProfile
-      } = this.props.profile;
-      if (userProfile && userProfile.user === undefined) {
-        return this.onLogOut;
-      }
-      this.props.navigation.navigate("Dashboard");
-    }
-  }
 
   componentDidUpdate() {
      const { isRegistered, isError } = this.props.newUser
@@ -50,6 +40,25 @@ class Register extends Component {
   }
 
 
+  checkAuthenticated = () => {
+    const { isAuthenticated } = this.props.existingUser;
+    if (isAuthenticated) {
+      const {
+        userProfile
+      } = this.props.profile;
+      if (userProfile && userProfile.user === undefined) {
+         this.onLogOut;
+         return
+      }
+      this.props.navigation.navigate("Dashboard");
+    }
+  }
+
+  onLogOut = () => {
+    this.props.logoutUser();
+    this.props.navigation.navigate('Home')
+  }
+
   render() {
     const { loading } = this.props.newUser
     return (
@@ -66,6 +75,7 @@ class Register extends Component {
         <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
           <ScrollView>
             <View style={GlobalStyles.authForm}>
+            <NavigationEvents onDidFocus={this.checkAuthenticated} />
             <Text style={GlobalStyles.authText}>Register</Text>
 
               <Formik
@@ -149,7 +159,7 @@ class Register extends Component {
                       {props.touched.password && props.errors.password}
                     </Text>
                     <TouchableOpacity
-                      onPress={this.pressHandlerLogin}
+                      onPress={() => this.props.navigation.navigate("Login")}
                       style={GlobalStyles.loginTextSpanWrapper}
                     >
                       <Text style={GlobalStyles.registerTextSpan}>Login</Text>
@@ -174,8 +184,9 @@ class Register extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  existingUser: state.existingUser,
   profile: state.userProfile,
   newUser: state.newUser
 })
 
-export default connect(mapStateToProps, {registerUser, userProfile})(Register);
+export default connect(mapStateToProps, {loginUser, registerUser, userProfile}, logoutUser)(Register);

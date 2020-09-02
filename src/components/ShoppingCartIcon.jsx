@@ -29,7 +29,7 @@ class ShoppingCartIcon extends Component {
         <TouchableOpacity onPress={this.openModal}>
           <View style={GlobalStyles.shoppingCartNotification}>
             <Text style={{ color: "#fff", fontWeight: "bold" }}>
-              {existingBasket.basket.product && existingBasket.basket.product.length}
+              {existingBasket.basket && existingBasket.basket.product.length}
             </Text>
           </View>
 

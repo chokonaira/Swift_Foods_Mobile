@@ -48,7 +48,7 @@ const screens = {
       tabBarLabel: "Profile",
       tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{color: '#2c2828', }]} size={20} name={"user"} />
+          <Icon style={[{color: tintColor }]} size={20} name={"user"} />
         </View>
       ),
     },

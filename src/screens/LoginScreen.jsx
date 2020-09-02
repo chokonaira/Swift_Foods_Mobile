@@ -18,21 +18,11 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import { loginUser } from '../redux/actions/LoginAction';
 import { Formik } from "formik";
 import { showMessage } from "react-native-flash-message";
+import {NavigationEvents} from 'react-navigation';
 import { loginSchema } from "../helpers/formValidationSchema";
+import { logoutUser } from "../redux/actions/LogoutAction";
 
 class Login extends Component {
-  componentDidMount() {
-    const { isAuthenticated } = this.props.existingUser;
-    if (isAuthenticated) {
-      const {
-        userProfile
-      } = this.props.profile;
-      if (userProfile && userProfile.user === undefined) {
-        return this.onLogOut;
-      }
-      this.props.navigation.navigate("Dashboard");
-    }
-  }
 
   componentDidUpdate() {
     const { existingUser: {isAuthenticated, isError }} = this.props
@@ -50,6 +40,26 @@ class Login extends Component {
      });
    }
  }
+
+ checkAuthenticated = () => {
+  const { isAuthenticated } = this.props.existingUser;
+  if (isAuthenticated) {
+    const {
+      userProfile
+    } = this.props.profile;
+    if (userProfile && userProfile.user === undefined) {
+       this.onLogOut;
+       return
+    }
+    this.props.navigation.navigate("Dashboard");
+  }
+}
+
+onLogOut = () => {
+  this.props.logoutUser();
+  this.props.navigation.navigate('Home')
+}
+
   render() {
     const { existingUser: { loading }} = this.props
     return (
@@ -66,7 +76,8 @@ class Login extends Component {
           <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
             <ScrollView style={GlobalStyles.authFormWrapper}>
               <View style={GlobalStyles.authLoginForm}>
-              <Text style={GlobalStyles.authText}>Login</Text>
+              <NavigationEvents onDidFocus={this.checkAuthenticated} />
+                <Text style={GlobalStyles.authText}>Login</Text>
                 <Formik
                   initialValues={{
                     email: "",
@@ -135,6 +146,7 @@ class Login extends Component {
               </View>
             </ScrollView>
           </KeyboardAvoidingView>
+
         </TouchableWithoutFeedback>
       </ImageBackground>
     );
@@ -146,4 +158,4 @@ const mapStateToProps = (state) => ({
   existingUser: state.existingUser
 })
 
-export default connect(mapStateToProps, {loginUser, userProfile})(Login);
+export default connect(mapStateToProps, {loginUser, userProfile, logoutUser})(Login);

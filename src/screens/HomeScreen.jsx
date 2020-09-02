@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { userProfile } from "../redux/actions/ProfileAction";
 import { loginUser } from "../redux/actions/LoginAction";
 import { ImageBackground } from "react-native";
 import { globalImages } from "../styles/globalImages";
@@ -13,12 +12,6 @@ class Home extends Component {
   componentDidMount() {
     const { isAuthenticated } = this.props.existingUser;
     if (isAuthenticated) {
-      const {
-        userProfile,
-      } = this.props.profile;
-      if (userProfile && userProfile.user === undefined) {
-        return this.onLogOut;
-      }
       this.props.navigation.navigate("Dashboard");
     }
   }
@@ -59,7 +52,6 @@ class Home extends Component {
 
 const mapStateToProps = (state) => ({
   existingUser: state.existingUser,
-  profile: state.userProfile,
 });
 
-export default connect(mapStateToProps, { loginUser, userProfile })(Home);
+export default connect(mapStateToProps, { loginUser })(Home);

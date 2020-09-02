@@ -1,10 +1,10 @@
 import * as types from "../actions/index";
 
 const initialState = {
-  basket: {},
+  basket: [],
   basketFetched: false,
   loading: false,
-  errors: null,
+  errors: {},
   isError: false,
 };
 

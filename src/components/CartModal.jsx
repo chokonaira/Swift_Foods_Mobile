@@ -51,8 +51,9 @@ class CartModal extends Component {
   render() {
     const { modal } = this.state;
     const { shoppingBasket } = this.props;
+    console.log(shoppingBasket, 'shoppingBasket shoppingBasket')
     const add = (total, num) => total + parseInt(num.price);
-    const totalPrice = shoppingBasket.product.reduce(add, 0);
+    // const totalPrice = shoppingBasket.product.reduce(add, 0);
     return (
       <View
         style={{
@@ -130,7 +131,7 @@ class CartModal extends Component {
                       color: "#2c2828",
                     }}
                   >
-                    Total Payable: {totalPrice}Rwf{" "}
+                    {/* Total Payable: {totalPrice}Rwf{" "} */}
                   </Text>
                   <TouchableOpacity
                     onPress={this.openCheckoutModal}

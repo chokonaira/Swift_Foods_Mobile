@@ -1,8 +1,8 @@
 import * as types from '../actions';
 
 const initialState = {
-  newUser: null,
-  errors: null,
+  newUser: {},
+  errors: {},
   loading: false,
   isRegistered: false,
   isError: false

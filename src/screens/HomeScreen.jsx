@@ -6,6 +6,7 @@ import { globalImages } from "../styles/globalImages";
 import Logo from "../components/Logo";
 import Button from "../components/Button";
 import Spinner from "react-native-loading-spinner-overlay";
+import {NavigationEvents} from 'react-navigation';
 import { GlobalStyles } from "../styles/globalStyles";
 
 class Home extends Component {

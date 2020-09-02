@@ -11,21 +11,20 @@ import { addBasketItem, deleteBasketItem } from "../redux/actions/BasketItemsAct
 
 class FoodCard extends Component {
   state = {
-    cart: []
+    color: 'green'
   }
 
   addItem = (payload) => {
-    // console.log(basketItem, 'basketItem added')
     const { existingUser: { existingUser: { id, token }}} = this.props;
-    console.log(token, 'token there again')
-
     this.props.addBasketItem(id, payload, token)
   }
+
   render() {
 
     const {basket} = this.props.existingBasket
     const basketId = basket && basket.basket.id
     const {categoryId} = this.props;
+    
     let products 
     if (categoryId) {
     products = this.props.category.category.products
@@ -86,10 +85,9 @@ class FoodCard extends Component {
                   <Text style={{fontWeight:'bold', fontSize:10, color:'green'}}>Rwf: {item.price}</Text>
                   
                 </View>
-                <TouchableOpacity style={{marginRight:12}} >
+                <TouchableOpacity style={{marginRight:15}} onPress={() => this.addItem({basket_id: basketId, product_id: item.id, quantity:1})}>
                 <Icon
-                  onPress={() => this.addItem({basket_id: basketId, product_id: item.id, quantity:1})}
-                  style={[{ color: 'black' }]}
+                  style={{color: 'black'}}
                   size={20}
                   name={"cart-plus"}
                 />

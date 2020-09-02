@@ -24,19 +24,10 @@ import { logoutUser } from "../redux/actions/LogoutAction";
 class Register extends Component {
 
   componentDidUpdate() {
-     const { isRegistered, isError } = this.props.newUser
+     const { isRegistered } = this.props.newUser
       if(isRegistered) {
-        showMessage({
-          message: "Registration succesfull, Login",
-          type: "success",
-        });
         this.props.navigation.navigate("Login");
-    } else if(isError){
-      showMessage({
-        message: "Opps something went wrong, try again",
-        type: "danger",
-      });
-    }
+    } 
   }
 
 

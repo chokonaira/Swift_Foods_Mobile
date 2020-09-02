@@ -25,20 +25,10 @@ import { logoutUser } from "../redux/actions/LogoutAction";
 class Login extends Component {
 
   componentDidUpdate() {
-    const { existingUser: {isAuthenticated, isError }} = this.props
+    const { existingUser: {isAuthenticated }} = this.props
      if(isAuthenticated) {
-       showMessage({
-         message: "Login succesfull",
-         type: "success",
-         style: {alignContent: 'center', justifyContent:'center'} 
-       }); 
        this.props.navigation.navigate("Dashboard");
-   } else if(isError){
-     showMessage({
-       message: "Opps something went wrong, try again",
-       type: "danger",
-     });
-   }
+     }
  }
 
  checkAuthenticated = () => {

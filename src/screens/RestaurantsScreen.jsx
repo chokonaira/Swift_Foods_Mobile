@@ -10,8 +10,6 @@ import { loginUser } from "../redux/actions/LoginAction";
 import RestaurantCard from "../components/RestaurantCard"
 import { fetchAllRestaurants } from "../redux/actions/RestaurantAction";
 
-
-
 class Restaurant extends Component {
 
   componentDidMount() {

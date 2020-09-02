@@ -1,6 +1,6 @@
 import * as types from "./index";
 import axios from "axios";
-
+import { getShoppingBasket } from "./BasketAction"
 const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
 
 const basketItemLoading = () => ({
@@ -37,7 +37,7 @@ const deleteAllBasketItemsError = (payload) => ({
   payload,
 });
 
-export const addBasketItem = (payload, token) => (dispatch) => {
+export const addBasketItem = (id, payload, token) => (dispatch) => {
   dispatch(basketItemLoading());
   headers = {
     "Content-Type": "application/json",
@@ -48,13 +48,15 @@ export const addBasketItem = (payload, token) => (dispatch) => {
     .post(`${baseUrl}/basket_items/add`, payload, { headers })
     .then((response) => {
       dispatch(addBasketItemSuccess(response.data));
+      const {basket_item:{basket_id}} = response.data;
+      dispatch(getShoppingBasket(id, basket_id, token))
     })
     .catch((error) => {
       dispatch(addBasketItemError({ message: error.message }));
     });
 };
 
-export const deleteBasketItem = (basketItemId, token) => (dispatch) => {
+export const deleteBasketItem = (userId, basketId, basketItemId, token) => (dispatch) => {
   dispatch(basketItemLoading());
   headers = {
     "Content-Type": "application/json",
@@ -65,23 +67,25 @@ export const deleteBasketItem = (basketItemId, token) => (dispatch) => {
     .delete(`${baseUrl}/basket_items/${basketItemId}`, { headers })
     .then((response) => {
       dispatch(deleteBasketItemSuccess(response.data));
+      dispatch(getShoppingBasket(userId, basketId, token))
     })
     .catch((error) => {
       dispatch(deleteBasketItemError({ message: error.message }));
     });
 };
 
-export const deleteAllBasketItems = (basketId, token) => (dispatch) => {
-  dispatch(deleteAllBasketItemsLoading());
+export const deleteAllBasketItems = (userId, basketId, token) => (dispatch) => {
+  dispatch(basketItemLoading());
   headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
   };
 
   axios
-    .delete(`${baseUrl}/basket_items/${basketId}`, { headers })
+    .delete(`${baseUrl}/basket_items/basket/${basketId}`, { headers })
     .then((response) => {
       dispatch(deleteAllBasketItemsSuccess(response.data));
+      dispatch(getShoppingBasket(userId, basketId, token))
     })
     .catch((error) => {
       dispatch(deleteAllBasketItemsError({ message: error.message }));

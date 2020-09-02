@@ -9,8 +9,9 @@ import { createShoppingBasket, getShoppingBasket } from "../redux/actions/Basket
 import Spinner from 'react-native-loading-spinner-overlay';
 import { fetchACategory } from "../redux/actions/CategoryAction";
 import {NavigationEvents} from 'react-navigation';
+import { logoutUser } from "../redux/actions/LogoutAction";
 import { fetchAllProducts } from "../redux/actions/ProductAction";
-
+import jwtDecode from "jwt-decode";
 
 
 class DashboardScreen extends Component {
@@ -19,6 +20,7 @@ class DashboardScreen extends Component {
     const { createdBasket:{isBasketCreated} } = this.props;
     if (isAuthenticated) {
       const { existingUser: { existingUser: { id, token }}} = this.props;
+      this.checkTokenExpirationMiddleware(token)
       this.props.fetchAllProducts(token)
       this.props.userProfile(id, token);
         if(!isBasketCreated){
@@ -28,6 +30,18 @@ class DashboardScreen extends Component {
         const { createdBasket: { basket: { basket:{ id: basketId }}}} = this.props;
         this.props.getShoppingBasket(id, basketId, token);   
     }
+  }
+
+  checkTokenExpirationMiddleware = (token) => {
+    console.log(jwtDecode(token).exp, 'jwtDecode expiry')
+      if (jwtDecode(token).exp < Date.now() / 1000) {
+        return this.onLogOut()
+      }
+  };
+
+  onLogOut = () => {
+    this.props.logoutUser();
+    this.props.navigation.navigate('Home')
   }
 
   getCategory = (categoryId) => {
@@ -49,7 +63,7 @@ class DashboardScreen extends Component {
           visible={loading}
           textStyle={{color: '#f0a500'}}
           overlayColor='rgba(0, 0, 0, .6)'
-          textContent='Fetching Meals...'
+          // textContent='Fetching Meals...'
         />
          <NavigationEvents onDidFocus={() => this.getCategory(categoryId)} />
         <FoodCard categoryId={categoryId} navigation={this.props.navigation} category={this.props.category} allProducts={this.props.allProducts}/>
@@ -73,5 +87,6 @@ export default connect(mapStateToProps, {
   createShoppingBasket,
   getShoppingBasket,
   fetchAllProducts,
-  fetchACategory
+  fetchACategory,
+  logoutUser,
 })(DashboardScreen);

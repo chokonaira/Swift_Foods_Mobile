@@ -17,6 +17,10 @@ import { deleteBasketItem, deleteAllBasketItems } from "../redux/actions/BasketI
 import { loginUser } from "../redux/actions/LoginAction";
 
 class CartModal extends Component {
+  componentDidMount(){
+    this
+  }
+
   state = {
     modal: false,
   };
@@ -51,8 +55,9 @@ class CartModal extends Component {
   render() {
     const { modal } = this.state;
     const { shoppingBasket } = this.props;
+    console.log(shoppingBasket, 'shoppingBasket shoppingBasket')
     const add = (total, num) => total + parseInt(num.price);
-    const totalPrice = shoppingBasket.product.reduce(add, 0);
+    const totalPrice = shoppingBasket.basket && shoppingBasket.basket.product.reduce(add, 0);
     return (
       <View
         style={{
@@ -106,7 +111,7 @@ class CartModal extends Component {
                 name={"arrow-right"}
               />
             </View>
-            {shoppingBasket.product && shoppingBasket.product.length === 0 ? (
+            {shoppingBasket.basket && shoppingBasket.basket.product.length === 0 ? (
               <View>
                 <Text style={{ fontSize: 20, fontWeight: "bold" }}>
                   No Item in Shopping Basket
@@ -162,9 +167,9 @@ class CartModal extends Component {
                   </TouchableOpacity>
                 </View>
                 <ScrollView style={GlobalStyles.cartModalScroolView}>
-                  {shoppingBasket.product &&
-                    shoppingBasket.product.map((cartItem, index) => {
-                      const { basket_items } = shoppingBasket;
+                  {shoppingBasket.basket &&
+                    shoppingBasket.basket.product.map((cartItem, index) => {
+                      const { basket_items } = shoppingBasket.basket;
                       return (
                         <View
                           key={index + 1}

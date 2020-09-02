@@ -35,7 +35,8 @@ class DashboardScreen extends Component {
   checkTokenExpirationMiddleware = (token) => {
     console.log(jwtDecode(token).exp, 'jwtDecode expiry')
       if (jwtDecode(token).exp < Date.now() / 1000) {
-        return this.onLogOut()
+       this.onLogOut()
+       return
       }
   };
 

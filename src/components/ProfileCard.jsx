@@ -14,16 +14,6 @@ class ProfileCard extends Component {
     modal: false,
   };
 
-  componentDidMount() {
-    const { isAuthenticated } = this.props.existingUser;
-    if (isAuthenticated) {
-    const { userProfile:{user} } = this.props.profile;
-    if(user === undefined){
-      this.onLogOut
-    }
-      this.props.navigation.navigate("Dashboard");
-    }
-  }
   onLogOut = () => {
     this.props.logoutUser();
     this.props.navigation.navigate('Home')
@@ -37,8 +27,6 @@ class ProfileCard extends Component {
   }
   render() {
     const { modal } = this.state;
-    // const { userProfile:{user} } = this.props.profile;
-    
     const { userProfile } = this.props.profile;
     return (
       <>

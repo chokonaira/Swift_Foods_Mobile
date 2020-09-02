@@ -3,6 +3,7 @@ import { StyleSheet, Platform } from "react-native";
 export const GlobalStyles = StyleSheet.create({
   flastList:{
     // width: Platform.OS === 'ios' ? 173 : 190,
+    borderRadius: 6,
     height: 150,
     margin: 4,
   },
@@ -206,9 +207,10 @@ export const GlobalStyles = StyleSheet.create({
     height: 22,
     width: 22,
     borderRadius: 15,
-    backgroundColor: "#1eb2a6",
+    backgroundColor: "#f0a500",
     right: 28,
     bottom: 15,
+    color: '#444',
     alignItems: "center",
     justifyContent: "center",
     zIndex: 2000,

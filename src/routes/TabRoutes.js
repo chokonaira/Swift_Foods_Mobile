@@ -15,7 +15,7 @@ const screens = {
       tabBarLabel: "Meals",
       tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{ color: tintColor }]} size={20} name={"hamburger"} />
+          <Icon style={[{ color: tintColor }]} size={22} name={"hamburger"} />
         </View>
       ),
     },
@@ -26,7 +26,7 @@ const screens = {
       tabBarLabel: "Category",
       tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{ color: tintColor }]} size={20} name={"th"} />
+          <Icon style={[{ color: tintColor }]} size={22} name={"th"} />
         </View>
       ),
     },
@@ -37,7 +37,7 @@ const screens = {
       tabBarLabel: "Restaurant",
       tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{ color: tintColor }]} size={20} name={"hotel"} />
+          <Icon style={[{ color: tintColor }]} size={22} name={"hotel"} />
         </View>
       ),
     },
@@ -48,7 +48,7 @@ const screens = {
       tabBarLabel: "Profile",
       tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{color: tintColor }]} size={20} name={"user"} />
+          <Icon style={[{color: tintColor }]} size={22} name={"user"} />
         </View>
       ),
     },
@@ -57,8 +57,8 @@ const screens = {
 
 const TabRoutes = createMaterialBottomTabNavigator(screens, {
   // initialRouteName: 'Dashboard',
-  activeColor: '#fff',
-  inactiveColor: "#2c2828",
-  barStyle: { backgroundColor: "#f0a500"},
+  activeColor: '#ffbd69',
+  inactiveColor: "#444",
+  barStyle: { backgroundColor: "#fffdf9"},
 });
 export default TabRoutes;

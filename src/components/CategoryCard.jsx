@@ -53,7 +53,7 @@ class CategoryCard extends Component {
             >
               <View
                 style={{
-                  borderWidth: 0.7,
+                  borderWidth: 0.3,
                   borderRadius: 3,
                   borderColor: "#f0a500",
                   margin: 0.8,
@@ -70,7 +70,7 @@ class CategoryCard extends Component {
                   style={GlobalStyles.flastList}
                 />
 
-                <View style={{ backgroundColor: "rgba(240,165,0, 0.8)" }}>
+                <View style={{ backgroundColor: "#fff" }}>
                   <Text style={GlobalStyles.cardText}>{item.name}</Text>
                 </View>
               </View>

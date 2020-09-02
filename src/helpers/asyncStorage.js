@@ -23,10 +23,6 @@ export const getData = async (key) => {
 export const clearData = async () => {
   try {
     await AsyncStorage.clear();
-    showMessage({
-      message: "Logout succesfull",
-      type: "success",
-    });
   } catch (e) {
     console.log(e, "error");
   }

@@ -20,7 +20,7 @@ class DashboardScreen extends Component {
     const { createdBasket:{isBasketCreated} } = this.props;
     if (isAuthenticated) {
       const { existingUser: { existingUser: { id, token }}} = this.props;
-      this.checkTokenExpirationMiddleware(token)
+      // this.checkTokenExpirationMiddleware(token)
       this.props.fetchAllProducts(token)
       this.props.userProfile(id, token);
         if(!isBasketCreated){
@@ -32,13 +32,13 @@ class DashboardScreen extends Component {
     }
   }
 
-  checkTokenExpirationMiddleware = (token) => {
-    console.log(jwtDecode(token).exp, 'jwtDecode expiry')
-      if (jwtDecode(token).exp < Date.now() / 1000) {
-       this.onLogOut()
-       return
-      }
-  };
+  // checkTokenExpirationMiddleware = (token) => {
+  //   console.log(jwtDecode(token).exp, 'jwtDecode expiry')
+  //     if (jwtDecode(token).exp < Date.now() / 1000) {
+  //      this.onLogOut()
+  //      return
+  //     }
+  // };
 
   onLogOut = () => {
     this.props.logoutUser();

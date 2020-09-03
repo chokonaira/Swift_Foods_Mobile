@@ -22,7 +22,7 @@ const RootNavigator = createStackNavigator({
         title: "",
         headerLeft: () => <HeaderLogo navigation={navigation}/>,
         headerRight: () => <ShoppingCartIcon navigation={navigation}/>,
-        headerStyle: { backgroundColor: "#f0a500" },
+        headerStyle: { backgroundColor: "#fffdf9" },
         tranparentCard: true
       }
     },
@@ -31,5 +31,3 @@ const RootNavigator = createStackNavigator({
 })
 
 export default createAppContainer(RootNavigator);
-
-

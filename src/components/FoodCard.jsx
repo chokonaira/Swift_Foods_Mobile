@@ -67,7 +67,7 @@ class FoodCard extends Component {
               activeOpacity={0.5}
               // onPress={this.GetListItem.bind(this, item.p_title)}
               >
-              <View style={{borderWidth: .7, borderRadius: 3, borderColor: '#f0a500', margin: 1}} >
+              <View style={{borderWidth: .5, borderRadius: 3, borderColor: '#f0a500', margin: 1}} >
 
                 <Image
                   source={{ uri: item.image_url }}
@@ -79,7 +79,7 @@ class FoodCard extends Component {
                   }}
                   style={GlobalStyles.flastList}
                 />
-                <View style={{flexDirection:'row', justifyContent:'space-between', alignItems: 'center', backgroundColor: 'rgba(240,165,0, 0.8)', padding: 3,width: '100%' }}>
+                <View style={{flexDirection:'row', justifyContent:'space-between', alignItems: 'center', backgroundColor: '#fffdf9', padding: 3,width: '100%' }}>
                 <View style={{marginLeft:10, width: '80%'}}>
                   <Text style={{fontWeight:'bold', fontSize:12,color:'black'}}>{item.name}</Text>
                   <Text style={{fontWeight:'bold', fontSize:10, color:'green'}}>Rwf: {item.price}</Text>

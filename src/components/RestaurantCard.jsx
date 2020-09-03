@@ -43,7 +43,7 @@ class RestaurantCard extends Component {
                 <View
                   style={{
                     borderWidth: 0.7,
-                    borderRadius: 3,
+                    borderRadius: .5,
                     borderColor: "#f0a500",
                     margin: 1,
                   }}
@@ -59,7 +59,7 @@ class RestaurantCard extends Component {
                     style={GlobalStyles.flastList}
                   />
 
-                  <View style={{ backgroundColor: "rgba(240,165,0, 0.8)" }}>
+                  <View style={{ backgroundColor: "#fffdf9" }}>
                     <Text style={GlobalStyles.cardText}>{item.name}</Text>
                   </View>
                 </View>

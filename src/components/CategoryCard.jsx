@@ -53,7 +53,7 @@ class CategoryCard extends Component {
             >
               <View
                 style={{
-                  borderWidth: 0.7,
+                  borderWidth: 1,
                   borderRadius: .5,
                   borderColor: "#f0a500",
                   margin: 0.8,

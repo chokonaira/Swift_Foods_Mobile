@@ -22,7 +22,7 @@ class ShoppingCartIcon extends Component {
   render() {
     const { modal } = this.state;
     const {existingBasket} = this.props
-    const count = existingBasket.basket && existingBasket.basket.product.length
+    const count = existingBasket.basket.product && existingBasket.basket.product.length
     return (
       <View style={{ paddingBottom: 13 }}>
         <CartModal shoppingBasket={existingBasket} openModal={modal} closeModal={this.closeModal} />

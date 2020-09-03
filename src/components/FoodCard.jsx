@@ -67,7 +67,7 @@ class FoodCard extends Component {
               activeOpacity={0.5}
               // onPress={this.GetListItem.bind(this, item.p_title)}
               >
-              <View style={{borderWidth: .5, borderRadius: 3, borderColor: '#f0a500', margin: 1}} >
+              <View style={{borderWidth: 1, borderRadius: 3, borderColor: '#f0a500', margin: 1}} >
 
                 <Image
                   source={{ uri: item.image_url }}

@@ -42,8 +42,8 @@ class RestaurantCard extends Component {
               <View>
                 <View
                   style={{
-                    borderWidth: 0.7,
-                    borderRadius: .5,
+                    borderWidth: 1,
+                    borderRadius: 1,
                     borderColor: "#f0a500",
                     margin: 1,
                   }}

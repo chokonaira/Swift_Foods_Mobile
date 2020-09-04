@@ -33,11 +33,8 @@ const createShoppingBasket = (state = initialState, action) => {
     case types.LOGOUT_SUCCESS:
       return {
         ...state,
-        basket: null,
-        loading: false,
+        basket: [],
         isBasketCreated: false,
-        isLoggout: true,
-        errors: null,
       };
     default:
       return state;

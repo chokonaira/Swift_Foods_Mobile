@@ -6,6 +6,7 @@ const initialState = {
   loading: false,
   errors: {},
   isError: false,
+  isLoggout: false,
 };
 
 const fetchShoppingBasket = (state = initialState, action) => {
@@ -33,11 +34,8 @@ const fetchShoppingBasket = (state = initialState, action) => {
     case types.LOGOUT_SUCCESS:
       return {
         ...state,
-        basket: null,
-        loading: false,
-        isBasketbasketFetchedCreated: false,
-        isLoggout: true,
-        errors: null,
+        basket: [],
+        basketFetched: false,
       };
     default:
       return state;

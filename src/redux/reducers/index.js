@@ -16,13 +16,13 @@ import { basketItemsReducer } from './BasketItemsReducer'
 const existingUserPersistConfig = {
   key: 'existingUser',
   storage: AsyncStorage,
-  blacklist: ['errors', 'loading', 'isError',]
+  blacklist: ['errors', 'loading', 'isError', 'isLoggout']
 }
 
 const existingUserBasketPersistConfig = {
   key: 'createdBasket',
   storage: AsyncStorage,
-  blacklist: ['errors', 'isError', 'loading']
+  blacklist: ['errors', 'isError', 'loading', 'isLoggout']
 }
 
 

@@ -20,9 +20,9 @@ class FoodCard extends Component {
   }
 
   render() {
-
-    const {basket} = this.props.existingBasket
-    const basketId = basket.basket && basket.basket.id
+console.log(this.props.existingBasket, 'existingbasket')
+    const {existingBasket} = this.props
+    const basketId = existingBasket.basket.basket && existingBasket.basket.basket.id
     const {categoryId} = this.props;
     
     let products 

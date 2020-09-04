@@ -1,7 +1,7 @@
 import * as types from "../actions";
 
 const initialState = {
-  existingUser: [],
+  existingUser: {},
   errors: {},
   loading: false,
   isAuthenticated: false,
@@ -33,10 +33,9 @@ const loginReducer = (state = initialState, action) => {
     case types.LOGOUT_SUCCESS:
       return {
         ...state,
-        existingUser: null,
-        loading: false,
+        existingUser: {},
         isAuthenticated: false,
-        isLoggout: true,
+        loading: false,
       };
     default:
       return state;

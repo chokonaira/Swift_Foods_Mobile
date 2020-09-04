@@ -206,7 +206,7 @@ export const GlobalStyles = StyleSheet.create({
     height: 22,
     width: 22,
     borderRadius: 15,
-    backgroundColor: "#f0a500",
+    backgroundColor: "#5dc0a6",
     right: 28,
     bottom: 15,
     alignItems: "center",

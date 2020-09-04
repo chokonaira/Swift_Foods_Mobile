@@ -28,7 +28,7 @@ class ShoppingCartIcon extends Component {
         <CartModal shoppingBasket={existingBasket} openModal={modal} closeModal={this.closeModal} />
         <TouchableOpacity onPress={this.openModal}>
           <View style={GlobalStyles.shoppingCartNotification}>
-            <Text style={{ color: "#fff", fontWeight: "bold" }}>
+            <Text style={{ color: "#444", fontWeight: "bold" }}>
               {count}
             </Text>
           </View>

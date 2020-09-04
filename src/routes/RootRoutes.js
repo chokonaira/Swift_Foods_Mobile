@@ -22,7 +22,7 @@ const RootNavigator = createStackNavigator({
         title: "",
         headerLeft: () => <HeaderLogo navigation={navigation}/>,
         headerRight: () => <ShoppingCartIcon navigation={navigation}/>,
-        headerStyle: { backgroundColor: "#fffdf9" },
+        headerStyle: { backgroundColor: "#f0a500" },
         tranparentCard: true
       }
     },

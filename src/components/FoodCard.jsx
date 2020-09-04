@@ -20,9 +20,8 @@ class FoodCard extends Component {
   }
 
   render() {
-console.log(this.props.existingBasket, 'existingbasket')
-    const {existingBasket} = this.props
-    const basketId = existingBasket.basket.basket && existingBasket.basket.basket.id
+    const {basket} = this.props.existingBasket
+    const basketId = basket.basket && basket.basket.id
     const {categoryId} = this.props;
     
     let products 
@@ -109,13 +108,13 @@ console.log(this.props.existingBasket, 'existingbasket')
 const mapStateToProps = (state) => ({
   existingUser: state.existingUser,
   userProfile: state.userProfile,
-  existingBasket: state.existingBasket,
+  // existingBasket: state.existingBasket,
   basketItems: state.basketItems
 });
 
 export default connect(mapStateToProps, {
   loginUser,
-  getShoppingBasket,
+  // getShoppingBasket,
   addBasketItem,
   deleteBasketItem
 })(FoodCard);

@@ -20,7 +20,6 @@ class DashboardScreen extends Component {
     const { createdBasket:{isBasketCreated} } = this.props;
     if (isAuthenticated) {
       const { existingUser: { existingUser: { id, token }}} = this.props;
-      console.log(id, token, 'id, token')
       this.checkTokenExpirationMiddleware(token)
       this.props.fetchAllProducts(token)
       this.props.userProfile(id, token);
@@ -34,7 +33,7 @@ class DashboardScreen extends Component {
   }
 
   checkTokenExpirationMiddleware = (token) => {
-    console.log(jwtDecode(token).exp, 'jwtDecode expiry')
+    // console.log(jwtDecode(token).exp, 'jwtDecode expiry')
       if (jwtDecode(token).exp < Date.now() / 1000) {
        this.onLogOut()
        return
@@ -68,7 +67,7 @@ class DashboardScreen extends Component {
           // textContent='Fetching Meals...'
         />
          <NavigationEvents onDidFocus={() => this.getCategory(categoryId)} />
-        <FoodCard categoryId={categoryId} navigation={this.props.navigation} category={this.props.category} allProducts={this.props.allProducts}/>
+        <FoodCard existingBasket={this.props.existingBasket} categoryId={categoryId} navigation={this.props.navigation} category={this.props.category} allProducts={this.props.allProducts}/>
       </View>
     );
   }

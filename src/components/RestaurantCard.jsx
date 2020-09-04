@@ -13,8 +13,6 @@ class RestaurantCard extends Component {
   };
 
   render() {
-
-    // console.log(this.props, 'na here we dey so')
     const {restaurants: {hotels_restaurants}} = this.props.restaurants
     return (
       <View

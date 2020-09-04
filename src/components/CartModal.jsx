@@ -52,7 +52,6 @@ class CartModal extends Component {
   render() {
     const { modal } = this.state;
     const { shoppingBasket } = this.props;
-    console.log(shoppingBasket, 'shoppingBasket shoppingBasket')
     const add = (total, num) => total + parseInt(num.price);
     const totalPrice = shoppingBasket.basket.product && shoppingBasket.basket.product.reduce(add, 0);
     return (
@@ -184,7 +183,6 @@ class CartModal extends Component {
                             borderColor: "black",
                           }}
                         >
-                          {console.log(cartItem, "cartItem")}
                           <Text style={{ marginRight: 10, fontSize: 15 }}>
                             {index + 1}
                           </Text>

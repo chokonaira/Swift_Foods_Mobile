@@ -65,9 +65,9 @@ class ProfileCard extends Component {
             <Text style={GlobalStyles.profileBottomText}>{userProfile && userProfile.user.phone}</Text>
           </View>
           <Text style={GlobalStyles.emptyInput}></Text>
-          <TouchableOpacity onPress={this.openModal} style={GlobalStyles.profileBottomButton}>
+          {/* <TouchableOpacity onPress={this.openModal} style={GlobalStyles.profileBottomButton}>
             <Text style={GlobalStyles.profileBottomButtonText}>Edit Details</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       <ProfileFormModal openModal={modal} closeModal={this.closeModal}/>
 

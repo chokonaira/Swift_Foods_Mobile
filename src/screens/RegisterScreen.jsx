@@ -18,7 +18,6 @@ import { registerUser } from '../redux/actions/RegisterAction';
 import { loginUser } from "../redux/actions/LoginAction";
 import Spinner from 'react-native-loading-spinner-overlay';
 import {NavigationEvents} from 'react-navigation';
-import { showMessage } from "react-native-flash-message";
 import { logoutUser } from "../redux/actions/LogoutAction";
 
 class Register extends Component {
@@ -180,4 +179,4 @@ const mapStateToProps = (state) => ({
   newUser: state.newUser
 })
 
-export default connect(mapStateToProps, {loginUser, registerUser, userProfile}, logoutUser)(Register);
+export default connect(mapStateToProps, {loginUser, registerUser, userProfile, logoutUser})(Register);

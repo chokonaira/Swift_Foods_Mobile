@@ -1,8 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { Provider } from "react-redux";
 import { store, persistor } from "./src/redux/store";
-import { YellowBox } from "react-native";
-YellowBox.ignoreWarnings(["Remote debugger"]);
 import Main from "./src/Main";
 import { PersistGate } from "redux-persist/integration/react";
 

@@ -17,7 +17,6 @@ import { userProfile } from "../redux/actions/ProfileAction";
 import Spinner from 'react-native-loading-spinner-overlay';
 import { loginUser } from '../redux/actions/LoginAction';
 import { Formik } from "formik";
-import { showMessage } from "react-native-flash-message";
 import {NavigationEvents} from 'react-navigation';
 import { loginSchema } from "../helpers/formValidationSchema";
 import { logoutUser } from "../redux/actions/LogoutAction";

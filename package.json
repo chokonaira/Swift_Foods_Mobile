@@ -11,6 +11,10 @@
     "eject": "expo eject",
     "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=19001' && expo start"
   },
+  "jest": {
+    "preset": "jest-expo",
+    "setupFiles": ["./jest.config.js"]
+  },
   "dependencies": {
     "@expo/vector-icons": "^10.2.0",
     "@react-native-community/async-storage": "^1.11.0",

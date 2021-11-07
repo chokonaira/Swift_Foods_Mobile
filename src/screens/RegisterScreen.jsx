@@ -17,8 +17,6 @@ import { connect } from 'react-redux';
 import { registerUser } from '../redux/actions/RegisterAction';
 import { loginUser } from "../redux/actions/LoginAction";
 import Spinner from 'react-native-loading-spinner-overlay';
-import {NavigationEvents} from 'react-navigation';
-import { showMessage } from "react-native-flash-message";
 import { logoutUser } from "../redux/actions/LogoutAction";
 
 class Register extends Component {
@@ -32,7 +30,7 @@ class Register extends Component {
 
 
   checkAuthenticated = () => {
-    const { isAuthenticated } = this.props.existingUser;
+    const { isAuthenticated } = this.props?.existingUser;
     if (isAuthenticated) {
       const {
         userProfile
@@ -51,14 +49,13 @@ class Register extends Component {
   }
 
   render() {
-    const { loading } = this.props.newUser
+    const { loading } = this.props?.newUser;
     return (
       <ImageBackground style={GlobalStyles.image} source={globalImages.RegisterBanner}>
         <Spinner
           animation="none"
           color='#f0a500'
           visible={loading}
-          // textContent={'Loading...'}
           textStyle={{color: '#f0a500'}}
           overlayColor='rgba(0, 0, 0, .6)'
 
@@ -66,7 +63,6 @@ class Register extends Component {
         <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
           <ScrollView>
             <View style={GlobalStyles.authForm}>
-            <NavigationEvents onDidFocus={this.checkAuthenticated} />
             <Text style={GlobalStyles.authText}>Register</Text>
 
               <Formik
@@ -180,4 +176,4 @@ const mapStateToProps = (state) => ({
   newUser: state.newUser
 })
 
-export default connect(mapStateToProps, {loginUser, registerUser, userProfile}, logoutUser)(Register);
+export default connect(mapStateToProps, {loginUser, registerUser, userProfile, logoutUser })(Register);

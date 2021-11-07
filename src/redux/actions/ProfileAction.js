@@ -1,7 +1,7 @@
-import * as types from "./index";
-import axios from "axios";
+import * as types from './index';
+import axios from 'axios';
 
-const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
+const baseUrl = 'https://choko-swift-foods-backend.herokuapp.com';
 // const local = "http://127.0.0.1:3000";
 
 const profileLoading = () => ({
@@ -21,7 +21,7 @@ const profileFailure = (payload) => ({
 export const userProfile = (userId, token) => (dispatch) => {
   dispatch(profileLoading());
   headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   };
   axios

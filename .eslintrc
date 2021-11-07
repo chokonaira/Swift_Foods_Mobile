@@ -1,3 +1,4 @@
 {
-  "extends": "eslint-config-rallycoding"
+  "extends": "eslint-config-rallycoding",
+  "quotes": [0, "double"]
 }

@@ -18,7 +18,7 @@ export const registerSchema = Yup.object({
  .min(5, 'Password has to be longer than 5 characters!') 
  .required('Password is required!'),
 
-})
+});
 
 export const loginSchema = Yup.object({
   email: Yup.string()
@@ -28,4 +28,4 @@ export const loginSchema = Yup.object({
   .min(5, 'Password has to be longer than 5 characters!') 
   .required('Password is required!'),
  
- })
+ });

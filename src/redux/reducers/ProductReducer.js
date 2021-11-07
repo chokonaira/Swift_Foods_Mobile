@@ -1,4 +1,4 @@
-import * as types from "../actions";
+import * as types from '../actions';
 
 const initialState = {
   products: [],
@@ -33,5 +33,4 @@ export const fetchAllProductReducer = (state = initialState, action) => {
       return state;
   }
 };
-
 

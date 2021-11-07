@@ -1,7 +1,7 @@
-import * as types from "./index";
-import axios from "axios";
+import * as types from './index';
+import axios from 'axios';
 
-const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
+const baseUrl = 'https://choko-swift-foods-backend.herokuapp.com';
 // const local = "http://127.0.0.1:3000";
 
 const basketLoading = () => ({
@@ -31,7 +31,7 @@ const fetchBasketFailure = (payload) => ({
 export const createShoppingBasket = (userId, token) => (dispatch) => {
   dispatch(basketLoading());
   const headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   };
   axios
@@ -51,7 +51,7 @@ export const createShoppingBasket = (userId, token) => (dispatch) => {
 export const getShoppingBasket = (userId, basketId, token) => (dispatch) => {
   dispatch(basketLoading());
   const headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   };
 

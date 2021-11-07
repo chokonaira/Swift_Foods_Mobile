@@ -41,7 +41,7 @@ class Search extends Component {
           onChangeText={this.updateSearch}
           value={search}
         />
-       </View>
+      </View>
     );
   }
 }

@@ -1,7 +1,7 @@
-import * as types from "./index";
-import axios from "axios";
+import * as types from './index';
+import axios from 'axios';
 
-const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
+const baseUrl = 'https://choko-swift-foods-backend.herokuapp.com';
 
 const fetchFoodLoading = () => ({
   type: types.FETCH_FOOD_LOADING,
@@ -20,7 +20,7 @@ const fetchFoodError = (payload) => ({
 export const fetchAllProducts = (token) => (dispatch) => {
   dispatch(fetchFoodLoading());
   headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   };
 

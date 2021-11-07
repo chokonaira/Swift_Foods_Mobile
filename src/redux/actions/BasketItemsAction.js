@@ -1,7 +1,7 @@
-import * as types from "./index";
-import axios from "axios";
-import { getShoppingBasket } from "./BasketAction"
-const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
+import * as types from './index';
+import axios from 'axios';
+import { getShoppingBasket } from './BasketAction';
+const baseUrl = 'https://choko-swift-foods-backend.herokuapp.com';
 
 const basketItemLoading = () => ({
   type: types.BASKET_ITEM_LOADING,
@@ -40,7 +40,7 @@ const deleteAllBasketItemsError = (payload) => ({
 export const addBasketItem = (id, payload, token) => (dispatch) => {
   dispatch(basketItemLoading());
   headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   };
 
@@ -48,8 +48,8 @@ export const addBasketItem = (id, payload, token) => (dispatch) => {
     .post(`${baseUrl}/basket_items/add`, payload, { headers })
     .then((response) => {
       dispatch(addBasketItemSuccess(response.data));
-      const {basket_item:{basket_id}} = response.data;
-      dispatch(getShoppingBasket(id, basket_id, token))
+      const { basket_item: { basket_id } } = response.data;
+      dispatch(getShoppingBasket(id, basket_id, token));
     })
     .catch((error) => {
       dispatch(addBasketItemError({ message: error.message }));
@@ -59,7 +59,7 @@ export const addBasketItem = (id, payload, token) => (dispatch) => {
 export const deleteBasketItem = (userId, basketId, basketItemId, token) => (dispatch) => {
   dispatch(basketItemLoading());
   headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   };
 
@@ -67,7 +67,7 @@ export const deleteBasketItem = (userId, basketId, basketItemId, token) => (disp
     .delete(`${baseUrl}/basket_items/${basketItemId}`, { headers })
     .then((response) => {
       dispatch(deleteBasketItemSuccess(response.data));
-      dispatch(getShoppingBasket(userId, basketId, token))
+      dispatch(getShoppingBasket(userId, basketId, token));
     })
     .catch((error) => {
       dispatch(deleteBasketItemError({ message: error.message }));
@@ -77,7 +77,7 @@ export const deleteBasketItem = (userId, basketId, basketItemId, token) => (disp
 export const deleteAllBasketItems = (userId, basketId, token) => (dispatch) => {
   dispatch(basketItemLoading());
   headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   };
 
@@ -85,7 +85,7 @@ export const deleteAllBasketItems = (userId, basketId, token) => (dispatch) => {
     .delete(`${baseUrl}/basket_items/basket/${basketId}`, { headers })
     .then((response) => {
       dispatch(deleteAllBasketItemsSuccess(response.data));
-      dispatch(getShoppingBasket(userId, basketId, token))
+      dispatch(getShoppingBasket(userId, basketId, token));
     })
     .catch((error) => {
       dispatch(deleteAllBasketItemsError({ message: error.message }));

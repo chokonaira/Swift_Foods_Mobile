@@ -1,21 +1,20 @@
-import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
-import DashboardScreen from "../screens/DashboardScreen";
-import RestaurantScreen from "../screens/RestaurantsScreen";
-import CategoryScreen from "../screens/CategoryScreen";
-import ProfileScreen from "../screens/ProfileScreen";
-import React from "react";
-import { GlobalStyles } from "../styles/globalStyles";
-import { View } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome5";
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import DashboardScreen from '../screens/DashboardScreen';
+import RestaurantScreen from '../screens/RestaurantsScreen';
+import CategoryScreen from '../screens/CategoryScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import React from 'react';
+import { View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const screens = {
   Dashboard: {
     screen: DashboardScreen,
     navigationOptions: {
-      tabBarLabel: "Meals",
+      tabBarLabel: 'Meals',
       tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{ color: tintColor }]} size={22} name={"hamburger"} />
+          <Icon style={[{ color: tintColor }]} size={22} name={'hamburger'} />
         </View>
       ),
     },
@@ -23,10 +22,10 @@ const screens = {
   Category: {
     screen: CategoryScreen,
     navigationOptions: {
-      tabBarLabel: "Category",
+      tabBarLabel: 'Category',
       tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{ color: tintColor }]} size={22} name={"th"} />
+          <Icon style={[{ color: tintColor }]} size={22} name={'th'} />
         </View>
       ),
     },
@@ -34,10 +33,10 @@ const screens = {
   Restaurant: {
     screen: RestaurantScreen,
     navigationOptions: {
-      tabBarLabel: "Restaurant",
+      tabBarLabel: 'Restaurant',
       tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{ color: tintColor }]} size={22} name={"hotel"} />
+          <Icon style={[{ color: tintColor }]} size={22} name={'hotel'} />
         </View>
       ),
     },
@@ -45,10 +44,10 @@ const screens = {
   Profile: {
     screen: ProfileScreen,
     navigationOptions: {
-      tabBarLabel: "Profile",
+      tabBarLabel: 'Profile',
       tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{color: tintColor }]} size={22} name={"user"} />
+          <Icon style={[{ color: tintColor }]} size={22} name={'user'} />
         </View>
       ),
     },
@@ -58,7 +57,7 @@ const screens = {
 const TabRoutes = createMaterialBottomTabNavigator(screens, {
   // initialRouteName: 'Dashboard',
   activeColor: '#f0a500',
-  inactiveColor: "#444",
-  barStyle: { backgroundColor: "#fffdf9"},
+  inactiveColor: '#444',
+  barStyle: { backgroundColor: '#fffdf9' },
 });
 export default TabRoutes;

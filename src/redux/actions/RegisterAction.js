@@ -1,8 +1,8 @@
-import * as types from "./index";
-import axios from "axios";
-import { showMessage } from "react-native-flash-message";
+import * as types from './index';
+import axios from 'axios';
+import { showMessage } from 'react-native-flash-message';
 
-const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
+const baseUrl = 'https://choko-swift-foods-backend.herokuapp.com';
 
 const registerUserLoading = () => ({
   type: types.REGISTER_LOADING,
@@ -24,15 +24,15 @@ export const registerUser = (newUserData) => (dispatch) => {
     .then((response) => {
       dispatch(registerUserSuccess(response.data));
       showMessage({
-        message: "Registration succesfull, Login",
-        type: "success",
+        message: 'Registration succesfull, Login',
+        type: 'success',
       });
     })
     .catch((error) => {
       dispatch(registerUserFailure({ message: error.message }));
       showMessage({
-        message: "Opps something went wrong, try again",
-        type: "danger",
+        message: 'Opps something went wrong, try again',
+        type: 'danger',
       });
     });
 };

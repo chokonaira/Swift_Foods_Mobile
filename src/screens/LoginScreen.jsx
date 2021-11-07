@@ -10,63 +10,65 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { globalImages } from '../styles/globalImages'
-import { connect } from 'react-redux';
+import { globalImages } from "../styles/globalImages";
+import { connect } from "react-redux";
 import { GlobalStyles } from "../styles/globalStyles";
 import { userProfile } from "../redux/actions/ProfileAction";
-import Spinner from 'react-native-loading-spinner-overlay';
-import { loginUser } from '../redux/actions/LoginAction';
+import Spinner from "react-native-loading-spinner-overlay";
+import { loginUser } from "../redux/actions/LoginAction";
 import { Formik } from "formik";
-import { showMessage } from "react-native-flash-message";
-import {NavigationEvents} from 'react-navigation';
+import { NavigationEvents } from "react-navigation";
 import { loginSchema } from "../helpers/formValidationSchema";
 import { logoutUser } from "../redux/actions/LogoutAction";
 
 class Login extends Component {
-
   componentDidUpdate() {
-    const { existingUser: {isAuthenticated }} = this.props
-     if(isAuthenticated) {
-       this.props.navigation.navigate("Dashboard");
-     }
- }
-
- checkAuthenticated = () => {
-  const { isAuthenticated } = this.props.existingUser;
-  if (isAuthenticated) {
     const {
-      userProfile
-    } = this.props.profile;
-    if (userProfile && userProfile.user === undefined) {
-       this.onLogOut;
-       return
+      existingUser: { isAuthenticated },
+    } = this.props;
+    if (isAuthenticated) {
+      this.props.navigation.navigate("Dashboard");
     }
-    this.props.navigation.navigate("Dashboard");
   }
-}
 
-onLogOut = () => {
-  this.props.logoutUser();
-  this.props.navigation.navigate('Home')
-}
+  checkAuthenticated = () => {
+    const { isAuthenticated } = this.props?.existingUser;
+    if (isAuthenticated) {
+      const { userProfile } = this.props?.profile;
+      if (userProfile && userProfile.user === undefined) {
+        this.onLogOut;
+        return;
+      }
+      this.props.navigation.navigate("Dashboard");
+    }
+  };
+
+  onLogOut = () => {
+    this.props.logoutUser();
+    this.props.navigation.navigate("Home");
+  };
 
   render() {
-    const { existingUser: { loading }} = this.props
+    const {
+      loading,
+    } = this.props?.existingUser;
     return (
-      <ImageBackground style={GlobalStyles.image} source={globalImages.LoginBanner}>
+      <ImageBackground
+        style={GlobalStyles.image}
+        source={globalImages.LoginBanner}
+      >
         <Spinner
           animation="none"
-          color='#f0a500'
+          color="#f0a500"
           visible={loading}
-          textStyle={{color: '#f0a500'}}
-          overlayColor='rgba(0, 0, 0, .6)'
-
+          textStyle={{ color: "#f0a500" }}
+          overlayColor="rgba(0, 0, 0, .6)"
         />
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <KeyboardAvoidingView behavior="height" keyboardVerticalOffset={60}>
             <ScrollView style={GlobalStyles.authFormWrapper}>
               <View style={GlobalStyles.authLoginForm}>
-              <NavigationEvents onDidFocus={this.checkAuthenticated} />
+                <NavigationEvents onDidFocus={this.checkAuthenticated} />
                 <Text style={GlobalStyles.authText}>Login</Text>
                 <Formik
                   initialValues={{
@@ -109,23 +111,31 @@ onLogOut = () => {
                         {props.touched.password && props.errors.password}
                       </Text>
                       <TouchableOpacity
-                        onPress={() => this.props.navigation.navigate("Register")}
+                        onPress={() =>
+                          this.props.navigation.navigate("Register")
+                        }
                         style={GlobalStyles.loginTextSpanWrapper}
                       >
                         <Text style={GlobalStyles.loginTextSpan}>Register</Text>
                       </TouchableOpacity>
-                      {loading ? <TouchableOpacity
-                        style={GlobalStyles.formButton}
-                        onPress={props.handleSubmit}
-                      >
-                        <Text style={GlobalStyles.buttonText}>Loading...</Text>
-                      </TouchableOpacity> : <TouchableOpacity
-                        style={GlobalStyles.formButton}
-                        onPress={props.handleSubmit}
-                      >
-                        <Text style={GlobalStyles.buttonText}>Submit</Text>
-                      </TouchableOpacity>}
-                      
+                      {loading ? (
+                        <TouchableOpacity
+                          style={GlobalStyles.formButton}
+                          onPress={props.handleSubmit}
+                        >
+                          <Text style={GlobalStyles.buttonText}>
+                            Loading...
+                          </Text>
+                        </TouchableOpacity>
+                      ) : (
+                        <TouchableOpacity
+                          style={GlobalStyles.formButton}
+                          onPress={props.handleSubmit}
+                        >
+                          <Text style={GlobalStyles.buttonText}>Submit</Text>
+                        </TouchableOpacity>
+                      )}
+
                       <Text style={GlobalStyles.emptyInput}></Text>
                       <Text style={GlobalStyles.emptyInput}></Text>
                       <Text style={GlobalStyles.emptyInput}></Text>
@@ -136,7 +146,6 @@ onLogOut = () => {
               </View>
             </ScrollView>
           </KeyboardAvoidingView>
-
         </TouchableWithoutFeedback>
       </ImageBackground>
     );
@@ -145,7 +154,9 @@ onLogOut = () => {
 
 const mapStateToProps = (state) => ({
   profile: state.userProfile,
-  existingUser: state.existingUser
-})
+  existingUser: state.existingUser,
+});
 
-export default connect(mapStateToProps, {loginUser, userProfile, logoutUser})(Login);
+export default connect(mapStateToProps, { loginUser, userProfile, logoutUser })(
+  Login
+);

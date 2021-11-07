@@ -22,17 +22,17 @@ If you don't have a mobile simulator installed on your PC for Android or IOS or 
 # To Run App
 - git clone - `https://github.com/chokonaira/choko_swift_foods_frontend.git`
 - cd `choko_swift_food_frontend`
-- `npm install`
+- `yarn add`
 - If you already have the andriod virtual device setup, manually run your Android Emulator on the background by opening Android studio > click Configure > click AVD Manager > click the green play button
 - `npm run open-ios-simulator` to open your IOS Simulator on the background
-- `npm start` to run react native server.
+- `yarn start` to run react native server.
 - In your Terminal where your server is running, type letter `a` to automatically preview code on your android emulator. type letter `i` to automatically preview choko_swift_food_frontend on your IOS Simulator
 
 ### To run App on debug mode - 
 - Follow this instructions to install react-native stand alone debugger Tool [here](https://github.com/jhen0409/react-native-debugger)
 - After installation, Open React Native Debugger Tool > click debugger settings on the top left menu bar > Open config file > Modify defaultRNPackagerPorts to run on [19001] > Save and exit.
 - Make sure your mobile virtual devices are running in the background
-- `npm run debug` to run server in debug mode
+- `yarn debug` to run server in debug mode
 - When you preview code on the running virtual devices, it will automatically connect to the dubugger which is running on port `19001`
 
 ## choko_swift_food_frontend Backend

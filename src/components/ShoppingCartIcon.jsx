@@ -3,7 +3,10 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { userProfile } from "../redux/actions/ProfileAction";
-import { createShoppingBasket, getShoppingBasket } from "../redux/actions/BasketAction";
+import {
+  createShoppingBasket,
+  getShoppingBasket,
+} from "../redux/actions/BasketAction";
 import { loginUser } from "../redux/actions/LoginAction";
 import CartModal from "./CartModal";
 import { connect } from "react-redux";
@@ -21,16 +24,19 @@ class ShoppingCartIcon extends Component {
   };
   render() {
     const { modal } = this.state;
-    const {existingBasket} = this.props
-    const count = existingBasket.basket.product && existingBasket.basket.product.length
+    const { existingBasket } = this.props;
+    const count =
+      existingBasket.basket.product && existingBasket.basket.product.length;
     return (
       <View style={{ paddingBottom: 13 }}>
-        <CartModal shoppingBasket={existingBasket} openModal={modal} closeModal={this.closeModal} />
+        <CartModal
+          shoppingBasket={existingBasket}
+          openModal={modal}
+          closeModal={this.closeModal}
+        />
         <TouchableOpacity onPress={this.openModal}>
           <View style={GlobalStyles.shoppingCartNotification}>
-            <Text style={{ color: "#444", fontWeight: "bold" }}>
-              {count}
-            </Text>
+            <Text style={{ color: "#444", fontWeight: "bold" }}>{count}</Text>
           </View>
 
           <Icon
@@ -55,4 +61,3 @@ export default connect(mapStateToProps, {
   createShoppingBasket,
   getShoppingBasket,
 })(ShoppingCartIcon);
-

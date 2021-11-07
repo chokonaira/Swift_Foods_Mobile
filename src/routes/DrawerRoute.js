@@ -1,7 +1,7 @@
-import {createDrawerNavigator} from 'react-navigation-drawer'
-import HomeScreen from "../screens/HomeScreen";
-import AboutScreen from "../screens/AboutScreen";
-import DashboardScreen from "../screens/DashboardScreen";
+import { createDrawerNavigator } from 'react-navigation-drawer';
+import HomeScreen from '../screens/HomeScreen';
+import AboutScreen from '../screens/AboutScreen';
+import DashboardScreen from '../screens/DashboardScreen';
 
 
 const screens = {
@@ -22,8 +22,8 @@ const screens = {
 
 const DrawerRoutes = createDrawerNavigator(screens, {
   defaultNavigationOptions: {
-    headerTintColor: "#f0a500",
-    headerStyle: { backgroundColor: "#f0a500" },
+    headerTintColor: '#f0a500',
+    headerStyle: { backgroundColor: '#f0a500' },
   },
 });
 export default DrawerRoutes;

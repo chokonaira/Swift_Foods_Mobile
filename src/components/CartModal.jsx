@@ -13,11 +13,13 @@ import CheckoutFormModal from "./CheckoutFormModal";
 import { userProfile } from "../redux/actions/ProfileAction";
 import { getShoppingBasket } from "../redux/actions/BasketAction";
 import { connect } from "react-redux";
-import { deleteBasketItem, deleteAllBasketItems } from "../redux/actions/BasketItemsAction";
+import {
+  deleteBasketItem,
+  deleteAllBasketItems,
+} from "../redux/actions/BasketItemsAction";
 import { loginUser } from "../redux/actions/LoginAction";
 
 class CartModal extends Component {
-
   state = {
     modal: false,
   };
@@ -45,15 +47,21 @@ class CartModal extends Component {
         existingUser: { id, token },
       },
     } = this.props;
-    const {basket:{basket:{id: basketId}}} = this.props.existingBasket
-    this.props.deleteAllBasketItems(id, basketId, token)
-  }
+    const {
+      basket: {
+        basket: { id: basketId },
+      },
+    } = this.props.existingBasket;
+    this.props.deleteAllBasketItems(id, basketId, token);
+  };
 
   render() {
     const { modal } = this.state;
     const { shoppingBasket } = this.props;
     const add = (total, num) => total + parseInt(num.price);
-    const totalPrice = shoppingBasket.basket.product && shoppingBasket.basket.product.reduce(add, 0);
+    const totalPrice =
+      shoppingBasket.basket.product &&
+      shoppingBasket.basket.product.reduce(add, 0);
     return (
       <View
         style={{
@@ -107,7 +115,8 @@ class CartModal extends Component {
                 name={"arrow-right"}
               />
             </View>
-            {shoppingBasket.basket.product && shoppingBasket.basket.product.length === 0 ? (
+            {shoppingBasket.basket.product &&
+            shoppingBasket.basket.product.length === 0 ? (
               <View>
                 <Text style={{ fontSize: 20, fontWeight: "bold" }}>
                   No Item in Shopping Basket
@@ -263,5 +272,5 @@ export default connect(mapStateToProps, {
   loginUser,
   getShoppingBasket,
   deleteBasketItem,
-  deleteAllBasketItems
+  deleteAllBasketItems,
 })(CartModal);

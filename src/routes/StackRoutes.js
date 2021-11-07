@@ -1,9 +1,9 @@
-import { createStackNavigator } from "react-navigation-stack";
-import HomeScreen from "../screens/HomeScreen";
-import LoginScreen from "../screens/LoginScreen";
-import RegisterScreen from "../screens/RegisterScreen";
-import EditProfileScreen from "../screens/EditProfileScreen";
-import ProfileScreen from "../screens/EditProfileScreen";
+import { createStackNavigator } from 'react-navigation-stack';
+import HomeScreen from '../screens/HomeScreen';
+import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
+import EditProfileScreen from '../screens/EditProfileScreen';
+import ProfileScreen from '../screens/EditProfileScreen';
 
 
 const screens = {
@@ -30,8 +30,8 @@ const screens = {
 
 const Routes = createStackNavigator(screens, {
   defaultNavigationOptions: {
-    headerTintColor: "#f0a500",
-    headerStyle: { backgroundColor: "#f0a500" },
+    headerTintColor: '#f0a500',
+    headerStyle: { backgroundColor: '#f0a500' },
   },
 });
 export default Routes;

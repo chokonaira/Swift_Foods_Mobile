@@ -1,7 +1,7 @@
-import * as types from "./index";
-import axios from "axios";
+import * as types from './index';
+import axios from 'axios';
 
-const baseUrl = "https://choko-swift-foods-backend.herokuapp.com";
+const baseUrl = 'https://choko-swift-foods-backend.herokuapp.com';
 
 const fetchACategoryLoading = () => ({
   type: types.FETCH_A_CATEGORY_LOADING,
@@ -34,7 +34,7 @@ const fetchAllCategoryError = (payload) => ({
 export const fetchACategory = (categoryId, token) => (dispatch) => {
   dispatch(fetchACategoryLoading());
   headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   };
 
@@ -51,7 +51,7 @@ export const fetchACategory = (categoryId, token) => (dispatch) => {
 export const fetchAllCategory = (token) => (dispatch) => {
   dispatch(fetchAllCategoryLoading());
   headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   };
 

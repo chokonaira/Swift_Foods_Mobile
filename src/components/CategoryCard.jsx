@@ -5,29 +5,32 @@ import Image from "react-native-image-progress";
 import ProgressBar from "react-native-progress";
 
 class CategoryCard extends Component {
-
   render() {
-
-    const {restaurantId} = this.props;
+    const { restaurantId } = this.props;
     let categories;
-    if (restaurantId){
+    if (restaurantId) {
       categories = this.props.restaurant.restaurant.categories;
     } else {
       categories = this.props.categories.categories.categories;
     }
-    if (categories && categories.length < 1){
-     return (
-     <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 2,
-        }}
-      >
-        <Text style={{fontWeight:'bold', fontSize: 15}}>There are currently no Categories </Text>
-         <Text style={{fontWeight:'bold', fontSize: 15}}>for this Restaurant at the moment</Text>
-      </View>)
+    if (categories && categories.length < 1) {
+      return (
+        <View
+          style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 2,
+          }}
+        >
+          <Text style={{ fontWeight: "bold", fontSize: 15 }}>
+            There are currently no Categories{" "}
+          </Text>
+          <Text style={{ fontWeight: "bold", fontSize: 15 }}>
+            for this Restaurant at the moment
+          </Text>
+        </View>
+      );
     }
 
     return (
@@ -42,11 +45,11 @@ class CategoryCard extends Component {
         <FlatList
           data={categories}
           renderItem={({ item }) => (
-            <TouchableOpacity 
-              activeOpacity={0.5} 
+            <TouchableOpacity
+              activeOpacity={0.5}
               style={{ width: "33%" }}
               onPress={() => {
-                this.props.navigation.navigate('Dashboard', {
+                this.props.navigation.navigate("Dashboard", {
                   categoryId: item.id,
                 });
               }}
@@ -54,7 +57,7 @@ class CategoryCard extends Component {
               <View
                 style={{
                   borderWidth: 1,
-                  borderRadius: .5,
+                  borderRadius: 0.5,
                   borderColor: "#f0a500",
                   margin: 0.8,
                 }}

@@ -3,17 +3,12 @@ import { Text, View, TouchableOpacity, FlatList } from "react-native";
 import { GlobalStyles } from "../styles/globalStyles";
 import Image from "react-native-image-progress";
 import ProgressBar from "react-native-progress";
-// import foodImage from "../styles/globalImages";
-import { RestaurantsImages } from "../styles/globalImages";
 
 class RestaurantCard extends Component {
-
-  openMenu = () => {
-    // this.navigation.openDrawer();
-  };
-
   render() {
-    const {restaurants: {hotels_restaurants}} = this.props.restaurants
+    const {
+      restaurants: { hotels_restaurants },
+    } = this.props.restaurants;
     return (
       <View
         style={{
@@ -22,7 +17,6 @@ class RestaurantCard extends Component {
           alignItems: "center",
           marginTop: 2,
           width: "100%",
-          // borderRadius:50
         }}
       >
         <FlatList
@@ -30,9 +24,9 @@ class RestaurantCard extends Component {
           renderItem={({ item }) => (
             <TouchableOpacity
               activeOpacity={0.5}
-              style={{ width: "49.8%"}}
+              style={{ width: "49.8%" }}
               onPress={() => {
-                this.props.navigation.navigate('Category', {
+                this.props.navigation.navigate("Category", {
                   restaurantId: item.id,
                 });
               }}
